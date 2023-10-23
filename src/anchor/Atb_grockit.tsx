@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_grockit() {
-  return (
-		<Atb innerText="Grokit" href="https://en.wikipedia.org/wiki/Grockit"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_grockit = _Atb__new(
+	'Grokit',
+	'https://en.wikipedia.org/wiki/Grockit')

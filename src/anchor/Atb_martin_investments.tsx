@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_martin_investments() {
-  return (
-		<Atb innerText="Martin Investments" href="https://www.martin-investments.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_martin_investments = _Atb__new(
+	'Martin Investments',
+	'https://www.martin-investments.com/')

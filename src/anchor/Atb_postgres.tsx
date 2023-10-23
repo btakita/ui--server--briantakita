@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_postgres() {
-  return (
-		<Atb innerText="postgres" href="https://www.postgresql.org/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_postgres = _Atb__new(
+	'postgres',
+	'https://www.postgresql.org/')

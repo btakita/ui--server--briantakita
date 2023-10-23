@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_ruby_on_rails() {
-  return (
-		<Atb innerText="Ruby on Rails" href="https://rubyonrails.org/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_ruby_on_rails = _Atb__new(
+	'Ruby on Rails',
+	'https://rubyonrails.org/')

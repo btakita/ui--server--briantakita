@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_censible() {
-  return (
-		<Atb innerText="Censible" href="http://censible.co/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_censible = _Atb__new(
+	'Censible',
+	'http://censible.co/')

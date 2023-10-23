@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_heroku() {
-  return (
-		<Atb innerText="heroku" href="https://www.heroku.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_heroku = _Atb__new(
+	'heroku',
+	'https://www.heroku.com/')

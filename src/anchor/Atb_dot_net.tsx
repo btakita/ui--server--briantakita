@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_dot_net() {
-  return (
-		<Atb innerText=".NET" href="https://dotnet.microsoft.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_dot_net = _Atb__new(
+	'.NET',
+	'https://dotnet.microsoft.com/')

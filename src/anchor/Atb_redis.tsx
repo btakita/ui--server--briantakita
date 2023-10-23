@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_redis() {
-  return (
-		<Atb innerText="redis" href="https://redis.io"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_redis = _Atb__new(
+	'redis',
+	'https://redis.io')

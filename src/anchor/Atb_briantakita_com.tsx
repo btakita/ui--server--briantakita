@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_briantakita_com() {
-  return (
-		<Atb innerText="briantakita.com" href="http://briantakita.com"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_briantakita_com = _Atb__new(
+	'briantakita.com',
+	'http://briantakita.com')

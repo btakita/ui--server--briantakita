@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_menu() {
-  return (
-		<Atb innerText="menu.com" href="https://menu.com"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_menu = _Atb__new(
+	'menu.com',
+	'https://menu.com')

@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_unison() {
-  return (
-		<Atb innerText="unison" href="https://github.com/nathansobo/unison"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_unison = _Atb__new(
+	'unison',
+	'https://github.com/nathansobo/unison')

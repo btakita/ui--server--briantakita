@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_php() {
-  return (
-		<Atb innerText="PHP" href="https://www.php.net/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_php = _Atb__new(
+	'PHP',
+	'https://www.php.net/')

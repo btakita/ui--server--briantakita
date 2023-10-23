@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_sinatrarb() {
-  return (
-		<Atb innerText="sinatrarb" href="https://sinatrarb.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_sinatrarb = _Atb__new(
+	'sinatrarb',
+	'https://sinatrarb.com/')

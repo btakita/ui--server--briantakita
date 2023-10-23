@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_pnpm() {
-  return (
-		<Atb innerText="pnpm" href="https://pnpm.io/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_pnpm = _Atb__new(
+	'pnpm',
+	'https://pnpm.io/')

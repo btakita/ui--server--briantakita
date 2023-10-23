@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_rspec() {
-  return (
-		<Atb innerText="rspec" href="https://rspec.info/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_rspec = _Atb__new(
+	'rspec',
+	'https://rspec.info/')

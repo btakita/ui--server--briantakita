@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_bunjs() {
-  return (
-		<Atb innerText="bunjs" href="https://bun.sh/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_bunjs = _Atb__new(
+	'bunjs',
+	'https://bun.sh')

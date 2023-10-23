@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_engine_yard() {
-  return (
-		<Atb innerText="Engine Yard" href="https://www.engineyard.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_engine_yard = _Atb__new(
+	'Engine Yard',
+	'https://www.engineyard.com/')

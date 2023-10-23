@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_erector() {
-  return (
-		<Atb innerText="erector" href="https://erector.github.io/erector/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_erector = _Atb__new(
+	'erector',
+	'https://erector.github.io/erector/')

@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_reactjs() {
-  return (
-		<Atb innerText="reactjs" href="https://react.dev/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_reactjs = _Atb__new(
+	'reactjs',
+	'https://react.dev/')

@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_docker() {
-  return (
-		<Atb innerText="Docker" href="https://www.docker.com"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_docker = _Atb__new(
+	'Docker',
+	'https://www.docker.com')

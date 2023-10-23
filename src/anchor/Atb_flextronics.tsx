@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_flextronics() {
-  return (
-		<Atb innerText="Flextronics" href="https://flex.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_flextronics = _Atb__new(
+	'Flextronics',
+	'https://flex.com/')

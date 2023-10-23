@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_linux() {
-  return (
-		<Atb innerText="Linux" href="https://www.linux.org/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_linux = _Atb__new(
+	'Linux',
+	'https://www.linux.org/')

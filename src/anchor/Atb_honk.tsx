@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_honk() {
-  return (
-		<Atb innerText="honk.com" href="https://www.honk.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_honk = _Atb__new(
+	'honk.com',
+	'https://www.honk.com/')

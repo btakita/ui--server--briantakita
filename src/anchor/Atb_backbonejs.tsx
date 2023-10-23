@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_backbonejs() {
-  return (
-		<Atb innerText="Backbone.js" href="https://backbonejs.org/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_backbonejs = _Atb__new(
+	'Backbone.js',
+	'https://backbonejs.org')

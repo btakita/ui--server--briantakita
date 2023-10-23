@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_browserify() {
-  return (
-		<Atb innerText="Browserify" href="http://browserify.org/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_browserify = _Atb__new(
+	'Browserify',
+	'http://browserify.org')

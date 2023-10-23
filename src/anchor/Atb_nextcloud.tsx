@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_nextcloud() {
-  return (
-		<Atb innerText="NextCloud" href="https://nextcloud.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_nextcloud = _Atb__new(
+	'NextCloud',
+	'https://nextcloud.com')

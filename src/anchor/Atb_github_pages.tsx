@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_github_pages() {
-  return (
-		<Atb innerText="Github Pages" href="http://pages.github.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_github_pages = _Atb__new(
+	'Github Pages',
+	'http://pages.github.com')

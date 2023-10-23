@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_solidjs() {
-  return (
-		<Atb innerText="solidjs" href="https://www.solidjs.com"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_solidjs = _Atb__new(
+	'solidjs',
+	'https://www.solidjs.com')

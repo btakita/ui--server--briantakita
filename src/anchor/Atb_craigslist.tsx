@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_craigslist() {
-  return (
-		<Atb innerText="Craigslist" href="https://www.craigslist.org/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_craigslist = _Atb__new(
+	'Craigslist',
+	'https://www.craigslist.org')

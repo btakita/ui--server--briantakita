@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_ctx_core() {
-  return (
-		<Atb innerText="ctx-core" href="https://github.com/ctx-core/ctx-core"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_ctx_core = _Atb__new(
+	'ctx-core',
+	'https://github.com/ctx-core/ctx-core')

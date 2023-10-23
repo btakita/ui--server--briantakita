@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_truecar() {
-  return (
-		<Atb innerText="TrueCar" href="https://www.truecar.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_truecar = _Atb__new(
+	'TrueCar',
+	'https://www.truecar.com/')

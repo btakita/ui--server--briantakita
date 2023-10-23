@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_naspp() {
-	return (
-		<Atb innerText="NASPP" href="https://www.naspp.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_naspp = _Atb__new(
+	'NASPP',
+	'https://www.naspp.com/')

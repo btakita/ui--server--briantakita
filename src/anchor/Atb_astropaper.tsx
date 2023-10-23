@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_astropaper() {
-  return (
-		<Atb innerText="AstroPaper" href="https://astro-paper.pages.dev/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_astropaper = _Atb__new(
+	'AstroPaper',
+	'https://astro-paper.pages.dev/')

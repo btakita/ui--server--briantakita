@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_sapper() {
-  return (
-		<Atb innerText="sapper" href="https://sapper.svelte.dev/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_sapper = _Atb__new(
+	'sapper',
+	'https://sapper.svelte.dev/')

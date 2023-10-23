@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_rethinkdb() {
-  return (
-		<Atb innerText="RethinkDB" href="https://rethinkdb.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_rethinkdb = _Atb__new(
+	'RethinkDB',
+	'https://rethinkdb.com/')

@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_riotjs() {
-  return (
-		<Atb innerText="riot.js" href="https://riot.js.org/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_riotjs = _Atb__new(
+	'riot.js',
+	'https://riot.js.org/')

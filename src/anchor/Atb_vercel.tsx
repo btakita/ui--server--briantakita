@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_vercel() {
-  return (
-		<Atb innerText="Vercel" href="https://vercel.com"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_vercel = _Atb__new(
+	'Vercel',
+	'https://vercel.com')

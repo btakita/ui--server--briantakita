@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_backbone_signal() {
-  return (
-		<Atb innerText="backbone-signal" href="https://github.com/btakita/backbone-signal"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_backbone_signal = _Atb__new(
+	'backbone-signal',
+'https://github.com/btakita/backbone-signal')

@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_aws() {
-  return (
-		<Atb innerText="aws" href="https://aws.amazon.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_aws = _Atb__new(
+	'aws',
+	'https://aws.amazon.com')

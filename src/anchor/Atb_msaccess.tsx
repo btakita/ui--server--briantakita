@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_msaccess() {
-  return (
-		<Atb innerText="MS Access" href="https://www.microsoft.com/en-us/microsoft-365/access"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_msaccess = _Atb__new(
+	'MS Access',
+	'https://www.microsoft.com/en-us/microsoft-365/access')

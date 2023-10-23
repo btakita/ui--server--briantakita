@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_ruby() {
-  return (
-		<Atb innerText="Ruby" href="https://www.ruby-lang.org"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_ruby = _Atb__new(
+	'Ruby',
+	'https://www.ruby-lang.org')

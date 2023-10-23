@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_astrojs() {
-  return (
-		<Atb innerText="astrojs" href="https://astro.build/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_astrojs = _Atb__new(
+	'astrojs',
+	'https://astro.build')

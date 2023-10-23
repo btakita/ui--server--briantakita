@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_rundavoo() {
-  return (
-		<Atb innerText="Rundavoo" href="http://www.rundavoo.com"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_rundavoo = _Atb__new(
+	'Rundavoo',
+	'http://www.rundavoo.com')

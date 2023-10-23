@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_expressjs() {
-  return (
-		<Atb innerText="expressjs" href="http://expressjs.com/"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_expressjs = _Atb__new(
+	'expressjs',
+	'http://expressjs.com/')

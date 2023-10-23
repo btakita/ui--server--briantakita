@@ -1,6 +1,4 @@
-import { Atb } from '@btakita/ui--server--blog'
-export function Atb_nodejs() {
-  return (
-		<Atb innerText="Node.js" href="https://nodejs.org"/>
-	)
-}
+import { _Atb__new } from './_Atb__new'
+export const Atb_nodejs = _Atb__new(
+	'Node.js',
+	'https://nodejs.org')
