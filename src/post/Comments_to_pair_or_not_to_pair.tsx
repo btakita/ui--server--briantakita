@@ -1,5 +1,6 @@
 /// <reference lib="dom" />
 import './Comments_to_pair_or_not_to_pair.css'
+import { Atb } from '@btakita/ui--server--blog'
 export function Comments_to_pair_or_not_to_pair() {
 	return (
 		<div id="comments">
@@ -45,9 +46,9 @@ export function Comments_to_pair_or_not_to_pair() {
 					</div>
 					<div class="comment">
 						<span class="commentauthor">
-							<a href="http://thewoolleyweb.com/" rel="external nofollow" class="url">
+							<Atb href="http://thewoolleyweb.com/" rel="external nofollow" class="url">
 								Chad Woolley
-							</a> says...
+							</Atb> says...
 						</span>
 						<span class="commentdate">Comment on March 10, 2010 at 8:08 pm</span>
 						<div class="commenttext">
@@ -67,8 +68,8 @@ export function Comments_to_pair_or_not_to_pair() {
 					</div>
 					<div class="comment">
 						<span class="commentauthor">
-							<a href="https://web.archive.org/web/20120513132750/http://www.honk.com/" rel="external nofollow"
-								class="url">Brian</a> says...
+							<Atb href="https://web.archive.org/web/20120513132750/http://www.honk.com/" rel="external nofollow"
+								class="url">Brian</Atb> says...
 						</span>
 						<span class="commentdate">Comment on March 23, 2010 at 9:27 am</span>
 						<div class="commenttext">

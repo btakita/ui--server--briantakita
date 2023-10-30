@@ -9,6 +9,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@ctx-core/object": "^28.2.1",
     "solid-js": "^1.8.4"
   }
 }
