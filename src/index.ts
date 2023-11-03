@@ -1,4 +1,5 @@
 export * from './anchor'
 export * from './attribution'
+export * from './home'
 export * from './post'
 export * from './utf8'
