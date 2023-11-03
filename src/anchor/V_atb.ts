@@ -1,5 +1,6 @@
 import { V_atb } from '@btakita/ui--server--blog'
 import { type Ctx } from '@ctx-core/object'
+import type { VanShape } from 'van-type-delegate'
 export const V_atb_abstraction = _V_atb__new('Abstraction', 'https://github.com/btakita/philosophy/blob/master/src/abstraction.md')
 export const V_atb_ado_net = _V_atb__new('ADO.NET', 'https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview')
 export const V_atb_apache = _V_atb__new('Apache', 'https://apache.org')
@@ -149,7 +150,7 @@ export const V_atb_wintersmithjs = _V_atb__new('Wintersmith', 'http://wintersmit
 export const V_atb_worldview = _V_atb__new('Worldview', 'https://github.com/btakita/philosophy/blob/master/src/worldview.md')
 export const V_atb_wsj = _V_atb__new('Wall Street Journal', 'https://www.wsj.com')
 export const V_atb_yammer = _V_atb__new('Yammer', 'https://en.wikipedia.org/wiki/Yammer')
-export function _V_atb__new(innerText:string, href:string) {
+export function _V_atb__new<V extends VanShape>(innerText:string, href:string) {
 	return ({ ctx, ...$p }:{ ctx:Ctx, innerText?:string|number})=>
-		V_atb({ ctx, href, innerText: $p.innerText || innerText })
+		V_atb<V>({ ctx, href, innerText: $p.innerText || innerText })
 }
