@@ -1,7 +1,7 @@
-import { H_ } from '@btakita/domain--all--blog'
 import { type Ctx } from '@ctx-core/object'
 import { VanShape } from 'van-type-delegate'
 import './Comments_to_pair_or_not_to_pair.css'
+import { H_ } from '@ctx-core/vanjs'
 export function V_comments_to_pair_or_not_to_pair<V extends VanShape>({ ctx }:{ ctx:Ctx }) {
 	const {
 		a,

@@ -1,10 +1,11 @@
-import { H_, type Post, post__slug__new, S_ } from '@btakita/domain--all--blog'
+import { type Post, post__slug__new } from '@btakita/domain--all--blog'
 import { site__home__page__post_count_ } from '@btakita/domain--server--blog'
 import { V_card } from '@btakita/ui--all--blog'
-import { type Ctx } from '@ctx-core/object'
 import { V_hr, V_link_button } from '@btakita/ui--server--blog/src/html_tag'
 import { V_main } from '@btakita/ui--server--blog/src/main'
 import { V_socials } from '@btakita/ui--server--blog/src/social'
+import { type Ctx } from '@ctx-core/object'
+import { H_, S_ } from '@ctx-core/vanjs'
 import { V_atb_uop, V_atb_uop_engineering, V_atb_uop_engineering_physics } from '../anchor'
 import './V_home.css'
 export function V_home({ ctx, featured__posts, posts, social__count }:{
