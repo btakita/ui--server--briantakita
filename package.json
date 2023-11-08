@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ctx-core/object": "^29.0.0",
-    "@ctx-core/vanjs": "^2.1.1",
+    "@ctx-core/vanjs": "^2.1.2",
     "solid-js": "^1.8.5"
   }
 }
