@@ -33,11 +33,11 @@ export function V_home({ ctx, featured__posts, posts, social__count }:{
 						S.circle({ cx: 6, cy: 18, r: 2 }))),
 				H.p(
 					`Full stack developer with over 20 years experience. Emphasizes efficient product development,
-					consistent domain language, flat architectures, & code reuse. Graduated with a`,
-					V_atb_uop_engineering({ ctx }),
+					consistent domain language, flat architectures, & code reuse. Graduated with a `,
+					V_atb_uop_engineering({ ctx, innerText: 'Bachelor of Science' }),
 					` in `,
-					V_atb_uop_engineering_physics({ ctx }),
-					` from `,
+					V_atb_uop_engineering_physics({ ctx, innerText: 'Engineering Physics' }),
+					` from the `,
 					V_atb_uop({ ctx }),
 					`.`
 				),
