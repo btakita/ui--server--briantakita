@@ -1,1 +1,1 @@
-export * from './V_home.ts'
+export * from './V_home.js'

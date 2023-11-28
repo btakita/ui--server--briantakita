@@ -1,1 +1,1 @@
-export * from './Utf8_mdash.ts'
+export * from './Utf8_mdash.js'
