@@ -1,21 +1,21 @@
 import { type Post, post__slug__new } from '@btakita/domain--all--blog'
 import { site__home__page__post_count_ } from '@btakita/domain--server--blog'
-import { V_card } from '@btakita/ui--all--blog'
-import { V_hr, V_link_button, V_main, V_socials } from '@btakita/ui--server--blog'
+import { blog__card_c_ } from '@btakita/ui--all--blog'
+import { hr_c_, link_button_c_, blog__main_c_, socials_c_ } from '@btakita/ui--server--blog'
 import { type Ctx } from 'ctx-core/object'
 import { type relement_env_T } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { circle_, path_, svg_ } from 'relementjs/svg'
-import { V_atb_uop, V_atb_uop_engineering, V_atb_uop_engineering_physics } from '../anchor/index.js'
-import './V_home.css'
-export function V_home<env_T extends relement_env_T>({ ctx, featured__posts, posts, social__count }:{
+import { atb_uop_, atb_uop_engineering_, atb_uop_engineering_physics_ } from '../anchor/index.js'
+import './briantakita__home_c.css'
+export function briantakita__home_c_<env_T extends relement_env_T>({ ctx, featured__posts, posts, social__count }:{
 	ctx:Ctx
 	posts:Post[]
 	featured__posts:Post[]
 	social__count:number
 }) {
 	return (
-		V_main<env_T>({ ctx },
+		blog__main_c_<env_T>({ ctx },
 			section_({ id: 'hero' },
 				h1_({ class: 'mr-2' }, `Brian Takita`),
 				a_({
@@ -32,25 +32,25 @@ export function V_home<env_T extends relement_env_T>({ ctx, featured__posts, pos
 				p_(
 					`Full stack developer with over 20 years experience. Emphasizes efficient product development,
 					consistent domain language, flat architectures, & code reuse. Graduated with a `,
-					V_atb_uop_engineering({ innerText: 'Bachelor of Science' }),
+					atb_uop_engineering_({ innerText: 'Bachelor of Science' }),
 					` in `,
-					V_atb_uop_engineering_physics({ innerText: 'Engineering Physics' }),
+					atb_uop_engineering_physics_({ innerText: 'Engineering Physics' }),
 					` from the `,
-					V_atb_uop(),
+					atb_uop_(),
 					`.`
 				),
 				social__count > 0 ?
 					div_({ class: 'social-wrapper' },
 						div_({ class: 'social-links' }),
-						V_socials<env_T>({ ctx }))
+						socials_c_<env_T>({ ctx }))
 					: undefined,
-				V_hr<env_T>({ ctx }),
+				hr_c_<env_T>(),
 				featured__posts.length > 0
 					? [
 						section_({ id: 'featured' },
 							h2_(`Featured`),
 							ul_(featured__posts.map(post=>
-								V_card<env_T>({
+								blog__card_c_<env_T>({
 									ctx,
 									href: `/posts/${post__slug__new(post)}`,
 									post,
@@ -58,7 +58,7 @@ export function V_home<env_T extends relement_env_T>({ ctx, featured__posts, pos
 								})
 							)))
 					] : undefined,
-				V_hr<env_T>({ ctx }),
+				hr_c_<env_T>(),
 				section_({ id: 'recent-posts' },
 					h2_('Recent Posts'),
 					ul_(
@@ -66,14 +66,14 @@ export function V_home<env_T extends relement_env_T>({ ctx, featured__posts, pos
 						.filter(({ data })=>!data.featured)
 						.slice(0, site__home__page__post_count_(ctx))
 						.map((post, index)=>
-							V_card({
+							blog__card_c_({
 								ctx,
 								href: `/posts/${post__slug__new(post)}`,
 								post,
 								show_heading: false
 							}))),
 					div_({ class: 'all-posts-btn-wrapper' },
-						V_link_button<env_T>({ href: '/posts' },
+						link_button_c_<env_T>({ href: '/posts' },
 							`All Posts`,
 							svg_({ xmlns: 'http://www.w3.org/2000/svg' },
 								path_(

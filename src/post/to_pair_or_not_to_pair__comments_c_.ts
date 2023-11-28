@@ -1,11 +1,8 @@
-import { V_atb } from '@btakita/ui--server--blog'
-import { type Ctx } from 'ctx-core/object'
+import { atb_ } from '@btakita/ui--server--blog'
 import { type relement_env_T } from 'relementjs'
 import { a_, div_, em_, h3_, img_, li_, p_, span_, ul_ } from 'relementjs/html'
-import './Comments_to_pair_or_not_to_pair.css'
-export function V_comments_to_pair_or_not_to_pair<env_T extends relement_env_T>(
-	{ ctx }:{ ctx:Ctx }
-) {
+import './to_pair_or_not_to_pair__comments_c.css'
+export function to_pair_or_not_to_pair__comments_c_<env_T extends relement_env_T>() {
 	return (
 		div_({ id: 'comments' },
 			h3_(
@@ -47,7 +44,7 @@ export function V_comments_to_pair_or_not_to_pair<env_T extends relement_env_T>(
 						})),
 					div_({ class: 'comment' },
 						span_({ class: 'commentauthor' },
-							V_atb<env_T>({ ctx, href: 'http://thewoolleyweb.com/', rel: 'external nofollow', class: 'url' },
+							atb_<env_T>({ href: 'http://thewoolleyweb.com/', rel: 'external nofollow', class: 'url' },
 								'Chad Woolley'),
 							' says...'),
 						span_({ class: 'commentdate' },
@@ -72,8 +69,7 @@ export function V_comments_to_pair_or_not_to_pair<env_T extends relement_env_T>(
 					),
 					div_({ class: 'comment' },
 						span_({ class: 'commentauthor' },
-							V_atb<env_T>({
-									ctx,
+							atb_<env_T>({
 									href: 'https://web.archive.org/web/20120513132750/http://www.honk.com/',
 									rel: 'external nofollow',
 									class: 'url'
