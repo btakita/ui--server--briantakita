@@ -1,6 +1,6 @@
-import { type Post, post__slug__new } from '@btakita/domain--all--blog'
+import { type Post, post__slug__new } from '@btakita/domain--any--blog'
 import { site__home__page__post_count_ } from '@btakita/domain--server--blog'
-import { blog__card_c_ } from '@btakita/ui--all--blog'
+import { blog__card_c_ } from '@btakita/ui--any--blog'
 import { hr_c_, link_button_c_, blog__main_c_, socials_c_ } from '@btakita/ui--server--blog'
 import { type Ctx } from 'ctx-core/object'
 import { type relement_env_T } from 'relementjs'
