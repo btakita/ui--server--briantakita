@@ -6,8 +6,8 @@
   "dependencies": {
     "@btakita/ui--server--blog": "workspace:*",
     "@btakita/ui--server--linkument": "workspace:*",
-    "ctx-core": "^4.8.1",
-    "relementjs": "^0.17.1"
+    "ctx-core": "^4.8.2",
+    "relementjs": "^0.17.2"
   },
   "devDependencies": {
     "bun-types": "latest"
