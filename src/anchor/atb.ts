@@ -1,9 +1,7 @@
-import { atb_ } from '@btakita/ui--server--blog'
-import { type relement_env_T } from 'relementjs'
 export const atb_abstraction_ = atb__new('Abstraction', 'https://github.com/btakita/philosophy/blob/master/src/abstraction.md')
 export const atb_ado_net_ = atb__new('ADO.NET', 'https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview')
-export const atb_apache_ = atb__new('Apache', 'https://apache.org')
 export const atb_apache2_license_ = atb__new('Apache 2 license', 'https://www.apache.org/licenses/LICENSE-2.0.html')
+export const atb_apache_ = atb__new('Apache', 'https://apache.org')
 export const atb_asp_ = atb__new('ASP', 'https://en.wikipedia.org/wiki/Active_Server_Pages')
 export const atb_astrojs_ = atb__new('astrojs', 'https://astro.build')
 export const atb_astropaper_ = atb__new('AstroPaper', 'https://astro-paper.pages.dev/')
@@ -106,6 +104,7 @@ export const atb_reactjs_ = atb__new('reactjs', 'https://react.dev/')
 export const atb_redis_ = atb__new('redis', 'https://redis.io')
 export const atb_rethinkdb_ = atb__new('RethinkDB', 'https://rethinkdb.com/')
 export const atb_riotjs_ = atb__new('riot.js', 'https://riot.js.org/')
+export const atb_rmemo_ = atb__new('rmemo', 'https://github.com/ctx-core/rmemo')
 export const atb_rollupjs_ = atb__new('RollupJS', 'https://rollupjs.org/')
 export const atb_rr_ = atb__new('rr', 'https://github.com/rr/rr')
 export const atb_rspec_ = atb__new('rspec', 'https://rspec.info/')
@@ -153,3 +152,5 @@ export function atb__new<env_T extends relement_env_T>(_innerText:string, href:s
 	return ({ innerText }:{ innerText?:string|number} = {})=>
 		atb_<env_T>({ href, innerText: innerText || _innerText })
 }
+import { atb_ } from '@btakita/ui--server--blog'
+import { type relement_env_T } from 'relementjs'

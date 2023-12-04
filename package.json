@@ -7,7 +7,7 @@
     "@btakita/ui--server--blog": "workspace:*",
     "@btakita/ui--server--linkument": "workspace:*",
     "ctx-core": "^4.9.0",
-    "relementjs": "^0.17.3"
+    "relementjs": "^0.18.0"
   },
   "devDependencies": {
     "bun-types": "latest"
