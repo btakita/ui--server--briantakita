@@ -9,6 +9,6 @@ export function attribution_web_framework_realworld_app_sizes__add<env_T extends
 			ctx,
 			attribution_id: '/assets/images/web-framework-realworld-app-sizes.png'
 		},
-			atb_<env_T>({ href: 'https://levelup.gitconnected.com/a-solid-realworld-demo-comparison-8c3363448fd8#255b' },
+			atb_({ href: 'https://levelup.gitconnected.com/a-solid-realworld-demo-comparison-8c3363448fd8#255b' },
 				'© Ryan Carniato')))
 }

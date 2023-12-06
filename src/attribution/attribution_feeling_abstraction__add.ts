@@ -7,15 +7,15 @@ export function attribution_feeling_abstraction__add<env_T extends relement_env_
 	return (
 		attribution__add<env_T>({ ctx, attribution_id: '/assets/images/feeling-abstraction.jpg' },
 			'Originally from ',
-			atb_<env_T>({ href: 'http://haiphonghoaphuongdo.blogspot.com/2011/07/colorful-vector-abstraction.html' },
+			atb_({ href: 'http://haiphonghoaphuongdo.blogspot.com/2011/07/colorful-vector-abstraction.html' },
 				'Original article'),
 			'—',
-			atb_<env_T>({
+			atb_({
 					href: 'http://2.bp.blogspot.com/-_t6mHvuNOTs/Th23RDI-RgI/AAAAAAAAAL0/T_VMdr6wIcY/s1600/abstract-vector-free-art.jpg'
 				},
 				'Source Image'),
 			'—',
-			atb_<env_T>({ href: 'https://2-bp.blogspot.com/2018/09/best-free-stock-photos.html' },
+			atb_({ href: 'https://2-bp.blogspot.com/2018/09/best-free-stock-photos.html' },
 				'Licensed under Creative Commons CC0'))
 	)
 }

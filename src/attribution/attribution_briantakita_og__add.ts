@@ -7,13 +7,11 @@ export function attribution_briantakita_og__add<env_T extends relement_env_T>(
 ) {
 	return (
 		attribution__add<env_T>({ ctx, attribution_id: '/assets/images/briantakita-og.jpg' },
-			atb_<env_T>({ href: 'https://www.flickr.com/photos/12972883@N00/193503222' },
-				'Graph of Der letze Schrei - Blog'),
+			atb_({ href: 'https://www.flickr.com/photos/12972883@N00/193503222' }, 'Graph of Der letze Schrei - Blog'),
 			' by ',
-			atb_<env_T>({ href: 'https://www.flickr.com/photos/12972883@N00' },
-				'jÖrg'),
+			atb_({ href: 'https://www.flickr.com/photos/12972883@N00' }, 'jÖrg'),
 			' is licensed under ',
-			atb_<env_T>({ href: 'https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse' },
+			atb_({ href: 'https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse' },
 				'CC BY-SA 2.0 ',
 				img_({
 					src: 'https://mirrors.creativecommons.org/presskit/icons/cc.svg',

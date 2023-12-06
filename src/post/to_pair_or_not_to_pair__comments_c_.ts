@@ -44,7 +44,7 @@ export function to_pair_or_not_to_pair__comments_c_<env_T extends relement_env_T
 						})),
 					div_({ class: 'comment' },
 						span_({ class: 'commentauthor' },
-							atb_<env_T>({ href: 'http://thewoolleyweb.com/', rel: 'external nofollow', class: 'url' },
+							atb_({ href: 'http://thewoolleyweb.com/', rel: 'external nofollow', class: 'url' },
 								'Chad Woolley'),
 							' says...'),
 						span_({ class: 'commentdate' },
@@ -69,12 +69,11 @@ export function to_pair_or_not_to_pair__comments_c_<env_T extends relement_env_T
 					),
 					div_({ class: 'comment' },
 						span_({ class: 'commentauthor' },
-							atb_<env_T>({
+							atb_({
 									href: 'https://web.archive.org/web/20120513132750/http://www.honk.com/',
 									rel: 'external nofollow',
 									class: 'url'
-								},
-								'Brian'),
+								}, 'Brian'),
 							' says...'),
 						span_({ class: 'commentdate' },
 							'Comment on March 23, 2010 at 9:27 am'),

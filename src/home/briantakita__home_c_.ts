@@ -32,13 +32,8 @@ export function briantakita__home_c_<env_T extends relement_env_T>({ ctx, featur
 				p_(
 					`Full stack developer with over 20 years experience. Emphasizes efficient product development,
 					consistent domain language, flat architectures, & code reuse. Graduated with a `,
-					atb_uop_engineering_({ innerText: 'Bachelor of Science' }),
-					` in `,
-					atb_uop_engineering_physics_({ innerText: 'Engineering Physics' }),
-					` from the `,
-					atb_uop_(),
-					`.`
-				),
+					atb_uop_engineering_('Bachelor of Science'), ` in `,
+					atb_uop_engineering_physics_('Engineering Physics'), ` from the `, atb_uop_(), `.`),
 				social__count > 0 ?
 					div_({ class: 'social-wrapper' },
 						div_({ class: 'social-links' }),
@@ -63,15 +58,15 @@ export function briantakita__home_c_<env_T extends relement_env_T>({ ctx, featur
 					h2_('Recent Posts'),
 					ul_(
 						posts
-						.filter(({ data })=>!data.featured)
-						.slice(0, site__home__page__post_count_(ctx))
-						.map((post, index)=>
-							blog__card_c_({
-								ctx,
-								href: `/posts/${post__slug__new(post)}`,
-								post,
-								show_heading: false
-							}))),
+							.filter(({ data })=>!data.featured)
+							.slice(0, site__home__page__post_count_(ctx))
+							.map((post, index)=>
+								blog__card_c_({
+									ctx,
+									href: `/posts/${post__slug__new(post)}`,
+									post,
+									show_heading: false
+								}))),
 					div_({ class: 'all-posts-btn-wrapper' },
 						link_button_c_<env_T>({ href: '/posts' },
 							`All Posts`,
