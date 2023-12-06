@@ -1,3 +1,6 @@
+import { atb_ } from '@btakita/ui--server--blog'
+import { type relement_env_T } from 'relementjs'
+import { code_ } from 'relementjs/html'
 export const atb_abstraction_ = atb__new('Abstraction', 'https://github.com/btakita/philosophy/blob/master/src/abstraction.md')
 export const atb_ado_net_ = atb__new('ADO.NET', 'https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview')
 export const atb_apache2_license_ = atb__new('Apache 2 license', 'https://www.apache.org/licenses/LICENSE-2.0.html')
@@ -146,6 +149,7 @@ export const atb_vault_scm_ = atb__new('Vault SCM', 'http://www.sourcegear.com/v
 export const atb_vercel_ = atb__new('Vercel', 'https://vercel.com')
 export const atb_vite_ = atb__new('Vite', 'https://vitejs.dev/')
 export const atb_vue_ = atb__new('vuejs', 'https://vuejs.org')
+export const atb_WeakRef_ = atb__new(code_('WeakRef'), 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef')
 export const atb_winforms_ = atb__new('Winforms', 'https://learn.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-7.0')
 export const atb_wintersmithjs_ = atb__new('Wintersmith', 'http://wintersmith.io/')
 export const atb_worldview_ = atb__new('Worldview', 'https://github.com/btakita/philosophy/blob/master/src/worldview.md')
@@ -155,5 +159,3 @@ export function atb__new<env_T extends relement_env_T>(_innerText:string, href:s
 	return ({ innerText }:{ innerText?:string|number} = {})=>
 		atb_<env_T>({ href, innerText: innerText || _innerText })
 }
-import { atb_ } from '@btakita/ui--server--blog'
-import { type relement_env_T } from 'relementjs'
