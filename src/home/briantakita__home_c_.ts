@@ -1,15 +1,21 @@
 import { type Post, post__slug__new } from '@btakita/domain--any--blog'
 import { site__home__page__post_count_ } from '@btakita/domain--server--blog'
-import { blog__card_c_ } from '@btakita/ui--any--blog'
-import { hr_c_, link_button_c_, blog__main_c_, socials_c_ } from '@btakita/ui--server--blog'
-import { type Ctx } from 'ctx-core/object'
-import { type relement_env_T } from 'relementjs'
+import { blog__card_c_ } from '@btakita/ui--any--blog/card'
+import { hr_c_, link_button_c_ } from '@btakita/ui--server--blog/html'
+import { blog__main_c_ } from '@btakita/ui--server--blog/main'
+import { socials_c_ } from '@btakita/ui--server--blog/social'
+import { type Ctx_wide_T, type relement_env_T } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { circle_, path_, svg_ } from 'relementjs/svg'
 import { atb_uop_, atb_uop_engineering_, atb_uop_engineering_physics_ } from '../anchor/index.js'
 import './briantakita__home_c.css'
-export function briantakita__home_c_<env_T extends relement_env_T>({ ctx, featured__posts, posts, social__count }:{
-	ctx:Ctx
+export function briantakita__home_c_<env_T extends relement_env_T>({
+	ctx,
+	featured__posts,
+	posts,
+	social__count,
+}:{
+	ctx:Ctx_wide_T<''>
 	posts:Post[]
 	featured__posts:Post[]
 	social__count:number
@@ -46,7 +52,6 @@ export function briantakita__home_c_<env_T extends relement_env_T>({ ctx, featur
 							h2_(`Featured`),
 							ul_(featured__posts.map(post=>
 								blog__card_c_<env_T>({
-									ctx,
 									href: `/posts/${post__slug__new(post)}`,
 									post,
 									show_heading: false
@@ -62,16 +67,20 @@ export function briantakita__home_c_<env_T extends relement_env_T>({ ctx, featur
 							.slice(0, site__home__page__post_count_(ctx))
 							.map((post, index)=>
 								blog__card_c_({
-									ctx,
 									href: `/posts/${post__slug__new(post)}`,
 									post,
 									show_heading: false
 								}))),
 					div_({ class: 'all-posts-btn-wrapper' },
-						link_button_c_<env_T>({ href: '/posts' },
+						link_button_c_({ href: '/posts' }, [
 							`All Posts`,
-							svg_({ xmlns: 'http://www.w3.org/2000/svg' },
-								path_(
-									{ d: 'm11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z' })))))))
+							svg_({
+								xmlns: 'http://www.w3.org/2000/svg'
+							}, [
+								path_({
+									d: 'm11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z'
+								})
+							])
+						])))))
 	)
 }
