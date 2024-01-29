@@ -1,12 +1,14 @@
-import { atb_, attribution__add } from '@btakita/ui--server--blog'
-import { type Ctx } from '@ctx-core/object'
+import { type root_ctx_T } from '@btakita/domain--any--blog'
+import { atb_ } from '@btakita/ui--server--blog/anchor'
+import { attribution__add } from '@btakita/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 import { img_ } from 'relementjs/html'
+import { type Node_T } from 'relementjs/isomorphic'
 export function attribution_1200px_Creation_of_Adam__add<env_T extends relement_env_T>(
 	{ ctx }:{
-		ctx:Ctx
+		ctx:root_ctx_T
 	}
-) {
+):Node_T<env_T, HTMLElement> {
 	return (
 		attribution__add<env_T>({
 				ctx,
