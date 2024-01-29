@@ -6,6 +6,7 @@
   "exports": {
     "./anchor": "./anchor/index.ts",
     "./attribution": "./attribution/index.ts",
+    "./footer": "./footer/index.ts",
     "./header": "./header/index.ts",
     "./home": "./home/index.ts",
     "./layout": "./layout/index.ts",

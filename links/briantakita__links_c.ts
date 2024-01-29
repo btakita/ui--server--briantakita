@@ -1,6 +1,6 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
 import { blog__main_c_ } from '@btakita/ui--server--blog/main'
-import { linkument_c_ } from '@btakita/ui--server--linkument'
+import { linkument_c_ } from 'lib/ui--server--linkument/index.ts'
 import { type fragment_T, type relement_env_T } from 'relementjs'
 import { section_ } from 'relementjs/html'
 export function briantakita__links_c_<env_T extends relement_env_T>({
