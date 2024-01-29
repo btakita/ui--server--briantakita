@@ -8,8 +8,9 @@ import { class_ } from 'ctx-core/html'
 import { type fragment_T, type relement_env_T } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { circle_, path_, svg_ } from 'relementjs/svg'
-import { request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'relysjs/server'
 import { atb_uop_, atb_uop_engineering_, atb_uop_engineering_physics_ } from '../anchor/index.js'
+import { briantakita_header_c_ } from '../header/index.ts'
 import { layout_c_ } from '../layout/index.js'
 export function home_page_<env_T extends relement_env_T>({
 	ctx,
@@ -26,7 +27,7 @@ export function home_page_<env_T extends relement_env_T>({
 		layout_c_({
 			ctx
 		}, [
-
+			briantakita_header_c_({ ctx }),
 			blog__main_c_<env_T>({ ctx },
 				section_({
 					id: 'hero',

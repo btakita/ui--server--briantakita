@@ -59,7 +59,7 @@ export function briantakita_header_c_<env_T extends relement_env_T>({
 				])
 			]),
 			SITE.light_and_dark_mode
-			&& li_(theme__toggle_button_c_({ ctx }))
+			&& li_(theme__toggle_button_c_())
 		])
 	)
 	function active_class_(_active:active_T) {
