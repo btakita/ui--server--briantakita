@@ -11,14 +11,13 @@
     "./home": "./home/index.ts",
     "./layout": "./layout/index.ts",
     "./links": "./links/index.ts",
-    "./post": "./post/index.ts",
     "./utf8": "./utf8/index.ts"
   },
   "dependencies": {
     "@btakita/ui--server--blog": "workspace:*",
     "@btakita/ui--server--linkument": "workspace:*",
-    "ctx-core": "^5.35.1",
-    "relementjs": "^0.59.1"
+    "ctx-core": "^5.36.0",
+    "relementjs": "^0.60.2"
   },
   "devDependencies": {
     "bun-types": "latest"

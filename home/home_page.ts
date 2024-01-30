@@ -1,9 +1,10 @@
 import { type Post, post__slug__new } from '@btakita/domain--any--blog'
 import { site__home__page__post_count_ } from '@btakita/domain--server--blog'
 import { blog__card_c_ } from '@btakita/ui--any--blog/card'
-import { hr_c_, link_button_c_ } from '@btakita/ui--server--blog/html'
-import { blog__main_c_ } from '@btakita/ui--server--blog/main'
-import { socials_c_ } from '@btakita/ui--server--blog/social'
+import { link_button_a_ } from '@btakita/ui--server--blog/anchor'
+import { hr_div_ } from '@btakita/ui--server--blog/hr'
+import { blog__main_fragment_ } from '@btakita/ui--server--blog/main'
+import { socials_div_ } from '@btakita/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
 import { type fragment_T, type relement_env_T } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
@@ -11,7 +12,7 @@ import { circle_, path_, svg_ } from 'relementjs/svg'
 import { type request_ctx_T } from 'relysjs/server'
 import { atb_uop_, atb_uop_engineering_, atb_uop_engineering_physics_ } from '../anchor/index.js'
 import { footer_c_ } from '../footer/index.ts'
-import { briantakita_header_c_ } from '../header/index.ts'
+import { briantakita__header_ } from '../header/index.ts'
 import { layout_c_ } from '../layout/index.js'
 export function home_page_<env_T extends relement_env_T>({
 	ctx,
@@ -28,8 +29,8 @@ export function home_page_<env_T extends relement_env_T>({
 		layout_c_({
 			ctx
 		}, [
-			briantakita_header_c_({ ctx }),
-			blog__main_c_<env_T>({ ctx }, [
+			briantakita__header_({ ctx }),
+			blog__main_fragment_<env_T>({ ctx }, [
 				section_({
 					id: 'hero',
 					class: class_(
@@ -96,10 +97,10 @@ export function home_page_<env_T extends relement_env_T>({
 									'mr-2',
 									'whitespace-nowrap')
 							}),
-							socials_c_<env_T>({ ctx })
+							socials_div_<env_T>({ ctx })
 						])
 						: undefined,
-					hr_c_(),
+					hr_div_(),
 					featured__posts.length > 0
 						? [
 							section_({
@@ -123,7 +124,7 @@ export function home_page_<env_T extends relement_env_T>({
 								))
 							])
 						] : undefined,
-					hr_c_(),
+					hr_div_(),
 					section_({
 						id: 'recent-posts',
 						class: class_(
@@ -151,7 +152,7 @@ export function home_page_<env_T extends relement_env_T>({
 								'my-8',
 								'text-center')
 						}, [
-							link_button_c_({ href: '/posts' }, [
+							link_button_a_({ href: '/posts' }, [
 								`All Posts`,
 								svg_({
 									xmlns: 'http://www.w3.org/2000/svg'

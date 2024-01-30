@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { atb_ } from '@btakita/ui--server--blog/anchor'
+import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import { attribution__add } from '@btakita/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 export function attribution_neurons__add<env_T extends relement_env_T>(
@@ -10,10 +10,10 @@ export function attribution_neurons__add<env_T extends relement_env_T>(
 			ctx,
 			attribution_id: '/assets/images/neurons.jpg'
 		}, [
-			atb_({
+			tb_a_({
 				href: 'http://www.flickr.com/photos/hmmmmm/3903176411/'
 			}, 'From Parthiv Haldipur'),
-			atb_({
+			tb_a_({
 				href: 'https://creativecommons.org/licenses/by-nc/2.0/',
 				rel: 'external nofollow'
 			}, 'Licensed under Creative Commons')

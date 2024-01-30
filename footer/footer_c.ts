@@ -1,6 +1,6 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { hr_c_ } from '@btakita/ui--server--blog/html'
-import { socials_c_ } from '@btakita/ui--server--blog/social'
+import { hr_div_ } from '@btakita/ui--server--blog/hr'
+import { socials_div_ } from '@btakita/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
 import { raw_, type relement_env_T } from 'relementjs'
 import { div_, footer_, span_ } from 'relementjs/html'
@@ -19,7 +19,7 @@ export function footer_c_<env_T extends relement_env_T>({
 					? 'mt-auto'
 					: undefined)
 		}, [
-			hr_c_({ no_padding: true }),
+			hr_div_({ no_padding: true }),
 			div_({
 				class: class_(
 					'footer-wrapper',
@@ -31,7 +31,7 @@ export function footer_c_<env_T extends relement_env_T>({
 					'py-6',
 					'sm:py-4')
 			}, [
-				socials_c_({
+				socials_div_({
 					ctx,
 					centered: true,
 					link_button_class: class_(
