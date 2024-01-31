@@ -18,7 +18,7 @@ export function briantakita__header_<env_T extends relement_env_T>({
 	active_link,
 }:{
 	ctx:root_ctx_T
-	active_link?:link_T
+	active_link?:briantakita_header__link_T
 }) {
 	return (
 		blog__header_<env_T>({ ctx }, [
@@ -96,11 +96,11 @@ export function briantakita__header_<env_T extends relement_env_T>({
 			])
 		])
 	)
-	function active_(link:link_T) {
+	function active_(link:briantakita_header__link_T) {
 		return active_link === link
 	}
 }
-type link_T =
+export type briantakita_header__link_T =
 	|'about'
 	|'portfolio'
 	|'posts'

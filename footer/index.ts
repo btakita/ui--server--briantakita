@@ -1,1 +1,1 @@
-export * from './footer_c.ts'
+export * from './briantakita__footer.js'

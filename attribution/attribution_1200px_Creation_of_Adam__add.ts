@@ -1,6 +1,6 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { attribution__add } from '@btakita/ui--server--blog/attribution'
+import { attribution__sup_ } from '@btakita/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 import { img_ } from 'relementjs/html'
 import { type Node_T } from 'relementjs/isomorphic'
@@ -10,9 +10,9 @@ export function attribution_1200px_Creation_of_Adam__add<env_T extends relement_
 	}
 ):Node_T<env_T, HTMLElement> {
 	return (
-		attribution__add<env_T>({
+		attribution__sup_<env_T>({
 				ctx,
-				attribution_id: '/assets/images/1200px-Creation_of_Adam.jpg'
+				footnote_id: '/assets/images/1200px-Creation_of_Adam.jpg'
 			},
 			tb_a_({ href: 'http://en.wikipedia.org/wiki/File:Creaci%C3%B3n_de_Ad%C3%A1m.jpg' },
 				'Wikipedia')),

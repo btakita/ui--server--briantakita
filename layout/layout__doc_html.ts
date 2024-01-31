@@ -12,8 +12,14 @@ const [
 	import('../public/favicon.svg'),
 	import('../public/assets/images/briantakita-og.jpg'),
 )
-export function layout_c_({
-	ctx, assets, canonical_url, title, author, description, og_image
+export function layout__doc_html_({
+	ctx,
+	assets,
+	canonical_url,
+	title,
+	author,
+	description,
+	og_image,
 }:{
 	ctx:request_ctx_T
 	assets?:assets_T
@@ -33,7 +39,7 @@ export function layout_c_({
 	return (
 		doc_html_(
 			head_([
-				meta_({ charset: 'UTF-8' }),
+				meta_({ charset: 'utf-8' }),
 				meta_({ name: 'viewport', content: 'width=device-width' }),
 				meta_({ name: 'title', content: title }),
 				meta_({ name: 'description', content: description }),

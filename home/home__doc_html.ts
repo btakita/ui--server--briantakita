@@ -6,31 +6,33 @@ import { hr_div_ } from '@btakita/ui--server--blog/hr'
 import { blog__main_fragment_ } from '@btakita/ui--server--blog/main'
 import { socials_div_ } from '@btakita/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
-import { type fragment_T, type relement_env_T } from 'relementjs'
+import { type fragment_T } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { circle_, path_, svg_ } from 'relementjs/svg'
 import { type request_ctx_T } from 'relysjs/server'
-import { atb_uop_, atb_uop_engineering_, atb_uop_engineering_physics_ } from '../anchor/index.js'
-import { footer_c_ } from '../footer/index.ts'
+import { uop__tb_a_, uop_engineering__tb_a_, uop_engineering_physics__tb_a_ } from '../anchor/index.js'
+import { briantakita__footer_ } from '../footer/index.ts'
 import { briantakita__header_ } from '../header/index.ts'
-import { layout_c_ } from '../layout/index.js'
-export function home_page_<env_T extends relement_env_T>({
+import { layout__doc_html_ } from '../layout/index.js'
+export function home__doc_html_({
 	ctx,
 	dehydrated_post_meta_a,
 }:{
 	ctx:request_ctx_T
 	dehydrated_post_meta_a:dehydrated_post_meta_T[]
-}):fragment_T {
+}) {
 	const unfeatured__dehydrated_post_meta_a =
 		dehydrated_post_meta_a.filter(({ featured })=>!featured)
 	const featured__dehydrated_post_meta_a =
 		dehydrated_post_meta_a.filter(({ featured })=>featured)
 	return (
-		layout_c_({
+		layout__doc_html_({
 			ctx
 		}, [
 			briantakita__header_({ ctx }),
-			blog__main_fragment_<env_T>({ ctx }, [
+			blog__main_fragment_({
+				ctx
+			}, [
 				section_({
 					id: 'hero',
 					class: class_(
@@ -76,8 +78,8 @@ export function home_page_<env_T extends relement_env_T>({
 					p_({ class: 'my-2' }, [
 						`Full stack developer with over 20 years experience. Emphasizes efficient product development,
 					consistent domain language, flat architectures, & code reuse. Graduated with a `,
-						atb_uop_engineering_('Bachelor of Science'), ` in `,
-						atb_uop_engineering_physics_('Engineering Physics'), ` from the `, atb_uop_(), `.`
+						uop_engineering__tb_a_('Bachelor of Science'), ` in `,
+						uop_engineering_physics__tb_a_('Engineering Physics'), ` from the `, uop__tb_a_(), `.`
 					]),
 					social_a1_(ctx).length > 0 ?
 						div_({
@@ -165,7 +167,7 @@ export function home_page_<env_T extends relement_env_T>({
 					])
 				])
 			]),
-			footer_c_({ ctx })
+			briantakita__footer_({ ctx })
 		])
 	)
 }

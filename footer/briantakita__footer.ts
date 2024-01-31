@@ -4,7 +4,7 @@ import { socials_div_ } from '@btakita/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
 import { raw_, type relement_env_T } from 'relementjs'
 import { div_, footer_, span_ } from 'relementjs/html'
-export function footer_c_<env_T extends relement_env_T>({
+export function briantakita__footer_<env_T extends relement_env_T>({
 	ctx,
 	no_margin_top,
 }:{
