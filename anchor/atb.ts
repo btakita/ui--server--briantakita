@@ -1,5 +1,5 @@
 import { type target_blank_a__props_T, tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { type relement_env_T, type tag__dom_T } from 'relementjs'
+import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import type { Node_T } from 'relementjs/isomorphic'
 export const atb_abstraction_ = atb__new({ href: 'https://github.com/btakita/philosophy/blob/master/src/abstraction.md' }, 'Abstraction')
 export const atb_ado_net_ = atb__new({ href: 'https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview' }, 'ADO.NET')
@@ -157,8 +157,8 @@ export const atb_wsj_ = atb__new({ href: 'https://www.wsj.com' }, 'Wall Street J
 export const atb_yammer_ = atb__new({ href: 'https://en.wikipedia.org/wiki/Yammer' }, 'Yammer')
 export function atb__new<env_T extends relement_env_T>(
 	$p:target_blank_a__props_T,
-	...children:tag__dom_T[]
-):(..._children:tag__dom_T[])=>Node_T<env_T, HTMLAnchorElement> {
-	return (..._children:tag__dom_T[])=>
+	...children:tag_dom_T[]
+):(..._children:tag_dom_T[])=>Node_T<env_T, HTMLAnchorElement> {
+	return (..._children:tag_dom_T[])=>
 		tb_a_($p, ...(_children.length ? _children : children))
 }

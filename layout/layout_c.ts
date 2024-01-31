@@ -1,6 +1,6 @@
 import { import_meta_env_ } from 'ctx-core/env'
 import { class_ } from 'ctx-core/html'
-import { raw_, type tag__dom_T } from 'relementjs'
+import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
 import { doc_html_ } from 'relementjs/server'
 import { asset_path_a_, assets_, assets__new, type assets_T, type request_ctx_T, request_url_ } from 'relysjs/server'
@@ -22,7 +22,7 @@ export function layout_c_({
 	author?:string
 	description?:string
 	og_image?:string
-}, ...children:tag__dom_T[]) {
+}, ...children:tag_dom_T[]) {
 	canonical_url ??= request_url_(ctx).href
 	title ??= 'Brian Takita'
 	description ??= 'Reactive Context Enthusiast'

@@ -1,6 +1,6 @@
-import { type Post, post__slug__new } from '@btakita/domain--any--blog'
-import { site__home__page__post_count_ } from '@btakita/domain--server--blog'
-import { blog__card_c_ } from '@btakita/ui--any--blog/card'
+import { type dehydrated_post_meta_T, post__slug__new } from '@btakita/domain--any--blog'
+import { site__home__page__post_count_, social_a1_ } from '@btakita/domain--server--blog'
+import { blog_card__li_ } from '@btakita/ui--any--blog/card'
 import { link_button_a_ } from '@btakita/ui--server--blog/anchor'
 import { hr_div_ } from '@btakita/ui--server--blog/hr'
 import { blog__main_fragment_ } from '@btakita/ui--server--blog/main'
@@ -16,15 +16,15 @@ import { briantakita__header_ } from '../header/index.ts'
 import { layout_c_ } from '../layout/index.js'
 export function home_page_<env_T extends relement_env_T>({
 	ctx,
-	featured__posts,
-	posts,
-	social__count,
+	dehydrated_post_meta_a,
 }:{
 	ctx:request_ctx_T
-	posts:Post[]
-	featured__posts:Post[]
-	social__count:number
+	dehydrated_post_meta_a:dehydrated_post_meta_T[]
 }):fragment_T {
+	const unfeatured__dehydrated_post_meta_a =
+		dehydrated_post_meta_a.filter(({ featured })=>!featured)
+	const featured__dehydrated_post_meta_a =
+		dehydrated_post_meta_a.filter(({ featured })=>featured)
 	return (
 		layout_c_({
 			ctx
@@ -79,7 +79,7 @@ export function home_page_<env_T extends relement_env_T>({
 						atb_uop_engineering_('Bachelor of Science'), ` in `,
 						atb_uop_engineering_physics_('Engineering Physics'), ` from the `, atb_uop_(), `.`
 					]),
-					social__count > 0 ?
+					social_a1_(ctx).length > 0 ?
 						div_({
 							class: class_(
 								'social-wrapper',
@@ -97,11 +97,11 @@ export function home_page_<env_T extends relement_env_T>({
 									'mr-2',
 									'whitespace-nowrap')
 							}),
-							socials_div_<env_T>({ ctx })
+							socials_div_({ ctx })
 						])
 						: undefined,
 					hr_div_(),
-					featured__posts.length > 0
+					featured__dehydrated_post_meta_a.length > 0
 						? [
 							section_({
 								id: 'featured',
@@ -115,15 +115,15 @@ export function home_page_<env_T extends relement_env_T>({
 										'font-semibold',
 										'tracking-wide')
 								}, `Featured`),
-								ul_(featured__posts.map(post=>
-									blog__card_c_<env_T>({
-										href: `/posts/${post__slug__new(post)}`,
-										post,
+								ul_(featured__dehydrated_post_meta_a.map(dehydrated_post_meta=>
+									blog_card__li_({
+										href: `/posts/${post__slug__new(dehydrated_post_meta)}`,
+										dehydrated_post_meta,
 										show_heading: false
 									})
 								))
 							])
-						] : undefined,
+						] : null,
 					hr_div_(),
 					section_({
 						id: 'recent-posts',
@@ -137,13 +137,12 @@ export function home_page_<env_T extends relement_env_T>({
 								'font-semibold',
 								'tracking-wide')
 						}, 'Recent Posts'),
-						ul_(posts
-							.filter(({ data })=>!data.featured)
+						ul_(unfeatured__dehydrated_post_meta_a
 							.slice(0, site__home__page__post_count_(ctx))
 							.map(post=>
-								blog__card_c_({
+								blog_card__li_({
 									href: `/posts/${post__slug__new(post)}`,
-									post,
+									dehydrated_post_meta: post,
 									show_heading: false
 								}))),
 						div_({
