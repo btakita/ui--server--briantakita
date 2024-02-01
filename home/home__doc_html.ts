@@ -1,4 +1,4 @@
-import { type dehydrated_post_meta_T, post__slug__new } from '@btakita/domain--any--blog'
+import { post__slug__new, sorted_dehydrated_post_meta_a1_ } from '@btakita/domain--any--blog'
 import { site__home__page__post_count_, social_a1_ } from '@btakita/domain--server--blog'
 import { blog_card__li_ } from '@btakita/ui--any--blog/card'
 import { link_button_a_ } from '@btakita/ui--server--blog/anchor'
@@ -6,7 +6,6 @@ import { hr_div_ } from '@btakita/ui--server--blog/hr'
 import { blog__main_fragment_ } from '@btakita/ui--server--blog/main'
 import { socials_div_ } from '@btakita/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
-import { type fragment_T } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { circle_, path_, svg_ } from 'relementjs/svg'
 import { type request_ctx_T } from 'relysjs/server'
@@ -16,15 +15,15 @@ import { briantakita__header_ } from '../header/index.ts'
 import { layout__doc_html_ } from '../layout/index.js'
 export function home__doc_html_({
 	ctx,
-	dehydrated_post_meta_a,
 }:{
 	ctx:request_ctx_T
-	dehydrated_post_meta_a:dehydrated_post_meta_T[]
 }) {
 	const unfeatured__dehydrated_post_meta_a =
-		dehydrated_post_meta_a.filter(({ featured })=>!featured)
+		sorted_dehydrated_post_meta_a1_(ctx)
+			.filter(({ featured })=>!featured)
 	const featured__dehydrated_post_meta_a =
-		dehydrated_post_meta_a.filter(({ featured })=>featured)
+		sorted_dehydrated_post_meta_a1_(ctx)
+			.filter(({ featured })=>featured)
 	return (
 		layout__doc_html_({
 			ctx
