@@ -13,6 +13,7 @@
     "./layout": "./layout/index.ts",
     "./links": "./links/index.ts",
     "./md": "./md/index.ts",
+    "./open_source": "./open_source/index.ts",
     "./portfolio": "./portfolio/index.ts",
     "./utf8": "./utf8/index.ts"
   },
