@@ -19,10 +19,7 @@ export function posts__doc_html_({
 				active_link: 'posts'
 			}),
 			blog_posts__main_fragment_({ ctx, }),
-			blog_posts__nav_({
-				ctx,
-				page_num: 0,
-			}),
+			blog_posts__nav_({ ctx }),
 			briantakita__footer_({ ctx }),
 		])
 	)
