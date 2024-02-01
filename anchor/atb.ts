@@ -39,6 +39,7 @@ export const domain_driven_design__tb_a_ = tb_a__new({ href: 'https://en.wikiped
 export const domain_specific_language__tb_a_ = tb_a__new({ href: 'http://en.wikipedia.org/wiki/Domain-specific_language' }, 'Domain Specific Languages')
 export const dot_net__tb_a_ = tb_a__new({ href: 'https://dotnet.microsoft.com/' }, '.NET')
 export const electric_universe__tb_a_ = tb_a__new({ href: 'https://www.thunderbolts.info/wp' }, 'Electric Universe')
+export const elysiajs__tb_a_ = tb_a__new({ href: 'https://elysiajs.com/' }, 'ElysiaJS')
 export const engine_yard__tb_a_ = tb_a__new({ href: 'https://www.engineyard.com/' }, 'Engine Yard')
 export const entity__tb_a_ = tb_a__new({ href: 'https://github.com/btakita/philosophy/blob/master/src/entity.md' }, 'Entity')
 export const erector__tb_a_ = tb_a__new({ href: 'https://erector.github.io/erector/' }, 'erector')
