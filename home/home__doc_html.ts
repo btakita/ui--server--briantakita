@@ -1,5 +1,5 @@
 import { post__slug__new, sorted_dehydrated_post_meta_a1_ } from '@btakita/domain--any--blog'
-import { site__home__page__post_count_, social_a1_ } from '@btakita/domain--server--blog'
+import { site__home__post_count_, social_a1_ } from '@btakita/domain--server--blog'
 import { blog_card__li_ } from '@btakita/ui--any--blog/card'
 import { link_button_a_ } from '@btakita/ui--server--blog/anchor'
 import { hr_div_ } from '@btakita/ui--server--blog/hr'
@@ -139,7 +139,7 @@ export function home__doc_html_({
 								'tracking-wide')
 						}, 'Recent Posts'),
 						ul_(unfeatured__dehydrated_post_meta_a
-							.slice(0, site__home__page__post_count_(ctx))
+							.slice(0, site__home__post_count_(ctx))
 							.map(post=>
 								blog_card__li_({
 									href: `/posts/${post__slug__new(post)}`,
