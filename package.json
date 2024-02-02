@@ -16,6 +16,7 @@
     "./open_source": "./open_source/index.ts",
     "./portfolio": "./portfolio/index.ts",
     "./post": "./post/index.ts",
+    "./search": "./search/index.ts",
     "./tag": "./tag/index.ts",
     "./utf8": "./utf8/index.ts"
   },
@@ -23,7 +24,7 @@
     "@btakita/ui--server--blog": "workspace:*",
     "@btakita/ui--server--linkument": "workspace:*",
     "ctx-core": "^5.36.4",
-    "relementjs": "^0.61.6"
+    "relementjs": "^0.62.0"
   },
   "devDependencies": {
     "bun-types": "latest"

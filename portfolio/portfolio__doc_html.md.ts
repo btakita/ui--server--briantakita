@@ -51,8 +51,8 @@ import {
 	unison__tb_a_,
 	usaa__tb_a_,
 	wsj__tb_a_
-} from '../anchor/index.ts'
-import { md_layout__doc_html_ } from '../md/index.ts'
+} from '../anchor/index.js'
+import { md_layout__doc_html_ } from '../md/index.js'
 export function portfolio__doc_html_({
 	ctx
 }:{

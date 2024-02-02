@@ -15,9 +15,9 @@ import {
 	relementjs__tb_a_,
 	relysjs__tb_a_,
 	rmemo__tb_a_
-} from '../anchor/index.ts'
-import { attribution_dev__sup_ } from '../attribution/index.ts'
-import { md_layout__doc_html_ } from '../md/index.ts'
+} from '../anchor/index.js'
+import { attribution_dev__sup_ } from '../attribution/index.js'
+import { md_layout__doc_html_ } from '../md/index.js'
 const [
 	dev_svg,
 ] = await asset_path_a_(

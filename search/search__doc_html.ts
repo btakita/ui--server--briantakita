@@ -1,10 +1,10 @@
 import { site__title_ } from '@btakita/domain--server--blog'
-import { blog_posts__main_fragment_, blog_posts__nav_ } from '@btakita/ui--server--blog/post'
+import { blog_search__main_fragment_ } from '@btakita/ui--server--blog/search'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
-export function posts__doc_html_({
+export function search__doc_html_({
 	ctx
 }:{
 	ctx:request_ctx_T
@@ -12,15 +12,16 @@ export function posts__doc_html_({
 	return (
 		layout__doc_html_({
 			ctx,
-			title: 'Posts | ' + site__title_(ctx)
+			title: 'Search | ' + site__title_(ctx)
 		}, [
 			briantakita__header_({
 				ctx,
-				active_link: 'posts'
+				active_link: 'search'
 			}),
-			blog_posts__main_fragment_({ ctx, }),
-			blog_posts__nav_({ ctx }),
-			briantakita__footer_({ ctx }),
+			blog_search__main_fragment_({
+				ctx,
+			}),
+			briantakita__footer_({ ctx })
 		])
 	)
 }

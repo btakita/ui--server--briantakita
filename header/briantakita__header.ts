@@ -1,4 +1,5 @@
 import { type root_ctx_T } from '@btakita/domain--any--blog'
+import { site__light_and_dark_mode_ } from '@btakita/domain--server--blog'
 import { link_button_a_ } from '@btakita/ui--server--blog/anchor'
 import {
 	blog__header_,
@@ -9,7 +10,6 @@ import {
 	blog__header__nav__li__a_class_
 } from '@btakita/ui--server--blog/header'
 import { theme__toggle_button_ } from '@btakita/ui--server--blog/theme'
-import { SITE } from 'briantakita.me/src/config.ts'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { path_, svg_ } from 'relementjs/svg'
@@ -81,7 +81,7 @@ export function briantakita__header_<env_T extends relement_env_T>({
 					])
 				])
 			]),
-			SITE.light_and_dark_mode
+			site__light_and_dark_mode_(ctx)
 			&& blog__header__nav__li_({}, [
 				theme__toggle_button_({
 					class: class_(

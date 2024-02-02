@@ -3,9 +3,9 @@ import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
 import { article_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
-import { briantakita__footer_ } from '../footer/index.ts'
-import { briantakita__header_, type briantakita_header__link_T } from '../header/index.ts'
-import { layout__doc_html_ } from '../layout/index.ts'
+import { briantakita__footer_ } from '../footer/index.js'
+import { briantakita__header_, type briantakita_header__link_T } from '../header/index.js'
+import { layout__doc_html_ } from '../layout/index.js'
 export function md_layout__doc_html_({
 	ctx,
 	title,

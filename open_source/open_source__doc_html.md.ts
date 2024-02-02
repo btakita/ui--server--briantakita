@@ -37,8 +37,8 @@ import {
 	sveltejs__tb_a_,
 	unison__tb_a_,
 	winforms__tb_a_
-} from '../anchor/index.ts'
-import { md_layout__doc_html_ } from '../md/index.ts'
+} from '../anchor/index.js'
+import { md_layout__doc_html_ } from '../md/index.js'
 export function open_source__doc_html_({
 	ctx,
 }:{

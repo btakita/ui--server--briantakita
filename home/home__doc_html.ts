@@ -10,8 +10,8 @@ import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { circle_, path_, svg_ } from 'relementjs/svg'
 import { type request_ctx_T } from 'relysjs/server'
 import { uop__tb_a_, uop_engineering__tb_a_, uop_engineering_physics__tb_a_ } from '../anchor/index.js'
-import { briantakita__footer_ } from '../footer/index.ts'
-import { briantakita__header_ } from '../header/index.ts'
+import { briantakita__footer_ } from '../footer/index.js'
+import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
 export function home__doc_html_({
 	ctx,
