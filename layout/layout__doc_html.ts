@@ -9,7 +9,7 @@ const [
 	favicon_svg,
 	briantakita_og_jpg,
 ] = await asset_path_a_(
-	import('../public/favicon.svg'),
+	import('../public/assets/favicon.svg'),
 	import('../public/assets/images/briantakita-og.jpg'),
 )
 export function layout__doc_html_({
