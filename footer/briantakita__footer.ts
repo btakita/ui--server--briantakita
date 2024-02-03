@@ -54,15 +54,9 @@ export function briantakita__footer_<env_T extends relement_env_T>({
 						'Copyright ',
 						raw_('&#169;'),
 						' ',
-						new Date().getFullYear()
+						new Date().getFullYear(),
+						' All rights reserved.'
 					]),
-					span_({
-						class: class_(
-							'separator',
-							'hidden',
-							'sm-inline')
-					}),
-					span_('All rights reserved.')
 				])
 			])
 		])
