@@ -6,6 +6,7 @@ import { hr_div_ } from '@btakita/ui--server--blog/hr'
 import { blog__main_fragment_ } from '@btakita/ui--server--blog/main'
 import { socials_div_ } from '@btakita/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
+import { raw_ } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { circle_, path_, svg_ } from 'relementjs/svg'
 import { type request_ctx_T } from 'relysjs/server'
@@ -74,7 +75,7 @@ export function home__doc_html_({
 						])
 					]),
 					p_({ class: 'my-2' }, [
-						`Full stack developer with over 20 years experience. Builds efficient apps & libraries using reactive memos, general purpose contexts, & the tag vector name system. First principles emphasize powerful primitives, bottom-up development discipline, & systems with an observable domain ontology. The result is maintainable systems that evolve to meet the needs of the public zeitgeist.`
+						`Exploring human potential in the age of Artificial Intelligence. Builds efficient apps & libraries using reactive memos, general purpose contexts, & the tag vector name system. First principles emphasize powerful primitives, bottom-up development discipline, & systems with an observable domain ontology. The result is maintainable systems that evolve to meet the needs of the public zeitgeist. Full stack developer with over 20 years experience. Productivity without the bloat`, raw_('&hellip;')
 					]),
 					social_a1_(ctx).length > 0 ?
 						div_({
