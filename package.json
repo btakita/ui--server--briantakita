@@ -18,7 +18,8 @@
     "./post": "./post/index.ts",
     "./search": "./search/index.ts",
     "./tag": "./tag/index.ts",
-    "./utf8": "./utf8/index.ts"
+    "./utf8": "./utf8/index.ts",
+    "./package.json": "./package.json"
   },
   "dependencies": {
     "@btakita/ui--server--blog": "workspace:*",
