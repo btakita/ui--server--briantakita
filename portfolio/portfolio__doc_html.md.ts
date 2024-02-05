@@ -67,7 +67,7 @@ export function portfolio__doc_html_({
 			// @formatter:off
 			// language=md
 			md__raw_(`
-## [briantakita.me](https://www.briantakita.me)
+## [briantakita.me](https://briantakita.me)
 
 ${briantakita_me_dev__tb_a_()} static app with libraries forked from ${astropaper__tb_a_()}. I did some refactoring including converting it to a monorepo, used solidjs instead of react, and added ctx-core & Nano Stores. These changes improve code re-use to be used in other profile sites which I will soon work on. I plan on adding support for ${strapi__tb_a_()}, so people without technical experience can write posts on their own optimized blog.
 
