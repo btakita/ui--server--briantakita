@@ -24,8 +24,8 @@
   "dependencies": {
     "@btakita/ui--server--blog": "workspace:*",
     "@btakita/ui--server--linkument": "workspace:*",
-    "ctx-core": "^5.38.0",
-    "relementjs": "^0.64.0"
+    "ctx-core": "^5.38.1",
+    "relementjs": "^0.64.1"
   },
   "devDependencies": {
     "bun-types": "latest"
