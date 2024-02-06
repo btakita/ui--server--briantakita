@@ -1,5 +1,5 @@
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
 import { type request_ctx_T } from 'relysjs/server'
 import {
 	astrojs__tb_a_,
@@ -19,7 +19,8 @@ import {
 	esg__tb_a_,
 	foresight_host__tb_a_,
 	heroku__tb_a_,
-	honk__tb_a_, jquery__tb_a_,
+	honk__tb_a_,
+	jquery__tb_a_,
 	lucene__tb_a_,
 	martin_investments__tb_a_,
 	menu__tb_a_,

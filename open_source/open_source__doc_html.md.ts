@@ -1,6 +1,6 @@
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { a_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {

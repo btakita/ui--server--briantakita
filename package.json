@@ -22,7 +22,10 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@btakita/ui--server--blog": "workspace:*",
+    "@rappstack/domain--any--blog": "workspace:*",
+    "@rappstack/domain--server--blog": "workspace:*",
+    "@rappstack/ui--any--blog": "workspace:*",
+    "@rappstack/ui--server--blog": "workspace:*",
     "@btakita/ui--server--linkument": "workspace:*",
     "ctx-core": "^5.38.1",
     "relementjs": "^0.64.1"

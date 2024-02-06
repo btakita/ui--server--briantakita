@@ -1,6 +1,6 @@
-import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { site__light_and_dark_mode_ } from '@btakita/domain--server--blog'
-import { link_button_a_ } from '@btakita/ui--server--blog/anchor'
+import { type root_ctx_T } from '@rappstack/domain--any--blog'
+import { site__light_and_dark_mode_ } from '@rappstack/domain--server--blog'
+import { link_button_a_ } from '@rappstack/ui--server--blog/anchor'
 import {
 	blog__header_,
 	blog__header__nav__button_class,
@@ -8,8 +8,8 @@ import {
 	blog__header__nav__li__a_,
 	blog__header__nav__li__a__svg_class_,
 	blog__header__nav__li__a_class_
-} from '@btakita/ui--server--blog/header'
-import { theme__toggle_button_ } from '@btakita/ui--server--blog/theme'
+} from '@rappstack/ui--server--blog/header'
+import { theme__toggle_button_ } from '@rappstack/ui--server--blog/theme'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T } from 'relementjs'
 import { path_, svg_ } from 'relementjs/svg'

@@ -1,4 +1,4 @@
-import { blog__main_fragment_ } from '@btakita/ui--server--blog/main'
+import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
 import { article_ } from 'relementjs/html'

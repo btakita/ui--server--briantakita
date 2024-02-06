@@ -1,6 +1,6 @@
-import { type root_ctx_T } from '@btakita/domain--any--blog'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { attribution__sup_ } from '@btakita/ui--server--blog/attribution'
+import { type root_ctx_T } from '@rappstack/domain--any--blog'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 export function attribution_web_framework_realworld_app_sizes__add<env_T extends relement_env_T>(
 	{ ctx }:{ ctx:root_ctx_T }

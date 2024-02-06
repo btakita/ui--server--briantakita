@@ -1,6 +1,6 @@
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { attribution__sup_ } from '@btakita/ui--server--blog/attribution'
 import { type Ctx } from '@ctx-core/object'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 import { i_, span_ } from 'relementjs/html'
 export function attribution_encyclopedia_britannica__add<env_T extends relement_env_T>(
