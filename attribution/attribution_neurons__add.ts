@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 export function attribution_neurons__add<env_T extends relement_env_T>(
@@ -8,7 +8,7 @@ export function attribution_neurons__add<env_T extends relement_env_T>(
 	return (
 		attribution__sup_<env_T>({
 			ctx,
-			footnote_id: '/assets/images/neurons.jpg'
+			footnote_id: 'neurons.jpg'
 		}, [
 			tb_a_({
 				href: 'http://www.flickr.com/photos/hmmmmm/3903176411/'

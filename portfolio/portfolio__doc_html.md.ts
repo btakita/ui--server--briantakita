@@ -1,5 +1,5 @@
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { type request_ctx_T } from 'relysjs/server'
 import {
 	astrojs__tb_a_,

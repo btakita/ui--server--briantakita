@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 export function attribution_feeling_abstraction__add<env_T extends relement_env_T>(
@@ -8,7 +8,7 @@ export function attribution_feeling_abstraction__add<env_T extends relement_env_
 	return (
 		attribution__sup_<env_T>({
 			ctx,
-			footnote_id: '/assets/images/feeling-abstraction.jpg'
+			footnote_id: 'feeling-abstraction.jpg'
 		}, [
 			'Originally from ',
 			tb_a_({

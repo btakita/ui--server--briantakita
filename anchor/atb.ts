@@ -1,4 +1,4 @@
-import { type target_blank_a__props_T, tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { type target_blank_a__props_T, tb_a_ } from '@rappstack/ui--any/anchor'
 import { type relement_env_T, type tag_dom_T } from 'relementjs'
 import type { Node_T } from 'relementjs/isomorphic'
 export const abstraction__tb_a_ = tb_a__new({ href: 'https://github.com/btakita/philosophy/blob/master/src/abstraction.md' }, 'Abstraction')

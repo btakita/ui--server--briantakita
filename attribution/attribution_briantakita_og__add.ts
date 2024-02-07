@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 import { img_ } from 'relementjs/html'
@@ -9,7 +9,7 @@ export function attribution_briantakita_og__add<env_T extends relement_env_T>(
 	return (
 		attribution__sup_<env_T>({
 			ctx,
-			footnote_id: '/assets/images/briantakita-og.jpg'
+			footnote_id: 'briantakita-og.jpg'
 		}, [
 			tb_a_({
 				href: 'https://www.flickr.com/photos/12972883@N00/193503222'

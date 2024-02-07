@@ -1,5 +1,4 @@
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { div_, img_ } from 'relementjs/html'
 import { asset_path_a_, type request_ctx_T } from 'relysjs/server'

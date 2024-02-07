@@ -1,6 +1,6 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { site__light_and_dark_mode_ } from '@rappstack/domain--server--blog'
-import { button__a_ } from '@rappstack/ui--server--blog/anchor'
+import { button__a_ } from '@rappstack/ui--any/anchor'
 import {
 	blog__header_,
 	blog__header__nav__button_class,

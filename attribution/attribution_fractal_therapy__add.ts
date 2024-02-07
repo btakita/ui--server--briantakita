@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 export function attribution_fractal_therapy__add<env_T extends relement_env_T>(
@@ -8,7 +8,7 @@ export function attribution_fractal_therapy__add<env_T extends relement_env_T>(
 	return (
 		attribution__sup_<env_T>({
 			ctx,
-			footnote_id: '/assets/images/fractal-therapy.jpg'
+			footnote_id: 'fractal-therapy.jpg'
 		}, [
 			tb_a_({
 				href: 'https://web.archive.org/web/20090816093348/http://www.synchronium.net/2009/07/02/5-books-that-really-will-expand-your-mind/comment-page-1'

@@ -1,5 +1,5 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
 import { type relement_env_T } from 'relementjs'
 import { img_ } from 'relementjs/html'
@@ -12,7 +12,7 @@ export function attribution_1200px_Creation_of_Adam__add<env_T extends relement_
 	return (
 		attribution__sup_<env_T>({
 				ctx,
-				footnote_id: '/assets/images/1200px-Creation_of_Adam.jpg'
+				footnote_id: '1200px-Creation_of_Adam.jpg'
 			},
 			tb_a_({ href: 'http://en.wikipedia.org/wiki/File:Creaci%C3%B3n_de_Ad%C3%A1m.jpg' },
 				'Wikipedia')),

@@ -1,8 +1,7 @@
 {
 	"name": "@btakita/ui--server--briantakita",
 	"type": "module",
-	"module": "src/index.ts",
-	"types": "src/index.ts",
+	"types": "./index.ts",
 	"exports": {
 		"./about": "./about/index.ts",
 		"./anchor": "./anchor/index.ts",
