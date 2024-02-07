@@ -1,6 +1,6 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { site__light_and_dark_mode_ } from '@rappstack/domain--server--blog'
-import { link_button_a_ } from '@rappstack/ui--server--blog/anchor'
+import { button__a_ } from '@rappstack/ui--server--blog/anchor'
 import {
 	blog__header_,
 	blog__header__nav__button_class,
@@ -53,7 +53,7 @@ export function briantakita__header_<env_T extends relement_env_T>({
 				}, 'Tags')
 			]),
 			blog__header__nav__li_({}, [
-				link_button_a_({
+				button__a_({
 					href: '/search',
 					class: class_(
 						'focus-outline',

@@ -1,10 +1,10 @@
 import { post_slug__new, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog'
 import { site__home__post_count_, social_a1_ } from '@rappstack/domain--server--blog'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
-import { link_button_a_ } from '@rappstack/ui--server--blog/anchor'
+import { button__a_ } from '@rappstack/ui--server--blog/anchor'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
-import { socials_div_ } from '@rappstack/ui--server--blog/social'
+import { socials__div_ } from '@rappstack/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
 import { a_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
@@ -95,7 +95,7 @@ export function home__doc_html_({
 									'mr-2',
 									'whitespace-nowrap')
 							}),
-							socials_div_({ ctx })
+							socials__div_({ ctx })
 						])
 						: undefined,
 					hr_div_(),
@@ -149,7 +149,7 @@ export function home__doc_html_({
 								'my-8',
 								'text-center')
 						}, [
-							link_button_a_({ href: '/posts' }, [
+							button__a_({ href: '/posts' }, [
 								`All Posts`,
 								svg_({
 									xmlns: 'http://www.w3.org/2000/svg'

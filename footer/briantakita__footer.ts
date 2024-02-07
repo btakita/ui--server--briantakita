@@ -1,6 +1,6 @@
 import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
-import { socials_div_ } from '@rappstack/ui--server--blog/social'
+import { socials__div_ } from '@rappstack/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
 import { raw_, type relement_env_T } from 'relementjs'
 import { div_, footer_, span_ } from 'relementjs/html'
@@ -31,7 +31,7 @@ export function briantakita__footer_<env_T extends relement_env_T>({
 					'py-6',
 					'sm:py-4')
 			}, [
-				socials_div_({
+				socials__div_({
 					ctx,
 					centered: true,
 					link_button_class: class_(
