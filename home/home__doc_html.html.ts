@@ -1,4 +1,4 @@
-import { post__slug__new, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog'
+import { post_slug__new, sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog'
 import { site__home__post_count_, social_a1_ } from '@rappstack/domain--server--blog'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { link_button_a_ } from '@rappstack/ui--server--blog/anchor'
@@ -115,7 +115,7 @@ export function home__doc_html_({
 								}, `Featured`),
 								ul_(featured__dehydrated_post_meta_a.map(dehydrated_post_meta=>
 									blog_card__li_({
-										href: `/posts/${post__slug__new(dehydrated_post_meta)}`,
+										href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
 										dehydrated_post_meta,
 										show_heading: false
 									})
@@ -139,7 +139,7 @@ export function home__doc_html_({
 							.slice(0, site__home__post_count_(ctx))
 							.map(post=>
 								blog_card__li_({
-									href: `/posts/${post__slug__new(post)}`,
+									href: `/posts/${post_slug__new(post)}`,
 									dehydrated_post_meta: post,
 									show_heading: false
 								}))),
