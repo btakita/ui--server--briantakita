@@ -1,4 +1,4 @@
-import { site__light_and_dark_mode_ } from '@rappstack/domain--server--blog'
+import { site__light_and_dark_mode_ } from '@rappstack/domain--server--blog/site'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import {
 	blog__header_,
