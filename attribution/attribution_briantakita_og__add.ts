@@ -1,10 +1,9 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
-import { type relement_env_T } from 'relementjs'
+import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { img_ } from 'relementjs/html'
 export function attribution_briantakita_og__add<env_T extends relement_env_T>(
-	{ ctx }:{ ctx:root_ctx_T }
+	{ ctx }:{ ctx:wide_ctx_T }
 ) {
 	return (
 		attribution__sup_<env_T>({

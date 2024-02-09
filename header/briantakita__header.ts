@@ -1,4 +1,3 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { site__light_and_dark_mode_ } from '@rappstack/domain--server--blog'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import {
@@ -11,13 +10,13 @@ import {
 } from '@rappstack/ui--server--blog/header'
 import { theme__toggle_button_ } from '@rappstack/ui--server--blog/theme'
 import { class_ } from 'ctx-core/html'
-import { type relement_env_T } from 'relementjs'
+import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { path_, svg_ } from 'relementjs/svg'
 export function briantakita__header_<env_T extends relement_env_T>({
 	ctx,
 	active_link,
 }:{
-	ctx:root_ctx_T
+	ctx:wide_ctx_T
 	active_link?:briantakita_header__link_T
 }) {
 	return (

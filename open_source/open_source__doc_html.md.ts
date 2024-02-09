@@ -86,7 +86,7 @@ I use ctx-core to maintain software with:
 
 ### Usage
 
-ctx-core uses dependency-injection of a \`ctx\` \`MapCtx|NestedMapCtx\` & "beings", (a function created with the \`be_\` factory function). The flat architecture reduces incidental complexity. To manage complex domains, Nested architecture provides scoping. The [Tag Vector](/posts/tag-vector-0-introduction) Convention, created while working on ctx-core, encodes tags joined by vectors & data structure shapes to express complex domains within a flat architecture.
+ctx-core uses dependency-injection of a \`ctx\` & "beings", (a function created with the \`be_\` factory function). The flat architecture reduces incidental complexity. To manage complex domains, Nested architecture provides scoping. The [Tag Vector](/posts/tag-vector-0-introduction) Convention, created while working on ctx-core, encodes tags joined by vectors & data structure shapes to express complex domains within a flat architecture.
 
 Currently, I use ctx-core along with ${nanostores__tb_a_()} to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores is also a general purpose library any component library is supported. In my work, I favor ${nanostores__tb_a_()} to render components on the server & browser. ctx-core also supports ${sveltejs__tb_a_()} with ${svelte_stores__tb_a_()} to render components & manage reactive state on the server & browser.
 

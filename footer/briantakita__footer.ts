@@ -1,14 +1,13 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
-import { raw_, type relement_env_T } from 'relementjs'
+import { raw_, type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { div_, footer_, span_ } from 'relementjs/html'
 export function briantakita__footer_<env_T extends relement_env_T>({
 	ctx,
 	no_margin_top,
 }:{
-	ctx:root_ctx_T,
+	ctx:wide_ctx_T,
 	no_margin_top?:boolean
 }) {
 	return (

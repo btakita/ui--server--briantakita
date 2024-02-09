@@ -1,7 +1,6 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
-import { type relement_env_T } from 'relementjs'
+import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { asset_path_a_ } from 'relysjs/server'
 const [
 	dev_svg,
@@ -9,7 +8,7 @@ const [
 	import('../public/assets/images/dev.svg'))
 export function attribution_dev__sup_<env_T extends relement_env_T>({
 	ctx
-}:{ ctx:root_ctx_T }) {
+}:{ ctx:wide_ctx_T }) {
 	return (
 		attribution__sup_<env_T>({
 			ctx,

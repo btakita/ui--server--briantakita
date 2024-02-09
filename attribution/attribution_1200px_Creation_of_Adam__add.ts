@@ -1,12 +1,11 @@
-import { type root_ctx_T } from '@rappstack/domain--any--blog'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { attribution__sup_ } from '@rappstack/ui--server--blog/attribution'
-import { type relement_env_T } from 'relementjs'
+import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { img_ } from 'relementjs/html'
 import { type Node_T } from 'relementjs/isomorphic'
 export function attribution_1200px_Creation_of_Adam__add<env_T extends relement_env_T>(
 	{ ctx }:{
-		ctx:root_ctx_T
+		ctx:wide_ctx_T
 	}
 ):Node_T<env_T, HTMLElement> {
 	return (
