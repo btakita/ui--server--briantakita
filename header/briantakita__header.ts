@@ -8,7 +8,7 @@ import {
 	blog__header__nav__li__a__svg_class_,
 	blog__header__nav__li__a_class_
 } from '@rappstack/ui--server--blog/header'
-import { theme__toggle_button_ } from '@rappstack/ui--server--blog/theme'
+import { theme_toggle__button_ } from '@rappstack/ui--server--blog/theme'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { path_, svg_ } from 'relementjs/svg'
@@ -82,7 +82,7 @@ export function briantakita__header_<env_T extends relement_env_T>({
 			]),
 			site__light_and_dark_mode_(ctx)
 			&& blog__header__nav__li_({}, [
-				theme__toggle_button_({
+				theme_toggle__button_({
 					class: class_(
 						'p-3',
 						'sm:p-1',
