@@ -27,7 +27,7 @@
 		"@rappstack/ui--server--blog": "workspace:*",
 		"@btakita/ui--server--linkument": "workspace:*",
 		"ctx-core": "^6.2.1",
-		"relementjs": "^0.72.1"
+		"relementjs": "^0.72.2"
 	},
 	"devDependencies": {
 		"bun-types": "latest"
