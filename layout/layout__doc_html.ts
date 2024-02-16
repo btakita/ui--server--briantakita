@@ -98,6 +98,18 @@ export function layout__doc_html_({
 					'selection:bg-skin-accent',
 					'selection:bg-opacity-70',
 					'selection:text-skin-inverted')
-			}, ...children))
+			}, [
+				raw_(`
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2F171MSE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2F171MSE3');
+</script>
+				`.trim()),
+				children
+			]))
 	)
 }
