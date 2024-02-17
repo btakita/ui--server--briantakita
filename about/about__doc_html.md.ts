@@ -2,7 +2,7 @@ import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { div_, img_ } from 'relementjs/html'
-import { asset_path_a_, type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'relysjs/server'
 import {
 	bunjs__tb_a_,
 	ctx_core__tb_a_,
@@ -18,10 +18,7 @@ import {
 } from '../anchor/index.js'
 import { attribution_dev__sup_ } from '../attribution/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
-const [
-	dev_svg,
-] = await asset_path_a_(
-	import('../public/assets/images/dev.svg'))
+import dev_svg from '../public/assets/images/dev.svg'
 export function about__doc_html_({
 	ctx,
 }:{

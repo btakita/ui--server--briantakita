@@ -3,15 +3,10 @@ import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
 import { doc_html_ } from 'relementjs/server'
-import { asset_path_a_, assets_, assets__new, type assets_T, type request_ctx_T, request_url_ } from 'relysjs/server'
+import { assets_, assets__new, type assets_T, type request_ctx_T, request_url_ } from 'relysjs/server'
+import favicon_svg from '../public/assets/favicon.svg'
+import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
 const google_site_verification = import_meta_env_().PUBLIC_GOOGLE_SITE_VERIFICATION
-const [
-	favicon_svg,
-	briantakita_og_jpg,
-] = await asset_path_a_(
-	import('../public/assets/favicon.svg'),
-	import('../public/assets/images/briantakita-og.jpg'),
-)
 export function layout__doc_html_({
 	ctx,
 	assets,
