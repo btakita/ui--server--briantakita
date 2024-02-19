@@ -6,13 +6,15 @@ import {
 	astropaper__tb_a_,
 	aws__tb_a_,
 	backbonejs__tb_a_,
-	briantakita_me_dev__tb_a_,
+	briantakita_me_dev__tb_a_, brookebrodack_dev__tb_a_,
+	brookebrodack_net__tb_a_,
 	bunjs__tb_a_,
 	cacheable_flash__tb_a_,
 	censible__tb_a_,
 	cordova__tb_a_,
 	ctx_core__tb_a_,
 	docker__tb_a_,
+	drizzle_orm__tb_a_,
 	elysiajs__tb_a_,
 	engine_yard__tb_a_,
 	erector__tb_a_,
@@ -20,11 +22,12 @@ import {
 	foresight_host__tb_a_,
 	heroku__tb_a_,
 	honk__tb_a_,
+	hyop__tb_a_,
 	jquery__tb_a_,
 	lucene__tb_a_,
 	martin_investments__tb_a_,
 	menu__tb_a_,
-	milyoni__tb_a_,
+	milyoni__tb_a_, motion_one__tb_a_,
 	nanostores__tb_a_,
 	neo__tb_a_,
 	news_corp__tb_a_,
@@ -32,6 +35,7 @@ import {
 	nodejs__tb_a_,
 	pnpm__tb_a_,
 	postgres__tb_a_,
+	rappstack__tb_a_,
 	redis__tb_a_,
 	relementjs__tb_a_,
 	relysjs__tb_a_,
@@ -46,6 +50,7 @@ import {
 	sinatrarb__tb_a_,
 	solid_start__tb_a_,
 	solidjs__tb_a_,
+	sqlite__tb_a_,
 	strapi__tb_a_,
 	sveltejs__tb_a_,
 	truecar__tb_a_,
@@ -74,8 +79,28 @@ ${briantakita_me_dev__tb_a_()} static app with libraries forked from ${astropape
 
 Stack:
 
+* ${rappstack__tb_a_()}
 * ${bunjs__tb_a_()}
 * ${elysiajs__tb_a_()}
+* ${ctx_core__tb_a_()}
+* ${relysjs__tb_a_()}
+* ${relementjs__tb_a_()}
+* ${rmemo__tb_a_()}
+* ${docker__tb_a_()}
+* VPS
+
+## ${brookebrodack_net__tb_a_()}
+
+Brooke Brodack is one of the original YouTube personalities. Her character, Brookers, once had the most subscribers on YouTube. This site features a Brookers Timeline & Brooke Brodack's current Youtube Content...embedding the YouTube & Internet Archive players. rmemo shines in this implementation to manage the player state & web animations. I was able to improve the web animations after switching from ${motion_one__tb_a_()} to rmemo. The ${brookebrodack_dev__tb_a_('source code')} is under the Apache 2 license.
+
+Stack:
+
+* ${rappstack__tb_a_()}
+* ${bunjs__tb_a_()}
+* ${sqlite__tb_a_()}
+* ${drizzle_orm__tb_a_()}
+* ${elysiajs__tb_a_()}
+* ${hyop__tb_a_()}
 * ${ctx_core__tb_a_()}
 * ${relysjs__tb_a_()}
 * ${relementjs__tb_a_()}
