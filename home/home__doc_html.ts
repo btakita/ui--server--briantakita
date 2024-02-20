@@ -1,7 +1,7 @@
 import { sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
-import { social_a1_ } from '@rappstack/domain--server--blog/social'
+import { social_a1_ } from '@rappstack/domain--server/social'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
