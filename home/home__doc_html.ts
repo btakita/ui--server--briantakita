@@ -3,6 +3,7 @@ import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
 import { social_a1_ } from '@rappstack/domain--server/social'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
+import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
@@ -59,8 +60,7 @@ export function home__doc_html_({
 						'aria-label': 'rss feed',
 						title: 'RSS Feed',
 					}, [
-						svg_({
-							xmlns: 'http://www.w3.org/2000/svg',
+						iconify_rss_({
 							class: class_(
 								'rss-icon',
 								'mb-2',
@@ -70,11 +70,7 @@ export function home__doc_html_({
 								'scale-110',
 								'sm:scale-125',
 								'fill-skin-accent')
-						}, [
-							path_({ d: 'M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z' }),
-							path_({ d: 'M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z' }),
-							circle_({ cx: 6, cy: 18, r: 2 })
-						])
+						})
 					]),
 					p_({ class: 'my-2' }, [
 						`Exploring human potential in the age of Artificial Intelligence. Builds efficient apps & libraries using reactive memos, general purpose contexts, & the tag vector name system. First principles emphasize powerful primitives, bottom-up development discipline, & systems with an observable domain ontology. The result is maintainable systems that evolve to meet the needs of the public zeitgeist. Full stack developer with over 20 years experience. Productivity without the bloat`, raw_('&hellip;')
