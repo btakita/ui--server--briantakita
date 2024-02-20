@@ -1,4 +1,4 @@
-import { site__title_ } from '@rappstack/domain--server--blog/site'
+import { site__title_ } from '@rappstack/domain--server/site'
 import { blog_tag__main_fragment_ } from '@rappstack/ui--server--blog/tag'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
