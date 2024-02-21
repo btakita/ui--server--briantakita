@@ -53,7 +53,7 @@ export function home__doc_html_({
 					}, `Brian Takita`),
 					a_({
 						target: '_blank',
-						href: '/rss.xml',
+						href: '/rss',
 						class: class_(
 							'rss-link',
 							'mb-6'),
