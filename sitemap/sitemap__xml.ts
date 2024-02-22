@@ -37,7 +37,7 @@ export function sitemap__xml_({
 			]),
 			...unique_tag_a1_(ctx).map(tag=>
 			url_([
-				loc_(url__join, '/tags', tag)
+				loc_(url__join(origin, '/tags', tag))
 			]))
 		])
 	)
