@@ -1,4 +1,4 @@
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { type tag_dom_T } from 'relementjs'
 import { type request_ctx_T } from 'relysjs/server'

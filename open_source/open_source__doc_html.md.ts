@@ -1,4 +1,4 @@
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { a_ } from 'relementjs/html'
