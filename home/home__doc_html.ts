@@ -72,9 +72,11 @@ export function home__doc_html_({
 								'fill-skin-accent')
 						})
 					]),
+					// @formatter:off
 					p_({ class: 'my-2' }, [
-						`Exploring human potential in the age of Artificial Intelligence. Builds efficient apps & libraries using reactive memos, general purpose contexts, & the tag vector name system. First principles emphasize powerful primitives, bottom-up development discipline, & systems with an observable domain ontology. The result is maintainable systems that evolve to meet the needs of the public zeitgeist. Full stack developer with over 20 years experience. Productivity without the bloat`, raw_('&hellip;')
+						'I build efficient apps & libraries using the web platform. With powerful libraries, I deliver results with simpler systems than other developers. Systems that emphasize powerful primitives, bottom-up development, & domain ontology. Unlocking the vanilla web platform to deliver productivity without framework bloat. The result is fast web sites/apps & systems that expand to handle more with less. Now & into the future.'
 					]),
+					// @formatter:on
 					social_a1_(ctx).length > 0 ?
 						div_({
 							class: class_(
