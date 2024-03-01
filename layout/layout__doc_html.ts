@@ -32,7 +32,9 @@ export function layout__doc_html_({
 	const social_image_url = new URL(og_image, request_url_(ctx).origin).href
 	assets = assets__new(assets_(ctx), assets)
 	return (
-		doc_html_(
+		doc_html_({
+			lang: 'en'
+		}, [
 			head_([
 				meta_({ charset: 'utf-8' }),
 				meta_({ name: 'viewport', content: 'width=device-width' }),
@@ -105,6 +107,7 @@ export function layout__doc_html_({
 </script>
 				`.trim()),
 				children
-			]))
+			])
+		])
 	)
 }
