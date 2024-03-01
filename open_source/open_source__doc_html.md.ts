@@ -105,11 +105,11 @@ At ${rundavoo__tb_a_()}, I created ${a_({ href: '/posts/jasmine-flow-fast-and-th
 
 ## ${rr__tb_a_()}
 
-RR (double Ruby) is a test double library for the Ruby language. I ${a_({ href: '/posts/introducing-rr' }, `released RR`)} back in 2008. RR features a terse api to for a high signal to syntax noise ratio. Which allows a read & write friendly automated testing. I used global state management to manage complex data interactions. I stopped development when I moved to full-stack Javascript development. ${tb_a_({ href: 'https://github.com/kou' }, `Sutou Kouhei`)} began maintaining this project in 2015.
+RR (double Ruby) is a test double library for the Ruby language. I ${a_({ href: '/posts/introducing-rr' }, `released RR`)} back in 2008. RR features a terse api to for a high signal to syntax noise ratio. Which allows a read & write friendly automated testing. I used global state management to manage complex data interactions. I stopped development when I moved to full-stack Javascript development. ${tb_a_({ href: 'https://github.com/kou', nofollow: true }, `Sutou Kouhei`)} began maintaining this project in 2015.
 
 ## ${rspec__tb_a_()}
 
-I was an early core maintainer on the rspec team. Rspec was the first DSL (Domain Specific Language) implementation of ${tb_a_({ href: 'https://dannorth.net/introducing-bdd/' }, 'BDD (Behavioral Driven Development)')}. Key contributions include the first known implementation of nested \`describe\` & \`context\` statements${rspec_nested_describes__footnote__sup_()}. Nested describes were controversial at that time. Criticism included adding to the complexity & inhibit readability of the specs. Nesting \`describe\` & \`context\` enabled contextual nesting with separate usage of \`beforeEach\` & \`afterEach\`. I championed the idea & delivered the implementation. I integrated Rspec with ${tb_a_({ href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html' }, `Test::Unit`)}. Worked on the initial mock implementation. Worked on the ${ruby_on_rails__tb_a_()} integration.
+I was an early core maintainer on the rspec team. Rspec was the first DSL (Domain Specific Language) implementation of ${tb_a_({ href: 'https://dannorth.net/introducing-bdd/', nofollow: true }, 'BDD (Behavioral Driven Development)')}. Key contributions include the first known implementation of nested \`describe\` & \`context\` statements${rspec_nested_describes__footnote__sup_()}. Nested describes were controversial at that time. Criticism included adding to the complexity & inhibit readability of the specs. Nesting \`describe\` & \`context\` enabled contextual nesting with separate usage of \`beforeEach\` & \`afterEach\`. I championed the idea & delivered the implementation. I integrated Rspec with ${tb_a_({ href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html', nofollow: true }, `Test::Unit`)}. Worked on the initial mock implementation. Worked on the ${ruby_on_rails__tb_a_()} integration.
 
 ## ${desertrb__tb_a_()}
 
@@ -170,7 +170,7 @@ ${footnote_list__div_({ ctx })}
 				ctx,
 				id: 'nanostores_breadth_first_queue'
 			}, [
-				tb_a_({ href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f' },
+				tb_a_({ href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f', nofollow: true },
 					'Nano Stores breadth first queue')
 			])
 		)
@@ -178,7 +178,7 @@ ${footnote_list__div_({ ctx })}
 	function svelte_cyclic_breadth_first_queue__footnote__sup_() {
 		return (
 			footnote__sup_({ ctx, id: 'svelte_cyclic_breadth_first_queue' }, [
-				tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6' },
+				tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6', nofollow: true },
 					'Svelte Cyclic breadth first queue')
 			])
 		)
@@ -186,7 +186,7 @@ ${footnote_list__div_({ ctx })}
 	function nanostores_computed_async__footnote__sup_() {
 		return (
 			footnote__sup_({ ctx, id: 'nanostores_computed_async' }, [
-				tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6' },
+				tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6', nofollow: true },
 					'Svelte Cyclic breadth first queue')
 			])
 		)
@@ -199,11 +199,13 @@ ${footnote_list__div_({ ctx })}
 			}, [
 				`Rspec: Added Nested Describes: Implemented in `,
 				tb_a_({
-					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
+					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29',
+					nofollow: true
 				}, `two`),
 				` `,
 				tb_a_({
-					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
+					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29',
+					nofollow: true
 				}, `commits`),
 				`.`
 			])

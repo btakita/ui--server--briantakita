@@ -11,15 +11,18 @@ export function attribution_feeling_abstraction__add<env_T extends relement_env_
 		}, [
 			'Originally from ',
 			tb_a_({
-				href: 'http://haiphonghoaphuongdo.blogspot.com/2011/07/colorful-vector-abstraction.html'
+				href: 'http://haiphonghoaphuongdo.blogspot.com/2011/07/colorful-vector-abstraction.html',
+				nofollow: true,
 			}, 'Original article'),
 			'—',
 			tb_a_({
-				href: 'http://2.bp.blogspot.com/-_t6mHvuNOTs/Th23RDI-RgI/AAAAAAAAAL0/T_VMdr6wIcY/s1600/abstract-vector-free-art.jpg'
+				href: 'http://2.bp.blogspot.com/-_t6mHvuNOTs/Th23RDI-RgI/AAAAAAAAAL0/T_VMdr6wIcY/s1600/abstract-vector-free-art.jpg',
+				nofollow: true,
 			}, 'Source Image'),
 			'—',
 			tb_a_({
-				href: 'https://2-bp.blogspot.com/2018/09/best-free-stock-photos.html'
+				href: 'https://2-bp.blogspot.com/2018/09/best-free-stock-photos.html',
+				nofollow: true,
 			}, 'Licensed under Creative Commons CC0')
 		])
 	)

@@ -10,11 +10,13 @@ export function attribution_box_arrow_up_right__add<env_T extends relement_env_T
 			footnote_id: 'box-arrow-up-right.svg'
 		}, [
 			tb_a_({
-				href: 'https://icons.getbootstrap.com/icons/box-arrow-up-right/'
+				href: 'https://icons.getbootstrap.com/icons/box-arrow-up-right/',
+				nofollow: true
 			}, 'icons.getbootstrap.com'),
 			'—',
 			tb_a_({
-				href: 'https://getbootstrap.com/docs/4.0/about/license/'
+				href: 'https://getbootstrap.com/docs/4.0/about/license/',
+				nofollow: true
 			}, 'MIT License')
 		])
 	)

@@ -10,7 +10,8 @@ export function attribution_web_framework_realworld_app_sizes__add<env_T extends
 			footnote_id: 'web-framework-realworld-app-sizes.png'
 		}, [
 			tb_a_({
-				href: 'https://levelup.gitconnected.com/a-solid-realworld-demo-comparison-8c3363448fd8#255b'
+				href: 'https://levelup.gitconnected.com/a-solid-realworld-demo-comparison-8c3363448fd8#255b',
+				nofollow: true,
 			}, '© Ryan Carniato')
 		]))
 }

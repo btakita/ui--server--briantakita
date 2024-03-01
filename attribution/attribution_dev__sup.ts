@@ -11,11 +11,13 @@ export function attribution_dev__sup_<env_T extends relement_env_T>({
 			footnote_id: dev_svg
 		}, [
 			tb_a_({
-				href: 'https://github.com/satnaing/astro-paper'
+				href: 'https://github.com/satnaing/astro-paper',
+				nofollow: true,
 			}, 'Astro Paper'),
 			'—',
 			tb_a_({
-				href: 'https://github.com/satnaing/astro-paper/blob/main/LICENSE'
+				href: 'https://github.com/satnaing/astro-paper/blob/main/LICENSE',
+				nofollow: true,
 			}, 'MIT License')
 		])
 	)

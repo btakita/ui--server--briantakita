@@ -10,7 +10,8 @@ export function attribution_unicorn__add<env_T extends relement_env_T>(
 			footnote_id: 'unicorn.jpg'
 		}, [
 			tb_a_({
-				href: 'https://www.deviantart.com/angel35w/art/Unicorn-Pukes-Rainbow-126388773'
+				href: 'https://www.deviantart.com/angel35w/art/Unicorn-Pukes-Rainbow-126388773',
+				nofollow: true,
 			}, '© 2009 - 2023 Angel35W')
 		])
 	)

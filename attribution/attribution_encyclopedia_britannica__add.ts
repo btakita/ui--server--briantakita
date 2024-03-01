@@ -11,13 +11,14 @@ export function attribution_encyclopedia_britannica__add<env_T extends relement_
 			footnote_id: 'encyclopedia-britannica.jpg'
 		}, [
 			tb_a_({
-				href: 'https://web.archive.org/web/20170225182500/https://www.flickr.com/photos/bostontx/4461314652/'
+				href: 'https://web.archive.org/web/20170225182500/https://www.flickr.com/photos/bostontx/4461314652/',
+				nofollow: true,
 			}, 'flicker.com'),
 			'—',
 			tb_a_({
 				href: 'https://creativecommons.org/licenses/by-nc/2.0/',
 				class: 'photo-license-url',
-				rel: 'license cc:license'
+				rel: 'noopener noreferrer nofollow license cc:license'
 			}, [
 				i_({ class: 'ui-icon-tiny-2cc' }),
 				span_('Some rights reserved')

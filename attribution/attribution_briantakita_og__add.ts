@@ -11,15 +11,18 @@ export function attribution_briantakita_og__add<env_T extends relement_env_T>(
 			footnote_id: 'briantakita-og.jpg'
 		}, [
 			tb_a_({
-				href: 'https://www.flickr.com/photos/12972883@N00/193503222'
+				href: 'https://www.flickr.com/photos/12972883@N00/193503222',
+				nofollow: true
 			}, 'Graph of Der letze Schrei - Blog'),
 			' by ',
 			tb_a_({
-				href: 'https://www.flickr.com/photos/12972883@N00'
+				href: 'https://www.flickr.com/photos/12972883@N00',
+				nofollow: true
 			}, 'jÖrg'),
 			' is licensed under ',
 			tb_a_({
-				href: 'https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse'
+				href: 'https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse',
+				nofollow: true
 			}, [
 				'CC BY-SA 2.0 ',
 				img_({

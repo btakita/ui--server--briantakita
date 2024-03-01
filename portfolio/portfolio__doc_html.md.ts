@@ -115,7 +115,7 @@ ${stack__details_(
 
 Designed & Built an analyst & customer portal for ESG investment funds. ESG analysis algorithms to rate companies according to Environment & Women in Leadership criteria.
 
-Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns. Exported the ESG analysis algorithms into Excel documents. Wrote direct ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Office_Open_XML' }, 'Office Open XML')}. Included deep linking across the document & to relevant web content.
+Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns. Exported the ESG analysis algorithms into Excel documents. Wrote direct ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Office_Open_XML', nofollow: true }, 'Office Open XML')}. Included deep linking across the document & to relevant web content.
 
 Built SVG & PDF exporters of portfolio & company ESG reports.
 
@@ -136,7 +136,7 @@ Progressive Web App. Enables you to upload your stock portfolio from a CSV file.
 
 You add or replace securities by the following. Name, Industry Peers, Industry Sectors, Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to optimize the ESG score. You can print a PDF report and industry sector analysis of the portfolio & benchmark fund.
 
-### ${tb_a_({ href: 'https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership' }, `Women In Leadership Report`)}
+### ${tb_a_({ href: 'https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership', nofollow: true }, `Women In Leadership Report`)}
 
 Market survey of Women in corporate leadership positions. Scoring  applied to analysis. Analysis includes Best Performing Companies, Best Performing Large Companies, Worst Performing Companies, Best & Worst Performing Funds, Largest Funds, & Socially Responsible Funds.
 
@@ -184,7 +184,7 @@ ${stack__details_(
 
 ## Rundavoo
 
-Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app ranked in Google's ${tb_a_({ href: 'https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm' }, `Best Apps of 2014 List`)}.
+Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app ranked in Google's ${tb_a_({ href: 'https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm', nofollow: true }, `Best Apps of 2014 List`)}.
 
 Web front-end development for social planning & decision app for restaurant patrons.
 
@@ -230,7 +230,7 @@ ${stack__details_(
 	cacheable_flash__tb_a_()
 )}
 
-I spoke at the ${tb_a_({ href: 'https://www.oreilly.com/pub/pr/1966' }, `2008 Rails Conf`)}.
+I spoke at the ${tb_a_({ href: 'https://www.oreilly.com/pub/pr/1966', nofollow: true }, `2008 Rails Conf`)}.
 
 Stack:
 

@@ -10,11 +10,12 @@ export function attribution_neurons__add<env_T extends relement_env_T>(
 			footnote_id: 'neurons.jpg'
 		}, [
 			tb_a_({
-				href: 'http://www.flickr.com/photos/hmmmmm/3903176411/'
+				href: 'http://www.flickr.com/photos/hmmmmm/3903176411/',
+				nofollow: true,
 			}, 'From Parthiv Haldipur'),
 			tb_a_({
 				href: 'https://creativecommons.org/licenses/by-nc/2.0/',
-				rel: 'external nofollow'
+				nofollow: true,
 			}, 'Licensed under Creative Commons')
 		])
 	)
