@@ -26,6 +26,7 @@ import {
 	pivotal_labs__tb_a_,
 	poloniumrb__tb_a_,
 	poof__tb_a_,
+	rmemo__tb_a_,
 	rr__tb_a_,
 	rspec__tb_a_,
 	ruby_on_rails__tb_a_,
@@ -34,7 +35,6 @@ import {
 	smarty__tb_a_,
 	solidjs__tb_a_,
 	svelte_stores__tb_a_,
-	sveltejs__tb_a_,
 	unison__tb_a_,
 	winforms__tb_a_
 } from '../anchor/index.js'
@@ -53,76 +53,77 @@ export function open_source__doc_html_({
 			// @formatter:off
 			// language=md
 			md__raw_(`
-I work on open source projects, licensed with the ${apache2_license__tb_a_()}. I have primarily focused on	developing libraries to assist in my project work. I will be focusing on more open source components & apps in the	near future. Here are some notable projects:
+I work on open source projects, licensed with the ${apache2_license__tb_a_()}. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more open source components & apps. Here are some notable projects:
 
 ## ${ctx_core__tb_a_()}
 
-A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core began in 2016 & continues today ${ctx_core_catch_all__footnote__sup_()}.
+Over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core began in 2016 & continues today ${ctx_core_catch_all__footnote__sup_()}.
 
 ### Motivation
 
 After maintaining several applications, I ran into the issues of:
 
-* quickly creating & iterating on features
+* creating & iterating on features
 * extracting code to reuse
 * time to refactor code
 * time to upgrade software
 * gluing together small libraries & snippets
+* composing app feature libraries
 
-Using existing solutions such as frameworks or libraries provides the benefit of quickly getting started, however there is a maintenance burden of:
+Existing solutions such as frameworks or libraries bring speed to get started. They come with the maintenance burden of:
 
 * large payload size & memory usage
 * extending the underlying software to fulfill requirements
 * time to upgrade the application with the underlying libraries
 * domain language mismatch between the library/framework
 
-I found that there are usually small libraries & code snippets that can be glued together with a ${naming_convention__tb_a_('naming convention')} that utilizes unique, immutable, & composable names.	As a result, one could find all usages of an entity or concept by doing a project-wide search. Rename refactorings were more accurate & comprehensive due to the uniqueness of names. Composable naming allows one to understand the context & full description of the entity.
+There are usually small libraries & code snippets. Gluing these small libraries & snippets together. With a ${naming_convention__tb_a_('naming convention')} that utilizes unique, immutable, & composable names. Results in a codebase when you could find all usages of an entity or concept by doing a project-wide search. Rename refactorings are more accurate & comprehensive due to the uniqueness of names. Composable naming allows one to understand the context & full description of the entity.
 
 I use ctx-core to maintain software with:
 
 * an accessible domain model
 * a flat architecture
-* active programming
+* reactive programming
 
 ### Usage
 
-ctx-core uses dependency-injection of a \`ctx\` & "beings", (a function created with the \`be_\` factory function). The flat architecture reduces incidental complexity. To manage complex domains, Nested architecture provides scoping. The [Tag Vector](/posts/tag-vector-0-introduction) Convention, created while working on ctx-core, encodes tags joined by vectors & data structure shapes to express complex domains within a flat architecture.
+ctx-core uses dependency-injection of a \`ctx\` & "beings". A "being" is a function created with the \`be_\` factory function. The flat architecture reduces incidental complexity. To manage complex domains, nested architecture provides scoping. I created the [Tag Vector](/posts/tag-vector-0-introduction) Convention while working on ctx-core. Tag Vector encodes tags  joined by vectors. Tag Vector express data structure shapes & complex domains within a flat architecture.
 
-Currently, I use ctx-core along with ${nanostores__tb_a_()} to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores is also a general purpose library any component library is supported. In my work, I favor ${nanostores__tb_a_()} to render components on the server & browser. ctx-core also supports ${sveltejs__tb_a_()} with ${svelte_stores__tb_a_()} to render components & manage reactive state on the server & browser.
+I use ctx-core along with ${rmemo__tb_a_()} to manage reactive state on the server & the browser. In my work, I favor ${rmemo__tb_a_()} to render components on the server & browser. ctx-core also supports reactive state with ${nanostores__tb_a_()}, ${solidjs__tb_a_()} signals, & ${svelte_stores__tb_a_()}.
 
 ## ${nanostores__tb_a_()}
 
-I learned about Nano Stores via ${astrojs__tb_a_()}. Since I was already using ${svelte_stores__tb_a_()}, Nano Stores was a natural replacement to support global reactive state while supporting multiple component libraries, such as ${solidjs__tb_a_()}. I contributed a fix${nanostores_breadth_first_queue__footnote__sup_()} to diamond dependency bugs by using a breadth first queuing algorithm which I previously contributed to svelte stores${svelte_cyclic_breadth_first_queue__footnote__sup_()}. I also added soon to be released async support to \`computed\`${nanostores_computed_async__footnote__sup_()} & am working on adding autosubsciptions to \`computed\`.
+II learned about Nano Stores via ${astrojs__tb_a_()}. NanoStores was a natural replacement of I ${svelte_stores__tb_a_()} to support global reactive state. NanoStores is agnostic to component libraries, such as ${solidjs__tb_a_()}. I contributed a fix${nanostores_breadth_first_queue__footnote__sup_()} to diamond dependency bugs. This fix uses a breadth first queuing algorithm. I also contributed the breadth first queuing algorithm to svelte stores${svelte_cyclic_breadth_first_queue__footnote__sup_()}. I added async support to \`computed\`${nanostores_computed_async__footnote__sup_()}. After failing to add autosubsciptions to \`computed\`, I created ${rmemo__tb_a_()}.
 
 ## ${backbone_signal__tb_a_()}
 
-I started using global state management with ${backbonejs__tb_a_()} while Lead Developer at ${honk__tb_a_()}. I ${a_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript' }, `created backbone-signal`)} to use global state management with Backbone.js across different projects, while working with ${rundavoo__tb_a_()}.
+I started using global state management with ${backbonejs__tb_a_()} while Lead Developer at ${honk__tb_a_()}. I created  ${a_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript' }, `backbone-signal`)} to add global state management to Backbone.js. I used this across different projects including ${rundavoo__tb_a_()}.
 
 ## ${jasmine_flow__tb_a_()}
 
-While at ${rundavoo__tb_a_()} I ${a_({ href: '/posts/jasmine-flow-fast-and-thourough-testing' }, `created jasmine-flow`)} to facilitate linear flow testing...saving effort in maintaining automated tests. This was hard-learned from maintaining various large apps while at ${honk__tb_a_()} & ${pivotal_labs__tb_a_()}.
+At ${rundavoo__tb_a_()}, I created ${a_({ href: '/posts/jasmine-flow-fast-and-thourough-testing' }, `jasmine-flow`)}. Jasmine-flow facilitates linear flow testing...saving effort in maintaining automated tests. This was hard-learned from maintaining various large apps while at ${honk__tb_a_()} & ${pivotal_labs__tb_a_()}.
 
 ## ${rr__tb_a_()}
 
-RR (double Ruby) is a test double library for the Ruby language. I ${a_({ href: '/posts/introducing-rr' }, `released RR`)} back in 2008. It features a terse api to for a high signal to syntax noise ratio for read & write friendly automated testing. I used global state management to manage complex data interactions. I stopped development when I moved to full-stack Javascript development. Maintenance of this project was picked up by ${tb_a_({ href: 'https://github.com/kou' }, `Sutou Kouhei`)} in 2015.
+RR (double Ruby) is a test double library for the Ruby language. I ${a_({ href: '/posts/introducing-rr' }, `released RR`)} back in 2008. RR features a terse api to for a high signal to syntax noise ratio. Which allows a read & write friendly automated testing. I used global state management to manage complex data interactions. I stopped development when I moved to full-stack Javascript development. ${tb_a_({ href: 'https://github.com/kou' }, `Sutou Kouhei`)} began maintaining this project in 2015.
 
 ## ${rspec__tb_a_()}
 
-I was an early core maintainer on the rspec team. Rspec is the first DSL (Domain Specific Language) implementation of ${tb_a_({ href: 'https://dannorth.net/introducing-bdd/' }, 'BDD (Behavioral Driven Development)')}. Key contributions include the first known implementation of nested \`describe\` & \`context\` statements${rspec_nested_describes__footnote__sup_()}. The concept of nested describe was controversial at that time as it was thought it would add to the complexity & inhibit readability of the specs. However, nesting \`describe\` & \`context\` enabled contextual nesting with separate usage of \`beforeEach\` & \`afterEach\`. I championed the idea & delivered the implementation. I also integrated Rspec with ${tb_a_({ href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html' }, `Test::Unit`)}, worked on the initial mock implementation, & worked on the ${ruby_on_rails__tb_a_()} integration.
+I was an early core maintainer on the rspec team. Rspec was the first DSL (Domain Specific Language) implementation of ${tb_a_({ href: 'https://dannorth.net/introducing-bdd/' }, 'BDD (Behavioral Driven Development)')}. Key contributions include the first known implementation of nested \`describe\` & \`context\` statements${rspec_nested_describes__footnote__sup_()}. Nested describes were controversial at that time. Criticism included adding to the complexity & inhibit readability of the specs. Nesting \`describe\` & \`context\` enabled contextual nesting with separate usage of \`beforeEach\` & \`afterEach\`. I championed the idea & delivered the implementation. I integrated Rspec with ${tb_a_({ href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html' }, `Test::Unit`)}. Worked on the initial mock implementation. Worked on the ${ruby_on_rails__tb_a_()} integration.
 
 ## ${desertrb__tb_a_()}
 
-Desert is a Rails plugin framework that makes it easy to share models, views, controllers, helpers, routes, and migrations across your applications.
+Desert is a Rails plugin framework. Desert allowed plugins to share models, views, controllers, helpers, routes, and migrations. Applications used these plugins.
 
-With Desert, reusability doesn’t come at the cost of extensibility: it’s trivial to extend the functionality of a plugin - both in your application and in other plugins.
+Reusability doesn’t come at the cost of extensibility. Desert made it easy to extend the functionality of a plugin - both in your application and in other plugins.
 
-Classes are automatically mixed in with your own or other plugins’ classes. This allows you to make full featured composable components.
+Mixin classes in with your own or other plugins’ classes. This allows you to make full featured composable components.
 
 ## ${jellyrb__tb_a_()}
 
-Jelly is an unobtrusive Javascript framework for ${jquery__tb_a_()} and ${ruby_on_rails__tb_a_()}. It provides a set of conventions and tools that help you organize your AJAX and client-side code, while keeping Javascript out of your views and markup. Jelly is the glue between your Rails controllers and jQuery events.
+Jelly is an unobtrusive Javascript framework for ${jquery__tb_a_()} and ${ruby_on_rails__tb_a_()}. Jelly provides a set of conventions and tools to organize your AJAX and client-side code. While keeping Javascript out of your views and markup. Jelly is the glue between your Rails controllers and jQuery events.
 
-Jelly encourages and enables unit testing your Javascript code. Using a Javascript testing framework such as ${jasminejs__tb_a_()} or ${screw_unit__tb_a_()}, Jelly allows you to test AJAX and client-side events independently from your Rails app.
+Jelly encourages and enables unit testing your Javascript code. While using a Javascript testing framework such as ${jasminejs__tb_a_()} or ${screw_unit__tb_a_()}. Jelly allows testing AJAX and client-side events separate from your Rails app.
 
 ## ${poloniumrb__tb_a_()}
 
@@ -134,8 +135,7 @@ Reactive in-memory relational caching library which syncs with upstream relation
 
 ## ${screw_unit__tb_a_()}
 
-Screw.Unit is a Behavior-Driven Testing Framework for Javascript. It features nested describes. Its goals are to
-provide:
+Screw.Unit is a Behavior-Driven Testing Framework for Javascript. It features nested describes. Its goals are to provide:
 
 * a DSL for elegant, readable, organized specs;
 * an interactive runner that can execute focused specs and describes;
@@ -143,11 +143,11 @@ provide:
 
 ## ${generic_query_analyzer__tb_a_()}
 
-A query analyzer using ${ado_net__tb_a_()}. I built this tool to run SQL queries on the ${msaccess__tb_a_()} CRM database & ${msexcel__tb_a_()} @ ${ccrcorp__tb_a_()}. Written with ${c_sharp__tb_a_()}, ${ado_net__tb_a_()}, ${winforms__tb_a_()}.
+A query analyzer using ${ado_net__tb_a_()}. I built this tool to run SQL queries on the ${msaccess__tb_a_()} CRM ${msexcel__tb_a_()} database. Used by @ ${ccrcorp__tb_a_()}. Written with ${c_sharp__tb_a_()}, ${ado_net__tb_a_()}, ${winforms__tb_a_()}.
 
 ## ${poof__tb_a_()}
 
-The PHP Object Oriented Framework is a framework library to build components in PHP. It was built as an alternative to using the ${smarty__tb_a_()}. Poof was written to encapsulate html rendering in components.
+The PHP Object Oriented Framework is a framework library to build components in PHP. POOF was an alternative to using the ${smarty__tb_a_()}. Poof encapsulated html rendering in components.
 
 ${footnote_list__div_({ ctx })}
 			`.trim())
@@ -160,7 +160,7 @@ ${footnote_list__div_({ ctx })}
 				ctx,
 				id: 'ctx_core_catch_all'
 			}, [
-				`ctx-core has been a bit of a catch-all project to share code between projects under the principles of ctx-core. The functionality of ctx-core is in place but the packages need some reorganization & documentation is needed to be more widely used. I have used ctx-core to handle transitions between other component & state management libraries as they emerge & are updated.`
+				`ctx-core has been a bit of a catch-all utility library. To share code between projects under the principles of ctx-core. I use ctx-core to handle transitions between technological developments in the web space.`
 			])
 		)
 	}
