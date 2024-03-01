@@ -78,7 +78,7 @@ export function portfolio__doc_html_({
 			md__raw_(`
 ## [briantakita.me](https://briantakita.me)
 
-${briantakita_me_dev__tb_a_()} static app with libraries forked from ${astropaper__tb_a_()}. I did some refactoring including converting it to a monorepo, used solidjs instead of react, and added ctx-core & Nano Stores. These changes improve code re-use to be used in other profile sites which I will soon work on. I plan on adding support for ${strapi__tb_a_()}, so people without technical experience can write posts on their own optimized blog.
+${briantakita_me_dev__tb_a_()} is originally forked from ${astropaper__tb_a_()}. I converted the codebase into a monorepo. I use ${relementjs__tb_a_()} + ${rmemo__tb_a_()} instead of react. I use ${rappstack__tb_a_()} instead of astro.
 
 ${stack__a_a1_(
 	rappstack__tb_a_(),
@@ -93,7 +93,7 @@ ${stack__a_a1_(
 
 ## ${brookebrodack_net__tb_a_()}
 
-Brooke Brodack is one of the original YouTube personalities. Her character, Brookers, once had the most subscribers on YouTube. This site features a Brookers Timeline & Brooke Brodack's current Youtube Content...embedding the YouTube & Internet Archive players. rmemo shines in this implementation to manage the player state & web animations. I was able to improve the web animations after switching from ${motion_one__tb_a_()} to rmemo. The ${brookebrodack_dev__tb_a_('source code')} is under the Apache 2 license.
+Brooke Brodack is one of the original YouTube personalities. Her character, Brookers, once had the most subscribers on YouTube. This site features the Brookers Timeline & Brooke Brodack's current Youtube Content. Embedding the YouTube & Internet Archive players. rmemo shines in this implementation to manage the player state & web animations. The web animation logic improved after switching from ${motion_one__tb_a_()} to rmemo. The ${brookebrodack_dev__tb_a_('source code')} is under the Apache 2 license.
 
 ${stack__a_a1_(
 	rappstack__tb_a_(),
@@ -111,9 +111,9 @@ ${stack__a_a1_(
 
 ## ${martin_investments__tb_a_()}
 
-Designed & Built an analyst & customer portal for ESG investment funds. Created ESG analysis algorithms to rate companies according to Environment & Women in Leadership criteria.
+Designed & Built an analyst & customer portal for ESG investment funds. ESG analysis algorithms to rate companies according to Environment & Women in Leadership criteria.
 
-Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns using ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Office_Open_XML' }, 'Office Open XML')} replicating the ESG analysis algorithms & deep linking across the document & to relevant web content.
+Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns. Exported the ESG analysis algorithms into Excel documents. Wrote direct ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Office_Open_XML' }, 'Office Open XML')}. Included deep linking across the document & to relevant web content.
 
 Built SVG & PDF exporters of portfolio & company ESG reports.
 
@@ -130,11 +130,11 @@ ${stack__a_a1_(
 
 ## ${censible__tb_a_()}
 
-Progressive Web App that enables the client to upload their portfolio from a CSV file and rebalance their portfolio based on ESG metrics compared to an Index Fund benchmark. The client can select ${esg__tb_a_()} Issue criteria (for scoring) & binary restriction criteria to identify securities that cross ethical boundaries. This app uses a market value weighted color bar, based on segmented scores, to indicate the areas of improvement. Client can search for securities to add or replace based on Name, Industry Peers, Industry Sectors, Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to obtain a desired ESG outcome. Also contains a printable report and industry sector analysis of the portfolio & benchmark fund.
+Progressive Web App. Enables you to upload your stock portfolio from a CSV file. Rebalances your portfolio based on ESG metrics compared to an Index Fund benchmark. You can select ${esg__tb_a_()} Issue criteria (for scoring). And binary restriction criteria to identify securities that cross ethical boundaries. This app uses a market value weighted color bar, based on segmented scores. Highlighting areas of improvement. You add or replace securities by Name, Industry Peers, Industry Sectors, Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to optimize the ESG score. You can print a PDF report and industry sector analysis of the portfolio & benchmark fund.
 
 ### ${tb_a_({ href: 'https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership' }, `Women In Leadership Report`)}
 
-Market survey of Women in corporate leadership positions. Scoring methodology applied to Aggregate analysis, Best Performing Companies, Best Performing Large Companies, Worst Performing Companies, Best & Worst Performing Funds, Largest Funds, & Socially Responsible Funds.
+Market survey of Women in corporate leadership positions. Scoring  applied to analysis. Analysis includes Best Performing Companies, Best Performing Large Companies, Worst Performing Companies, Best & Worst Performing Funds, Largest Funds, & Socially Responsible Funds.
 
 ${stack__a_a1_(
 	nodejs__tb_a_(),
@@ -170,7 +170,7 @@ ${stack__a_a1_(
 
 ## ${neo__tb_a_()}
 
-Worked with the previous incarnation as an inclubator & consulting firm of Neo before it's acquisition. The client was Tenfore Holdings, an investment fund. The project was a low-code document writer with integrated search into the client's ${salesforce__tb_a_()} using Salesforce cloud.
+Worked with the previous incarnation of Neo before it's acquisition. The client was Tenfore Holdings, an investment fund. A low-code document writer integrating search into the client's ${salesforce__tb_a_()} cloud account.
 
 ${stack__a_a1_(
 	nodejs__tb_a_(),
@@ -180,9 +180,9 @@ ${stack__a_a1_(
 
 ## Rundavoo
 
-Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was included in the Google's ${tb_a_({ href: 'https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm' }, `Best Apps of 2014 List`)}.
+Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app ranked in Google's ${tb_a_({ href: 'https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm' }, `Best Apps of 2014 List`)}.
 
-Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was included in the
+Web front-end development for social planning & decision app for restaurant patrons.
 
 ${stack__a_a1_(
 	riotjs__tb_a_(),
@@ -191,7 +191,7 @@ ${stack__a_a1_(
 
 ## ${milyoni__tb_a_()}
 
-Consulting developer for social entertainment platform. Developed scalable live video events with admin message moderation & components, on-demand movies with time-coded chat & interactive components.
+Consulting developer for social entertainment platform. Scalable live video events with admin message moderation & components. On-demand movies with time-coded chat & interactive components.
 
 ${stack__a_a1_(
 	ruby_on_rails__tb_a_(),
@@ -216,7 +216,7 @@ ${stack__a_a1_(
 
 ## Pivotal Labs
 
-Agile engineer with Web2.0 consulting firm & startup incubator from 2005-2009. Pivotal Labs was acquired by EMC & became VM Ware Tunzu after I left. At Pivotal, I worked with > 20 startup companies, bootstrapping their product development, engineer process, & mentoring developers. While at Pivotal Labs I worked on open source libraries including:
+Agile engineer with Web2.0 consulting firm & startup incubator from 2005-2009. EMC acquired Pivotal Labs. VM Ware Tunzu acquired EMC. I worked with > 20 startup companies. I bootstrapped their product development, engineer process, & mentoring developers. While at Pivotal Labs I worked on open source libraries including:
 
 ${stack__a_a1_(
 	rspec__tb_a_(), 
