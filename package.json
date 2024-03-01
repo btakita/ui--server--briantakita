@@ -28,8 +28,8 @@
 		"@rappstack/ui--any--blog": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
 		"@btakita/ui--server--linkument": "workspace:*",
-		"ctx-core": "^6.5.1",
-		"relementjs": "^0.74.1"
+		"ctx-core": "^6.5.3",
+		"relementjs": "^0.74.3"
 	},
 	"devDependencies": {
 		"bun-types": "latest"
