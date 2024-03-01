@@ -132,7 +132,9 @@ ${stack__details_(
 
 ## ${censible__tb_a_()}
 
-Progressive Web App. Enables you to upload your stock portfolio from a CSV file. Rebalances your portfolio based on ESG metrics compared to an Index Fund benchmark. You can select ${esg__tb_a_()} Issue criteria (for scoring). And binary restriction criteria to identify securities that cross ethical boundaries. This app uses a market value weighted color bar, based on segmented scores. Highlighting areas of improvement. You add or replace securities by Name, Industry Peers, Industry Sectors, Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to optimize the ESG score. You can print a PDF report and industry sector analysis of the portfolio & benchmark fund.
+Progressive Web App. Enables you to upload your stock portfolio from a CSV file. Rebalances your portfolio based on ESG metrics compared to an Index Fund benchmark. You can select ${esg__tb_a_()} Issue criteria (for scoring). And binary restriction criteria to identify securities that cross ethical boundaries. This app uses a market value weighted color bar, based on segmented scores. Highlighting areas of improvement.
+
+You add or replace securities by the following. Name, Industry Peers, Industry Sectors, Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to optimize the ESG score. You can print a PDF report and industry sector analysis of the portfolio & benchmark fund.
 
 ### ${tb_a_({ href: 'https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership' }, `Women In Leadership Report`)}
 
