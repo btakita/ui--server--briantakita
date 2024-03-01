@@ -1,6 +1,8 @@
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
+import { details_, span_, summary_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
 	astrojs__tb_a_,
@@ -80,7 +82,7 @@ export function portfolio__doc_html_({
 
 ${briantakita_me_dev__tb_a_()} is originally forked from ${astropaper__tb_a_()}. I converted the codebase into a monorepo. I use ${relementjs__tb_a_()} + ${rmemo__tb_a_()} instead of react. I use ${rappstack__tb_a_()} instead of astro.
 
-${stack__a_a1_(
+${stack__details_(
 	rappstack__tb_a_(),
 	bunjs__tb_a_(),
 	elysiajs__tb_a_(),
@@ -95,7 +97,7 @@ ${stack__a_a1_(
 
 Brooke Brodack is one of the original YouTube personalities. Her character, Brookers, once had the most subscribers on YouTube. This site features the Brookers Timeline & Brooke Brodack's current Youtube Content. Embedding the YouTube & Internet Archive players. rmemo shines in this implementation to manage the player state & web animations. The web animation logic improved after switching from ${motion_one__tb_a_()} to rmemo. The ${brookebrodack_dev__tb_a_('source code')} is under the Apache 2 license.
 
-${stack__a_a1_(
+${stack__details_(
 	rappstack__tb_a_(),
 	bunjs__tb_a_(),
 	sqlite__tb_a_(),
@@ -117,7 +119,7 @@ Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & h
 
 Built SVG & PDF exporters of portfolio & company ESG reports.
 
-${stack__a_a1_(
+${stack__details_(
 	nodejs__tb_a_(),
 	pnpm__tb_a_(),
 	ctx_core__tb_a_(),
@@ -136,7 +138,7 @@ Progressive Web App. Enables you to upload your stock portfolio from a CSV file.
 
 Market survey of Women in corporate leadership positions. Scoring  applied to analysis. Analysis includes Best Performing Companies, Best Performing Large Companies, Worst Performing Companies, Best & Worst Performing Funds, Largest Funds, & Socially Responsible Funds.
 
-${stack__a_a1_(
+${stack__details_(
 	nodejs__tb_a_(),
 	pnpm__tb_a_(),
 	ctx_core__tb_a_(),
@@ -152,7 +154,7 @@ ${stack__a_a1_(
 
 Front end development of the menu.com multi-tenant app. Consumer web app, restaurant back-office, & back-office Cordova app.
 
-${stack__a_a1_(
+${stack__details_(
 	sveltejs__tb_a_(),
 	ctx_core__tb_a_(),
 	sapper__tb_a_(),
@@ -163,7 +165,7 @@ ${stack__a_a1_(
 
 Private NextCloud groupware site with some custom plugins.
 
-${stack__a_a1_(
+${stack__details_(
 	nextcloud__tb_a_(),
 	docker__tb_a_(), 
 	'VPS')}
@@ -172,7 +174,7 @@ ${stack__a_a1_(
 
 Worked with the previous incarnation of Neo before it's acquisition. The client was Tenfore Holdings, an investment fund. A low-code document writer integrating search into the client's ${salesforce__tb_a_()} cloud account.
 
-${stack__a_a1_(
+${stack__details_(
 	nodejs__tb_a_(),
 	riotjs__tb_a_(),
 	rethinkdb__tb_a_(),
@@ -184,7 +186,7 @@ Web front-end development for social planning & decision app for restaurant patr
 
 Web front-end development for social planning & decision app for restaurant patrons.
 
-${stack__a_a1_(
+${stack__details_(
 	riotjs__tb_a_(),
 	backbonejs__tb_a_(), 
 	heroku__tb_a_())}
@@ -193,7 +195,7 @@ ${stack__a_a1_(
 
 Consulting developer for social entertainment platform. Scalable live video events with admin message moderation & components. On-demand movies with time-coded chat & interactive components.
 
-${stack__a_a1_(
+${stack__details_(
 	ruby_on_rails__tb_a_(),
 	nodejs__tb_a_(),
 	postgres__tb_a_(), 
@@ -204,7 +206,7 @@ ${stack__a_a1_(
 
 Lead developer for automotive pricing & info startup. Built product from initial concept through acquisition by ${truecar__tb_a_()}. Key partnerships include ${news_corp__tb_a_()}, ${wsj__tb_a_()}, ${usaa__tb_a_()}.
 
-${stack__a_a1_(
+${stack__details_(
 	ruby_on_rails__tb_a_(),
 	sinatrarb__tb_a_(),
 	erector__tb_a_(),
@@ -218,7 +220,7 @@ ${stack__a_a1_(
 
 Agile engineer with Web2.0 consulting firm & startup incubator from 2005-2009. EMC acquired Pivotal Labs. VM Ware Tunzu acquired EMC. I worked with > 20 startup companies. I bootstrapped their product development, engineer process, & mentoring developers. While at Pivotal Labs I worked on open source libraries including:
 
-${stack__a_a1_(
+${stack__details_(
 	rspec__tb_a_(), 
 	rr__tb_a_(),
 	erector__tb_a_(),
@@ -230,7 +232,7 @@ I spoke at the ${tb_a_({ href: 'https://www.oreilly.com/pub/pr/1966' }, `2008 Ra
 
 Stack:
 
-${stack__a_a1_(
+${stack__details_(
 	ruby_on_rails__tb_a_(),
 	sinatrarb__tb_a_(),
 	erector__tb_a_(),
@@ -246,6 +248,14 @@ ${stack__a_a1_(
 		])
 	)
 }
-function stack__a_a1_(...a_a1:tag_dom_T[]) {
-	return a_a1.join(' ')
+function stack__details_(...a_a1:tag_dom_T[]) {
+  return (
+		details_({
+			class: class_(
+				'mb-4')
+		}, [
+			summary_('Stack'),
+			span_(a_a1.map(a=>[a, ' ']))
+		])
+	)
 }
