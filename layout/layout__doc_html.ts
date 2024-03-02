@@ -5,9 +5,9 @@ import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
 import { doc_html_ } from 'relementjs/server'
 import { assets_, assets__new, type assets_T, type request_ctx_T, request_url_ } from 'relysjs/server'
+import ld_json from '../ld_json/index.json.js'
 import favicon_svg from '../public/assets/favicon.svg'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
-import { layout__ld_json_graph_ } from './layout__ld_json_graph.js'
 const google_site_verification = import_meta_env_().PUBLIC_GOOGLE_SITE_VERIFICATION
 export function layout__doc_html_({
 	ctx,
@@ -85,7 +85,7 @@ export function layout__doc_html_({
 								: 'light')
 				`.trim().replaceAll('					', ''))),
 				title_(title),
-				script_({ type: 'ld+json'}, raw_(JSON.stringify(layout__ld_json_graph_(ctx))))
+				script_({ type: 'ld+json'}, raw_(JSON.stringify(ld_json)))
 			]),
 			body_({
 				class: class_(

@@ -10,6 +10,7 @@
 		"./header": "./header/index.ts",
 		"./home": "./home/index.ts",
 		"./layout": "./layout/index.ts",
+		"./ld_json": "./ld_json/index.ts",
 		"./links": "./links/index.ts",
 		"./md": "./md/index.ts",
 		"./open_source": "./open_source/index.ts",
