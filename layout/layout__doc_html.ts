@@ -1,11 +1,15 @@
+import { site__author_, site__description_, site__title_ } from '@rappstack/domain--server/site'
+import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { import_meta_env_ } from 'ctx-core/env'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
 import { doc_html_ } from 'relementjs/server'
 import { assets_, assets__new, type assets_T, type request_ctx_T, request_url_ } from 'relysjs/server'
+import type { Graph } from 'schema-dts'
 import favicon_svg from '../public/assets/favicon.svg'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
+import { layout__ld_json_graph_ } from './layout__ld_json_graph.js'
 const google_site_verification = import_meta_env_().PUBLIC_GOOGLE_SITE_VERIFICATION
 export function layout__doc_html_({
 	ctx,
@@ -25,9 +29,9 @@ export function layout__doc_html_({
 	og_image?:string
 }, ...children:tag_dom_T[]) {
 	canonical_url ??= request_url_(ctx).href
-	title ??= 'Brian Takita'
-	description ??= 'Reactive Context Enthusiast'
-	author ??= 'Brian Takita'
+	title ??= site__title_(ctx)
+	description ??= site__description_(ctx)
+	author ??= site__author_(ctx)
 	og_image ??= briantakita_og_jpg
 	const social_image_url = new URL(og_image, request_url_(ctx).origin).href
 	assets = assets__new(assets_(ctx), assets)
@@ -83,6 +87,7 @@ export function layout__doc_html_({
 								: 'light')
 				`.trim().replaceAll('					', ''))),
 				title_(title),
+				script_({ type: 'ld+json'}, raw_(JSON.stringify(layout__ld_json_graph_(ctx))))
 			]),
 			body_({
 				class: class_(

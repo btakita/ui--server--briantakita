@@ -73,7 +73,7 @@ export function home__doc_html_({
 						})
 					]),
 					// @formatter:off
-					p_({ class: 'my-2' }, [
+					p_({ id: 'about', class: 'my-2' }, [
 						'I build efficient apps & libraries using the web platform. With powerful libraries, I deliver results with simpler systems than other developers. Systems that emphasize powerful primitives, bottom-up development, & domain ontology. Unlocking the vanilla web platform to deliver productivity without framework bloat. The result is fast web sites/apps & systems that expand to handle more with less. Now & into the future.'
 					]),
 					// @formatter:on
