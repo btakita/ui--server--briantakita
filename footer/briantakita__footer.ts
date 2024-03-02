@@ -32,6 +32,7 @@ export function briantakita__footer_<env_T extends relement_env_T>({
 			}, [
 				socials__div_({
 					ctx,
+					id: 'contact',
 					centered: true,
 					link_button_class: class_(
 						'my-1',
