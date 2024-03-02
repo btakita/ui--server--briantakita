@@ -93,7 +93,7 @@ ${[
 
 ## ${rmemo__tb_a_({ id: 'rmemo' })}
 
-rmemo is a tiny no-fluff reactive state management library. The primitive is a reactive memo. A reactive signal is a reactive memo that has a public setter property. rmemo includes memosig, lock_memosig, & a rich api for your reactive state management needseatures include:
+rmemo is a tiny no-fluff reactive state management library. The primitive is a reactive memo. A reactive signal is a reactive memo that has a public setter property. rmemo includes memosig, lock_memosig, & a rich api for your reactive state management needs. Features include:
 
 * \`memo_\`
 * \`signal_\`
