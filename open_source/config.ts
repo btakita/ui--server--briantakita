@@ -171,11 +171,10 @@ I learned about Nano Stores via ${astrojs__tb_a_()}. NanoStores was a natural re
 /// language=md
 export const sveltejs_md_ = (
 	svelte_cyclic_breadth_first_queue__footnote__sup_?:()=>tag_dom_T,
-	nanostores_computed_async__footnote__sup_?:()=>tag_dom_T
 )=>`
 ## ${sveltejs__tb_a_({ id: 'sveltejs' })}
 
-I also contributed the breadth first queuing algorithm to svelte stores${svelte_cyclic_breadth_first_queue__footnote__sup_?.() ?? ''}. I added async support to \`computed\`${nanostores_computed_async__footnote__sup_?.() ?? ''}.
+I contributed the breadth first queuing algorithm to svelte stores${svelte_cyclic_breadth_first_queue__footnote__sup_?.() ?? ''}.
 `
 /// language=md
 export const backbone_signal_md_ = ()=>`

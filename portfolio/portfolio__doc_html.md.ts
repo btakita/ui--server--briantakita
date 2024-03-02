@@ -1,8 +1,5 @@
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { class_ } from 'ctx-core/html'
-import { raw_, type tag_dom_T } from 'relementjs'
-import { details_, span_, summary_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
 	astrojs__tb_a_,
@@ -56,7 +53,6 @@ import {
 	solid_start__tb_a_,
 	solidjs__tb_a_,
 	sqlite__tb_a_,
-	strapi__tb_a_,
 	sveltejs__tb_a_,
 	truecar__tb_a_,
 	unison__tb_a_,
@@ -64,6 +60,7 @@ import {
 	wsj__tb_a_
 } from '../anchor/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
+import { stack__details_ } from '../stack/index.js'
 export function portfolio__doc_html_({
 	ctx
 }:{
@@ -239,39 +236,6 @@ ${stack__details_(
 )}
 `.trim())
 			// @formatter:on
-		])
-	)
-}
-function stack__details_(...a_a1:tag_dom_T[]) {
-	return (
-		details_({
-			class: class_(
-				'!block',
-				'w-full',
-				'mb-4',
-				'overflow-hidden',
-				'group')
-		}, [
-			summary_({
-				class: class_(
-					'block',
-					'float-right')
-			}, [
-				span_({
-					class: class_(
-						'inline-block',
-						'group-open:hidden',
-						'mr-1')
-				}, '-'),
-				span_({
-					class: class_(
-						'hidden',
-						'group-open:inline-block',
-						'mr-1')
-				}, raw_('&larr;')),
-				'Stack'
-			]),
-			span_(a_a1.map(a=>[a, ' ']))
 		])
 	)
 }

@@ -18,6 +18,7 @@
 		"./post": "./post/index.ts",
 		"./search": "./search/index.ts",
 		"./sitemap": "./sitemap/index.ts",
+		"./stack": "./stack/index.ts",
 		"./tag": "./tag/index.ts",
 		"./utf8": "./utf8/index.ts",
 		"./package.json": "./package.json"

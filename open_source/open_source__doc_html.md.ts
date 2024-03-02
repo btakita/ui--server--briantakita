@@ -61,7 +61,7 @@ ${ctx_core_md_(ctx_core_catch_all__footnote__sup_)}
 
 ${nanostores_md_(nanostores_breadth_first_queue__footnote__sup_)}
 
-${sveltejs_md_(svelte_cyclic_breadth_first_queue__footnote__sup_, nanostores_computed_async__footnote__sup_)}
+${sveltejs_md_(svelte_cyclic_breadth_first_queue__footnote__sup_)}
 
 ${backbone_signal_md_()}
 
@@ -114,14 +114,6 @@ ${footnote_list__div_({ ctx })}
 	function svelte_cyclic_breadth_first_queue__footnote__sup_() {
 		return (
 			footnote__sup_({ ctx, id: 'svelte_cyclic_breadth_first_queue' }, [
-				tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6', nofollow: true },
-					'Svelte Cyclic breadth first queue')
-			])
-		)
-	}
-	function nanostores_computed_async__footnote__sup_() {
-		return (
-			footnote__sup_({ ctx, id: 'nanostores_computed_async' }, [
 				tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6', nofollow: true },
 					'Svelte Cyclic breadth first queue')
 			])
