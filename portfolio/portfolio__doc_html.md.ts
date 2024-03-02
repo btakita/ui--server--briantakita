@@ -1,7 +1,7 @@
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { class_ } from 'ctx-core/html'
-import { type tag_dom_T } from 'relementjs'
+import { raw_, type tag_dom_T } from 'relementjs'
 import { details_, span_, summary_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
@@ -222,17 +222,9 @@ ${stack__details_(
 
 Agile engineer with Web2.0 consulting firm & startup incubator from 2005-2009. EMC acquired Pivotal Labs. VM Ware Tunzu acquired EMC. I worked with > 20 startup companies. I bootstrapped their product development, engineer process, & mentoring developers. While at Pivotal Labs I worked on open source libraries including:
 
-${stack__details_(
-	rspec__tb_a_(), 
-	rr__tb_a_(),
-	erector__tb_a_(),
-	unison__tb_a_(),
-	cacheable_flash__tb_a_()
-)}
+${[rspec__tb_a_(), rr__tb_a_(), erector__tb_a_(), unison__tb_a_(), cacheable_flash__tb_a_()].join(' ')}
 
 I spoke at the ${tb_a_({ href: 'https://www.oreilly.com/pub/pr/1966', nofollow: true }, `2008 Rails Conf`)}.
-
-Stack:
 
 ${stack__details_(
 	ruby_on_rails__tb_a_(),
@@ -251,12 +243,34 @@ ${stack__details_(
 	)
 }
 function stack__details_(...a_a1:tag_dom_T[]) {
-  return (
+	return (
 		details_({
 			class: class_(
-				'mb-4')
+				'!block',
+				'w-full',
+				'mb-4',
+				'overflow-hidden',
+				'group')
 		}, [
-			summary_('Stack'),
+			summary_({
+				class: class_(
+					'block',
+					'float-right')
+			}, [
+				span_({
+					class: class_(
+						'inline-block',
+						'group-open:hidden',
+						'mr-1')
+				}, '-'),
+				span_({
+					class: class_(
+						'hidden',
+						'group-open:inline-block',
+						'mr-1')
+				}, raw_('&larr;')),
+				'Stack'
+			]),
 			span_(a_a1.map(a=>[a, ' ']))
 		])
 	)

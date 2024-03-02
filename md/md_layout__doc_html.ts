@@ -11,11 +11,13 @@ export function md_layout__doc_html_({
 	title,
 	description,
 	active_link,
+	article_class,
 }:{
 	ctx:request_ctx_T
 	title:string
 	description?:string
 	active_link?:briantakita_header__link_T
+	article_class?:string
 }, ...children:tag_dom_T[]) {
 	return (
 		layout__doc_html_({
@@ -36,7 +38,8 @@ export function md_layout__doc_html_({
 					class: class_(
 						'mb-28',
 						'max-w-3xl',
-						'prose-img:border-0')
+						'prose-img:border-0',
+						article_class)
 				}, ...children)
 			]),
 			briantakita__footer_({ ctx })
