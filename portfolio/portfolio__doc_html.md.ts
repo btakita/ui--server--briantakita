@@ -77,7 +77,7 @@ export function portfolio__doc_html_({
 			md__raw_(`
 ## [briantakita.me](https://briantakita.me)
 
-${briantakita_me_dev__tb_a_()} is originally forked from ${astropaper__tb_a_()}. I converted the codebase into a monorepo. I use ${relementjs__tb_a_()} + ${rmemo__tb_a_()} instead of react. I use ${rappstack__tb_a_()} instead of astro.
+${briantakita_me_dev__tb_a_()} started from a fork. Optimized the performance, SEO, & semantic markup with json-ld. I develop & experiment with software tech on this site.
 
 ${stack__details_(
 	rappstack__tb_a_(),
