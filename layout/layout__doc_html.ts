@@ -54,6 +54,7 @@ export function layout__doc_html_({
 				meta_({ property: 'twitter:title', content: title }),
 				meta_({ property: 'twitter:description', content: description }),
 				meta_({ property: 'twitter:image', content: social_image_url }),
+				meta_({ name: 'darkreader-lock' }),
 				meta_({ name: 'darkreader', content: 'disable' }),
 				// Google Font
 				meta_({ rel: 'preconnect', href: 'https://fonts.googleapis.com' }),

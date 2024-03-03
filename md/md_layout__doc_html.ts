@@ -6,6 +6,7 @@ import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_, type briantakita_header__link_T } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
+import { prose_class } from '../prose/index.js'
 export function md_layout__doc_html_({
 	ctx,
 	title,
@@ -29,7 +30,9 @@ export function md_layout__doc_html_({
 			}),
 			blog__main_fragment_({
 				ctx,
-				class: 'prose',
+				class: class_(
+					'prose',
+					prose_class),
 				title,
 				description,
 			}, [
