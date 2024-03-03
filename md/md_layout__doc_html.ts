@@ -10,19 +10,22 @@ import { prose_class } from '../prose/index.js'
 export function md_layout__doc_html_({
 	ctx,
 	title,
+	h1_text,
 	description,
 	active_link,
 	article_class,
 }:{
 	ctx:request_ctx_T
 	title:string
+	h1_text:string
 	description?:string
 	active_link?:briantakita_header__link_T
 	article_class?:string
 }, ...children:tag_dom_T[]) {
 	return (
 		layout__doc_html_({
-			ctx
+			ctx,
+			title
 		}, [
 			briantakita__header_({
 				ctx,
@@ -33,7 +36,7 @@ export function md_layout__doc_html_({
 				class: class_(
 					'prose',
 					prose_class),
-				title,
+				h1_text,
 				description,
 			}, [
 				article_({

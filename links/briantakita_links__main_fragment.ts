@@ -11,7 +11,7 @@ export function briantakita_links__main_fragment_<env_T extends relement_env_T>(
 	return (
 		blog__main_fragment_<env_T>({
 			ctx,
-			title: 'Links',
+			h1_text: 'Links',
 			class: 'briantakita_links__main_fragment',
 		}, section_(
 			linkument_c_))

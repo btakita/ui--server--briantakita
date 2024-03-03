@@ -1,3 +1,4 @@
+import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { type request_ctx_T } from 'relysjs/server'
@@ -69,7 +70,8 @@ export function portfolio__doc_html_({
 	return (
 		md_layout__doc_html_({
 			ctx,
-			title: 'Portfolio',
+			title: 'Portfolio | ' + site__title_(ctx),
+			h1_text: 'Portfolio',
 			active_link: 'portfolio',
 		}, [
 			// @formatter:off

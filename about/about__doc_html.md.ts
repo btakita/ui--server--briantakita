@@ -1,3 +1,4 @@
+import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'relysjs/server'
@@ -5,7 +6,6 @@ import {
 	bunjs__tb_a_,
 	ctx_core__tb_a_,
 	drizzle_orm__tb_a_,
-	electric_universe__tb_a_,
 	existence__tb_a_,
 	philosophy__tb_a_,
 	rappstack__tb_a_,
@@ -24,7 +24,8 @@ export function about__doc_html_({
 	return (
 		md_layout__doc_html_({
 			ctx,
-			title: 'About Brian Takita',
+			title: 'About | ' + site__title_(ctx),
+			h1_text: 'About ' + site__title_(ctx),
 			description: 'Contextual full stack systems developer',
 			active_link: 'about',
 		}, [
@@ -82,22 +83,13 @@ Abstraction organizes software libraries.
 
 Name conventions are much loved to bring organization & familiarity to a codebase. Javascript is a flexible & dynamic language. The majority of the javascript community uses the camelCase convention to join words. Yet camelCase has some disadvantages. For one, the case of a word changes depending on it's location in the variable name. The first word is lower case while the following words are Upper Case. This leads to inconsistency. Which makes global code searches more difficult.
 
-# Interests
+## Interests
 
-## Meta-Philosophy
+### Meta-Philosophy
 
 From the question "how do we model ${existence__tb_a_()}?" sprang a ${philosophy__tb_a_()}.
 
 This meta-philosophy applies language to model any reified entity. Language patterns in software & speech to create models of Existence.
-
-## ${electric_universe__tb_a_()}
-
-Viewing the Universe through the lens of Electricity & Magnetism. The same electrical equations & circuit theory apply from the micro to the cosmic. The incomprehensible becomes understood with an effective model.
-
-## 🌙 Divination
-
-Writing software is creating logic models that a machine can execute. The interface between the programmer & the machine. Like writing, programming allows one to organize an ontology using abstractions. The executable software provides feedback on the logical consistency of the model. If there are logic issues, there are bugs. With tools such as type systems, tests, & validations, the software will result in errors. The discovery process allows you to explore conceptual systems. With a logic feedback loop revealing insights into Existence.
-
 ${footnote_list__div_({ ctx })}
 			`.trim())
 			// @formatter:on

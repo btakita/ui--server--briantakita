@@ -1,3 +1,4 @@
+import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
@@ -35,7 +36,8 @@ export function open_source__doc_html_({
 	return (
 		md_layout__doc_html_({
 			ctx,
-			title: 'Open Source',
+			title: 'Open Source | ' + site__title_(ctx),
+			h1_text: 'Open Source',
 			active_link: 'open-source',
 		}, [
 			// @formatter:off
