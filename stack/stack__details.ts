@@ -5,10 +5,14 @@ export function stack__details_(...a_a1:tag_dom_T[]) {
 	return (
 		details_({
 			class: class_(
-				'!block',
+				'block',
+				'select-none',
 				'w-full',
 				'mb-4',
 				'overflow-hidden',
+				'text-skin-base',
+				'focus-outline',
+				'cursor-pointer',
 				'group')
 		}, [
 			summary_({
