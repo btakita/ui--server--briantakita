@@ -25,13 +25,13 @@ export function stack__details_(...a_a1:tag_dom_T[]) {
 						'inline-block',
 						'group-open:hidden',
 						'mr-1')
-				}, '-'),
+				}, '→'),
 				span_({
 					class: class_(
 						'hidden',
 						'group-open:inline-block',
 						'mr-1')
-				}, raw_('&larr;')),
+				}, raw_('←')),
 				'Stack'
 			]),
 			span_(a_a1.map(a=>[a, ' ']))
