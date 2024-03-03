@@ -3,6 +3,7 @@ import { socials__div_ } from '@rappstack/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
 import { raw_, type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { div_, footer_, span_ } from 'relementjs/html'
+import { social_link_button_svg_class } from '../social/index.js'
 export function briantakita__footer_<env_T extends relement_env_T>({
 	ctx,
 	no_margin_top,
@@ -38,7 +39,8 @@ export function briantakita__footer_<env_T extends relement_env_T>({
 						'my-1',
 						'p-2',
 						'hover:rotate-6',
-						'[&>svg]:scale-125')
+						'[&>svg]:scale-125'),
+					link_button_svg_class: social_link_button_svg_class,
 				}),
 				div_({
 					class: class_(

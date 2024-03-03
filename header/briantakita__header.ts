@@ -90,7 +90,12 @@ export function briantakita__header_<env_T extends relement_env_T>({
 					svg_class: class_(
 						'scale-125',
 						'sm:scale-100',
-						'hover:rotate-12')
+						'hover:rotate-12',
+						'inline-block',
+						'h-6',
+						'w-6',
+						'fill-skin-base',
+						'group-hover:fill-skin-accent')
 				})
 			])
 		])

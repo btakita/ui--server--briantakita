@@ -16,6 +16,7 @@ import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
+import { social_link_button_svg_class } from '../social/index.js'
 export function home__doc_html_({
 	ctx,
 }:{
@@ -95,7 +96,10 @@ export function home__doc_html_({
 									'mr-2',
 									'whitespace-nowrap')
 							}),
-							socials__div_({ ctx })
+							socials__div_({
+								ctx,
+								link_button_svg_class: social_link_button_svg_class,
+							})
 						])
 						: undefined,
 					hr_div_(),

@@ -1,6 +1,7 @@
 import { class_ } from 'ctx-core/html'
-import { raw_, tag_dom_T } from 'relementjs'
+import { type tag_dom_T } from 'relementjs'
 import { details_, span_, summary_ } from 'relementjs/html'
+import { heroicons_chevron_double_left_, heroicons_chevron_double_right_ } from '../icon/index.js'
 export function stack__details_(...a_a1:tag_dom_T[]) {
 	return (
 		details_({
@@ -20,18 +21,22 @@ export function stack__details_(...a_a1:tag_dom_T[]) {
 					'block',
 					'float-right')
 			}, [
-				span_({
+				heroicons_chevron_double_right_({
 					class: class_(
 						'inline-block',
 						'group-open:hidden',
+						'h-6',
+						'w-4',
 						'mr-1')
-				}, '→'),
-				span_({
+				}),
+				heroicons_chevron_double_left_({
 					class: class_(
 						'hidden',
 						'group-open:inline-block',
+						'h-4',
+						'w-4',
 						'mr-1')
-				}, raw_('←')),
+				}),
 				'Stack'
 			]),
 			span_(a_a1.map(a=>[a, ' ']))
