@@ -86,7 +86,7 @@ export function layout__doc_html_({
 								: 'light')
 				`.trim().replaceAll('					', ''))),
 				title_(title),
-				script_({ type: 'ld+json'}, raw_(JSON.stringify(ld_json)))
+				script_({ type: 'application/ld+json'}, raw_(JSON.stringify(ld_json)))
 			]),
 			body_({
 				class: class_(

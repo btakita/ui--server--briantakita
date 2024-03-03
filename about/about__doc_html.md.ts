@@ -34,7 +34,7 @@ export function about__doc_html_({
 			md__raw_(`
 I create full stack software solutions.
 
-My current preferred tooling is:
+My preferred tooling is:
 
 ${[
 	bunjs__tb_a_(), drizzle_orm__tb_a_(), ctx_core__tb_a_(), relysjs__tb_a_(), rmemo__tb_a_(), relementjs__tb_a_(), redis__tb_a_(), sqlite__tb_a_(), rappstack__tb_a_()
