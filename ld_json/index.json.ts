@@ -17,42 +17,21 @@ export default async ()=>{
 				'@id': root_Person_id,
 				url: root_Person_id,
 				name: author,
+				image: 'https://gravatar.com/avatar/a0599814ceddc2e283792f4e47c57f5e',
 				hasOccupation: [
 					{
-						'@type': 'Occupation',
+						'@type': 'Role',
 						name: 'Sr. Full Stack Engineer',
 						description: full_stack_engineer_description,
 						qualifications: full_stack_engineer_description,
-						mainEntityOfPage: about_WebPage_id,
-						/** @see {https://www.glassdoor.com/Salaries/senior-full-stack-engineer-salary-SRCH_KO0,26.htm} */
-						estimatedSalary: [{
-							"@type":"MonetaryAmountDistribution",
-							"name":"base",
-							"currency":"USD",
-							"duration":"P1Y",
-							"percentile10":"149529",
-							"median":"185417",
-							"percentile90":"232831"
-						}],
-						occupationLocation: 'remote'
+						mainEntityOfPage: about_WebPage_id
 					},
 					{
-						'@type': 'Occupation',
+						'@type': 'Role',
 						name: 'Digital Marketer',
 						description: digital_marketer_description,
 						qualifications: digital_marketer_description,
 						mainEntityOfPage: about_WebPage_id,
-						/** @see {https://www.glassdoor.com/Salaries/digital-marketer-salary-SRCH_KO0,16.htm} */
-						estimatedSalary: [{
-							"@type":"MonetaryAmountDistribution",
-							"name":"base",
-							"currency":"USD",
-							"duration":"P1Y",
-							"percentile10":"51949",
-							"median":"68783",
-							"percentile90":"91627"
-						}],
-						occupationLocation: 'remote'
 					},
 				],
 				mainEntityOfPage: [
