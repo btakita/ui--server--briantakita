@@ -110,7 +110,9 @@ export function layout__doc_html_({
   window.addEventListener('load', ()=>{
 		let script = document.createElement('script')
 		script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F2F171MSE3'
-		document.head.appendChild(script)		
+		script.async = true
+		script.defer = true
+		document.head.appendChild(script)
   })
 </script>
 				`.trim()),

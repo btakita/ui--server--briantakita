@@ -6,6 +6,7 @@ import { span_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
 	astrojs__tb_a_,
+	astropaper__tb_a_,
 	aws__tb_a_,
 	backbonejs__tb_a_,
 	briantakita_me_dev__tb_a_,
@@ -80,7 +81,7 @@ export function portfolio__doc_html_({
 			md__raw_(`
 ## [briantakita.me](https://briantakita.me)
 
-${briantakita_me_dev__tb_a_()} started from a fork. Optimized the performance, SEO, & semantic markup with json-ld. I develop & experiment with software tech on this site.
+${briantakita_me_dev__tb_a_()} started from a fork from ${astropaper__tb_a_()}. Optimized the performance, SEO, & semantic markup with json-ld. I develop & experiment with software tech on this site.
 
 ${stack__details_(
 	rappstack__tb_a_,

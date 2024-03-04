@@ -42,7 +42,7 @@ export function md_layout__doc_html_({
 				article_({
 					id: active_link,
 					class: class_(
-						'mb-28',
+						'mb-8',
 						'max-w-3xl',
 						'prose-img:border-0',
 						article_class)

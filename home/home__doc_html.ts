@@ -6,6 +6,7 @@ import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
+import { right_arrow_ } from '@rappstack/ui--server--blog/icon'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
@@ -64,6 +65,7 @@ export function home__doc_html_({
 						iconify_rss_({
 							class: class_(
 								'rss-icon',
+								'inline-block',
 								'mb-2',
 								'sm:mb-3',
 								'h-6',
@@ -75,7 +77,7 @@ export function home__doc_html_({
 					]),
 					// @formatter:off
 					p_({ id: 'about', class: 'my-2' }, [
-						'I build efficient apps & libraries using the web platform. With powerful libraries, I deliver results with simpler systems than other developers. Systems that emphasize powerful primitives, bottom-up development, & domain ontology. Unlocking the vanilla web platform to deliver productivity without framework bloat. The result is fast web sites/apps & systems that expand to handle more with less. Now & into the future.'
+						'I build efficient apps & libraries using the web platform. With powerful libraries, I deliver results with simpler systems. Systems that emphasize powerful primitives, bottom-up development, & domain ontology. Unlocking the vanilla web platform to deliver productivity without framework bloat. The result is fast web sites/apps & systems that expand to handle more with less. Now & into the future.'
 					]),
 					// @formatter:on
 					social_a1_(ctx).length > 0 ?
@@ -102,68 +104,70 @@ export function home__doc_html_({
 							})
 						])
 						: undefined,
-					hr_div_(),
-					featured__dehydrated_post_meta_a.length > 0
-						? [
-							section_({
-								id: 'featured',
-								class: class_(
-									'pt-12',
-									'pb-6')
-							}, [
-								h2_({
-									class: class_(
-										'text-2xl',
-										'font-semibold',
-										'tracking-wide')
-								}, `Featured`),
-								ul_(featured__dehydrated_post_meta_a.map(dehydrated_post_meta=>
-									blog_card__li_({
-										href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
-										dehydrated_post_meta,
-										show_heading: false
-									})
-								))
-							])
-						] : null,
-					hr_div_(),
-					section_({
-						id: 'recent-posts',
-						class: class_(
-							'pt-12',
-							'pb-6')
-					}, [
-						h2_({
+				]),
+				hr_div_(),
+				featured__dehydrated_post_meta_a.length > 0
+					? [
+						section_({
+							id: 'featured',
 							class: class_(
-								'text-2xl',
-								'font-semibold',
-								'tracking-wide')
-						}, 'Recent Posts'),
-						ul_(unfeatured__dehydrated_post_meta_a
-							.slice(0, site__home__post_count_(ctx))
-							.map(post=>
-								blog_card__li_({
-									href: `/posts/${post_slug__new(post)}`,
-									dehydrated_post_meta: post,
-									show_heading: false
-								}))),
-						div_({
-							class: class_(
-								'all-posts-btn-wrapper',
-								'my-8',
-								'text-center')
+								'pt-12',
+								'pb-6')
 						}, [
-							button__a_({ href: '/posts' }, [
-								`All Posts`,
-								svg_({
-									xmlns: 'http://www.w3.org/2000/svg'
-								}, [
-									path_({
-										d: 'm11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z'
-									})
-								])
-							])
+							h2_({
+								class: class_(
+									'text-2xl',
+									'font-semibold',
+									'tracking-wide')
+							}, `Featured`),
+							ul_(featured__dehydrated_post_meta_a.map(dehydrated_post_meta=>
+								blog_card__li_({
+									href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
+									dehydrated_post_meta,
+									show_heading: false
+								})
+							))
 						])
+					] : null,
+				hr_div_(),
+				section_({
+					id: 'recent-posts',
+					class: class_(
+						'pt-12')
+				}, [
+					h2_({
+						class: class_(
+							'text-2xl',
+							'font-semibold',
+							'tracking-wide')
+					}, 'Recent Posts'),
+					ul_(unfeatured__dehydrated_post_meta_a
+						.slice(0, site__home__post_count_(ctx))
+						.map(post=>
+							blog_card__li_({
+								href: `/posts/${post_slug__new(post)}`,
+								dehydrated_post_meta: post,
+								show_heading: false
+							}))),
+				]),
+				div_({
+					class: class_(
+						'all-posts-btn-wrapper',
+						'my-8',
+						'text-center',
+						'group')
+				}, [
+					button__a_({ href: '/posts' }, [
+						`All Posts`,
+						right_arrow_({
+							class: class_(
+								'inline-block',
+								'h-6',
+								'w-6',
+								'scale-125',
+								'fill-skin-base',
+								'group-hover:fill-skin-accent')
+						})
 					])
 				])
 			]),
