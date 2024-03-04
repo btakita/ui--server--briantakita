@@ -1,6 +1,8 @@
 import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { tag_class } from '@rappstack/ui--server--blog/tag'
+import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
 	bunjs__tb_a_,
@@ -45,8 +47,8 @@ I create full stack software solutions.
 My preferred tooling is:
 
 ${[
-	bunjs__tb_a_(), drizzle_orm__tb_a_(), ctx_core__tb_a_(), relysjs__tb_a_(), rmemo__tb_a_(), relementjs__tb_a_(), redis__tb_a_(), sqlite__tb_a_(), rappstack__tb_a_()
-].join(' ')}
+	bunjs__tb_a_, drizzle_orm__tb_a_, ctx_core__tb_a_, relysjs__tb_a_, rmemo__tb_a_, relementjs__tb_a_, redis__tb_a_, sqlite__tb_a_, rappstack__tb_a_
+].map(a_=>a_({ class: class_(tag_class) })).join(' ')}
 
 With over 20 years of professional development experience. I have been a part of many projects & fantastic teams. See a [portfolio](/portfolio) of some of my work. I'm excited about the latest set of tools. The javascript ecosystem has a comprehensive, high-performance, set of isomorphic full-stack solutions. And machine learning + vector databases. Over the last few years, I have worked on libraries to take advantage of this inevitable outcome.
 

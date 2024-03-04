@@ -1,8 +1,9 @@
+import { tag_class } from '@rappstack/ui--server--blog/tag'
 import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
 import { details_, span_, summary_ } from 'relementjs/html'
 import { heroicons_chevron_double_left_, heroicons_chevron_double_right_ } from '../icon/index.js'
-export function stack__details_(...a_a1:tag_dom_T[]) {
+export function stack__details_(...a__a1:(($p:{ class?:string })=>tag_dom_T)[]) {
 	return (
 		details_({
 			class: class_(
@@ -39,7 +40,7 @@ export function stack__details_(...a_a1:tag_dom_T[]) {
 				}),
 				'Stack'
 			]),
-			span_(a_a1.map(a=>[a, ' ']))
+			span_(a__a1.map(a_=>[a_({ class: tag_class }), ' ']))
 		])
 	)
 }
