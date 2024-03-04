@@ -7,7 +7,8 @@ export default async ()=>{
 	const root_AboutPage_id = url__join(root_Person_id, '#about')
 	const root_ContactPage_id = url__join(root_Person_id, '#contact')
 	const about_WebPage_id = url__join(website, 'about')
-	const occupation_description = 'Develops many interoperable apps + open source libraries that are simple & small in size. Creates flat architectures that scale large & small. These libraries & apps build on each other. Reactive programming with general purpose contexts. Precise & scalable domain ontology. These techniques remove incidental complexity & bloat that come with other programming paradigms.'
+	const full_stack_engineer_description = 'Develops many interoperable apps + open source libraries that are simple & small in size. Creates flat architectures that scale large & small. These libraries & apps build on each other. Reactive programming with general purpose contexts. Precise & scalable domain ontology. These techniques remove incidental complexity & bloat that come with other programming paradigms.'
+	const digital_marketer_description = 'Performs full-featured Digital Marketing Services. Excels at creating engaging websites/apps, technical SEO, & automating systems.'
 	return JSON.stringify(<Graph>{
 		'@context': 'https://schema.org',
 		'@graph': [
@@ -16,16 +17,24 @@ export default async ()=>{
 				'@id': root_Person_id,
 				url: root_Person_id,
 				name: author,
-				hasOccupation: {
-					'@type': 'Occupation',
-					name: 'Full Stack Engineer',
-					description: occupation_description,
-					qualifications: occupation_description,
-					mainEntityOfPage: about_WebPage_id,
-					// https://careerfoundry.com/en/blog/web-development/full-stack-developer-salary-guide/
-					estimatedSalary: 180_000,
-					occupationLocation: 'online'
-				},
+				hasOccupation: [
+					{
+						'@type': 'Role',
+						name: 'Full Stack Engineer',
+						description: full_stack_engineer_description,
+						qualifications: full_stack_engineer_description,
+						mainEntityOfPage: about_WebPage_id,
+						occupationLocation: 'remote'
+					},
+					{
+						'@type': 'Role',
+						name: 'Digital Marketer',
+						description: digital_marketer_description,
+						qualifications: digital_marketer_description,
+						mainEntityOfPage: about_WebPage_id,
+						occupationLocation: 'remote'
+					},
+				],
 				mainEntityOfPage: [
 					about_WebPage_id,
 					root_ContactPage_id,
