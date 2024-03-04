@@ -102,12 +102,16 @@ export function layout__doc_html_({
 				children,
 				raw_(`
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2F171MSE3"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F2F171MSE3');
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date())
+  gtag('config', 'G-F2F171MSE3')
+  window.addEventListener('load', ()=>{
+		let script = document.createElement('script')
+		script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F2F171MSE3'
+		document.head.appendChild(script)		
+  })
 </script>
 				`.trim()),
 				script_({ type: 'application/ld+json'}, raw_(JSON.stringify(ld_json)))
