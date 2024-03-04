@@ -1,6 +1,5 @@
 import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -108,7 +107,6 @@ The [Tag Vector](/posts/tag-vector-0-introduction) name system keeps the integri
 From the question "how do we model ${existence__tb_a_()}?" sprang a ${philosophy__tb_a_()}.
 
 This meta-philosophy applies language to model any reified entity. Language patterns in software & speech to create models of Existence.
-${footnote_list__div_({ ctx })}
 			`.trim())
 			// @formatter:on
 		])

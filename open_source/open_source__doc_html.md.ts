@@ -1,7 +1,7 @@
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'relysjs/server'
 import { apache2_license__tb_a_ } from '../anchor/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
@@ -86,8 +86,6 @@ ${screw_unit_md_()}
 ${generic_query_analyzer_md_()}
 
 ${poof_md_()}
-
-${footnote_list__div_({ ctx })}
 			`.trim())
 			// @formatter:on
 		])

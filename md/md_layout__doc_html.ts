@@ -1,3 +1,4 @@
+import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
@@ -46,7 +47,10 @@ export function md_layout__doc_html_({
 						'max-w-3xl',
 						'prose-img:border-0',
 						article_class)
-				}, ...children)
+				}, [
+					...children,
+					footnote_list__div_({ ctx })
+				])
 			]),
 			briantakita__footer_({ ctx })
 		])

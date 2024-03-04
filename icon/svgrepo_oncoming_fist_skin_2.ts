@@ -1,6 +1,6 @@
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
-import { defs_, linearGradient_, path_, svg_ } from 'relementjs/svg'
+import { svg_ } from 'relementjs/svg'
 // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
 /** @see {https://www.svgrepo.com/svg/434172/oncoming-fist-skin-2} */
 export function svgrepo_oncoming_fist_skin_2_(props?:{

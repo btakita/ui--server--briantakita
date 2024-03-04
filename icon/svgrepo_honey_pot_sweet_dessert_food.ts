@@ -1,6 +1,6 @@
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
-import { path_, svg_ } from 'relementjs/svg'
+import { svg_ } from 'relementjs/svg'
 // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
 /** @see {https://www.svgrepo.com/svg/405814/honey-pot} */
 export function svgrepo_honey_pot_sweet_dessert_food_(props?:{
