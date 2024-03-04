@@ -100,19 +100,22 @@ export function layout__doc_html_({
 					'selection:text-skin-inverted')
 			}, [
 				children,
+				// Google tag (gtag.js)
+				// language=html
 				raw_(`
-<!-- Google tag (gtag.js) -->
 <script>
   window.dataLayer = window.dataLayer || []
   function gtag(){dataLayer.push(arguments)}
   gtag('js', new Date())
   gtag('config', 'G-F2F171MSE3')
   window.addEventListener('load', ()=>{
-		let script = document.createElement('script')
-		script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F2F171MSE3'
-		script.async = true
-		script.defer = true
-		document.head.appendChild(script)
+		setTimeout(()=>{
+			let script = document.createElement('script')
+			script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F2F171MSE3'
+			script.async = true
+			script.defer = true
+			document.head.appendChild(script)			
+		}, 1500)
   })
 </script>
 				`.trim()),
