@@ -18,11 +18,12 @@ export default async ()=>{
 				name: author,
 				hasOccupation: {
 					'@type': 'Occupation',
-					name: 'Full Stack Developer',
+					name: 'Full Stack Engineer',
 					description: occupation_description,
 					qualifications: occupation_description,
-					mainEntityOfPage: root_Person_id,
-					estimatedSalary: 'N/A',
+					mainEntityOfPage: about_WebPage_id,
+					// https://careerfoundry.com/en/blog/web-development/full-stack-developer-salary-guide/
+					estimatedSalary: 180_000,
 					occupationLocation: 'online'
 				},
 				mainEntityOfPage: [
