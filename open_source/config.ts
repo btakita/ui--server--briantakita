@@ -1,22 +1,33 @@
 import { tb_a_ } from '@rappstack/ui--any/anchor'
-import { type tag_dom_T } from 'relementjs'
-import { a_ } from 'relementjs/html'
+import { url__join } from 'ctx-core/uri'
+import { raw_, type tag_dom_T } from 'relementjs'
+import { a_, script_ } from 'relementjs/html'
+import { SoftwareSourceCode } from 'schema-dts'
 import {
 	ado_net__tb_a_,
 	astrojs__tb_a_,
 	backbone_signal__tb_a_,
+	backbone_signal_href,
+	backbone_signal_name,
 	backbonejs__tb_a_,
 	bunjs__tb_a_,
 	c_sharp__tb_a_,
 	ccrcorp__tb_a_,
 	ctx_core__tb_a_,
+	ctx_core_dev_href,
+	ctx_core_href,
+	ctx_core_name,
 	desertrb__tb_a_,
 	drizzle_orm__tb_a_,
 	elysiajs__tb_a_,
 	generic_query_analyzer__tb_a_,
 	honk__tb_a_,
 	hyop__tb_a_,
+	hyop_href,
+	hyop_name,
 	jasmine_flow__tb_a_,
+	jasmine_flow_href,
+	jasmine_flow_name,
 	jasminejs__tb_a_,
 	jellyrb__tb_a_,
 	jquery__tb_a_,
@@ -28,12 +39,27 @@ import {
 	poloniumrb__tb_a_,
 	poof__tb_a_,
 	rappstack__tb_a_,
+	rappstack_dev_href,
+	rappstack_href,
+	rappstack_name,
 	rebuildjs__tb_a_,
+	rebuildjs_href,
+	rebuildjs_name,
 	rebuildjs_tailwind__tb_a_,
+	rebuildjs_tailwind_href,
+	rebuildjs_tailwind_name,
 	relementjs__tb_a_,
+	relementjs_href,
+	relementjs_name,
 	relysjs__tb_a_,
+	relysjs_href,
+	relysjs_name,
 	rmemo__tb_a_,
+	rmemo_href,
+	rmemo_name,
 	rr__tb_a_,
+	rr_href,
+	rr_name,
 	rspec__tb_a_,
 	ruby_on_rails__tb_a_,
 	rundavoo__tb_a_,
@@ -47,88 +73,265 @@ import {
 	unison__tb_a_,
 	winforms__tb_a_
 } from '../anchor/index.js'
+const author = {
+	'@type': 'Person',
+	name: 'Brian Takita'
+}
+const about = {
+	'@type': 'Thing',
+	name: 'Software Development'
+}
 // @formatter:off
+export const rappstack_md_ = ()=>{
+	const id = 'rappstack'
+	const name = rappstack_name
+	const url = rappstack_href
+	const codeRepository = rappstack_dev_href
+	const opener = 'rappstack (reactive app stack) is an opinionated stack that emphasizes:'
+	const item_a1 = ['reactive programming', 'general purpose contexts', 'tiny browser bundles', 'performance']
+	const tech_stack_includes = 'The tech stack includes:'
+	const stack_item_a2 = [
+		[bunjs__tb_a_(), 'bunjs'],
+		[elysiajs__tb_a_(), 'ElysiaJS'],
+		[sqlite__tb_a_(), 'SQLite'],
+		[drizzle_orm__tb_a_(), 'DrizzleORM'],
+		[tailwindcss__tb_a_(), 'TailwindCSS'],
+		[ctx_core__tb_a_(), 'ctx-core'],
+		[rmemo__tb_a_(), 'rmemo'],
+		[relementjs__tb_a_(), 'relementjs'],
+		[relysjs__tb_a_(), 'relysjs'],
+		[hyop__tb_a_(), 'hyop'],
+	]
 // language=md
-export const rappstack_md_ = ()=>`
-## ${rappstack__tb_a_({ id: 'rappstack' })}
+	return `
+## ${rappstack__tb_a_({ id })}
 
-rappstack (reactive app stack) is an opinionated stack that emphasizes:
+${opener}
 
-* reactive programming
-* general purpose contexts
-* tiny browser bundles
-* performance
+${item_a1.map(item=>'* ' + item).join('\n')}
 
-The tech stack includes:
+${tech_stack_includes}
 
-${[
-	bunjs__tb_a_(),
-	elysiajs__tb_a_(),
-	sqlite__tb_a_(),
-	drizzle_orm__tb_a_(),
-	tailwindcss__tb_a_(),
-	ctx_core__tb_a_(),
-	rmemo__tb_a_(),
-	relementjs__tb_a_(),
-	relysjs__tb_a_(),
-	hyop__tb_a_(),
-].join(' ')}
+${stack_item_a2.map(a1=>a1[0]).join(' ')}
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'WebApplication',
+	name,
+	url,
+	codeRepository,
+	description:
+    opener + '\n\n'
+		+ item_a1.map(item=>'- ' + item).join('\n') + '\n\n'
+		+ tech_stack_includes + '\n\n'
+		+ stack_item_a2.map(a1=>a1[1]).join(', '),
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2024-02-06',
+	author,
+	about
+})))}
 `
+}
+export const rmemo_md_ = ()=>{
+	const id = 'rmemo'
+	const name = rmemo_name
+	const url = rmemo_href
+	const codeRepository = rmemo_href
+	const opener = 'rmemo is a tiny no-fluff reactive state management library. The primitive is a reactive memo. A reactive signal is a reactive memo that has a public setter property. rmemo includes memosig, lock_memosig, & a rich api for your reactive state management needs. Features include:'
+	const item_a2 = [
+		['`memo_`', 'memo_'],
+		['`signal_`', 'signal_'],
+		['`memosig_`', 'memosig_'],
+		['`lock_memosig_`', 'lock_memosig_'],
+		['general purpose contexts with [\`ctx-core/be\`](https://github.com/ctx-core/be)', 'general purpose contexts with ctx-core/be'],
+		['autosubscriptions'],
+		['async support'],
+		['a terse & focused api'],
+		['performance'],
+		['reactive state management library with the smallest full featured bundle size'],
+		['integration with garbage collector via WeakRef'],
+	]
 /// language=md
-export const rmemo_md_ = ()=>`
-## ${rmemo__tb_a_({ id: 'rmemo' })}
+	return `
+## ${rmemo__tb_a_({ id })}
 
-rmemo is a tiny no-fluff reactive state management library. The primitive is a reactive memo. A reactive signal is a reactive memo that has a public setter property. rmemo includes memosig, lock_memosig, & a rich api for your reactive state management needs. Features include:
+${opener}
 
-* \`memo_\`
-* \`signal_\`
-* \`memosig_\`
-* \`lock_memosig_\`
-* general purpose contexts with [\`ctx-core/be\`](https://github.com/ctx-core/be)
-* autosubscriptions
-* async support
-* a terse & focused api
-* performance
-* reactive state management library with the smallest full featured bundle size
-* integration with garbage collector via WeakRef
+${item_a2.map(a1=>`* ${a1[0]}`).join('\n')}
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description:
+		opener + '\n\n'
+		+ item_a2.map(a1=>`* ${a1[1] ?? a1[0]}`).join('\n'),
+	license: url__join(rmemo_href, '/blob/main/LICENSE'),
+	dateCreated: '2023-11-17',
+	author,
+	about
+})))}
 `
+}
 /// language=md
-export const relementjs_md_ = ()=>`
-## ${relementjs__tb_a_({ id: 'relementjs' })}
+export const relementjs_md_ = ()=>{
+	const id = 'relementjs'
+	const name = relementjs_name
+	const url = relementjs_href
+	const codeRepository = relementjs_href
+	const description = 'Isomorphic ui rendering & state management on the browser & server. The smallest reactive UI library on the browser & server. relementjs scales large & small with tree-shakable modules for rendering, reactivity, contexts, & hydration.'
+	return `
+## ${relementjs__tb_a_({ id })}
 
-Isomorphic ui rendering & state management on the browser & server. The smallest reactive UI library on the browser & server. relementjs scales large & small with tree-shakable modules for rendering, reactivity, contexts, & hydration.
+${description}
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2023-11-23',
+	author,
+	about
+})))}
 `
+}
 /// language=md
-export const rebuildjs_md_ = ()=>`
-## ${rebuildjs__tb_a_({ id: 'rebuildjs' })}
+export const rebuildjs_md_ = ()=>{
+	const id = 'rebuildjs'
+	const name = rebuildjs_name
+	const url = rebuildjs_href
+	const codeRepository = rebuildjs_href
+	const description = `Simple hackable alternative to vite for Multi-Page Apps.
 
-Simple hackable alternative to vite for Multi-Page Apps.
+This library provides esbuild functions for dev & production environments. It forms a core for an app server stack.`
+	return `
+## ${rebuildjs__tb_a_({ id })}
 
-This library provides esbuild functions for dev & production environments. It forms a core for an app server stack.
+${description}
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2023-12-12',
+	author,
+	about
+})))}
 `
+}
 /// language=md
-export const relysjs_md_ = ()=>`
-## ${relysjs__tb_a_({ id: 'relysjs' })}
+export const relysjs_md_ = ()=>{
+	const id = 'relysjs'
+	const name = relysjs_name
+	const url = relysjs_href
+	const codeRepository = relysjs_href
+	const description = 'Reactive web app server. Focuses on MPAs with simple server middleware &amp; browser build api. Uses a rebuildjs core with Bunjs, Elysia, ESBuild, rmemo, & ctx-core'
+	return `
+## ${relysjs__tb_a_({ id })}
 
-Reactive web app server. Focuses on MPAs with simple server middleware &amp; browser build api. Uses a rebuildjs core with Bunjs, Elysia, ESBuild, rmemo, & ctx-core
+${description}
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2023-12-11',
+	author,
+	about
+})))}
 `
+}
 /// language=md
-export const rebuildjs_tailwind_md_ = ()=>`
-## ${rebuildjs_tailwind__tb_a_({ id: 'rebuildjs_tailwind' })}
+export const rebuildjs_tailwind_md_ = ()=>{
+	const id = 'rebuildjs_tailwind'
+	const name = rebuildjs_tailwind_name
+	const url = rebuildjs_tailwind_href
+	const codeRepository = rebuildjs_tailwind_href
+	const description = 'Tailwindcss plugin for rebuildjs.'
+	return `
+## ${rebuildjs_tailwind__tb_a_({ id })}
 
-Tailwindcss plugin for rebuildjs
+${description}
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2024-1-1',
+	author,
+	about
+})))}
 `
+}
 /// language=md
-export const hyop_md_ = ()=>`
-## ${hyop__tb_a_({ id: 'hyop' })}
+export const hyop_md_ = ()=>{
+	const id = 'hyop'
+	const name = hyop_name
+	const url = hyop_href
+	const codeRepository = hyop_href
+	const description = 'Hypermedia Operation or Hydration Operation. Tiny library (starting at 61 B) to hydrate operations in the hyop attribute. Remove bloat from hydration & JS payloads. Use standalone or with other Hypermedia libraries like HTMX...Hydration as Hypermedia.'
+	return `
+## ${hyop__tb_a_({ id })}
 
-Hypermedia Operation or Hydration Operation. Tiny library (starting at 61 B) to hydrate operations in the hyop attribute. Remove bloat from hydration & JS payloads. Use standalone or with other Hypermedia libraries like HTMX...Hydration as Hypermedia.
+${description}
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2024-2-10',
+	author,
+	about
+})))}
 `
+}
 /// language=md
-export const ctx_core_md_ = (ctx_core_catch_all__footnote__sup_?:()=>tag_dom_T)=>`
-## ${ctx_core__tb_a_({ id: 'ctx-core' })}
+export const ctx_core_md_ = (ctx_core_catch_all__footnote__sup_?:()=>tag_dom_T)=>{
+	const id = 'ctx-core'
+	const name = ctx_core_name
+	const url = ctx_core_href
+	const codeRepository = ctx_core_dev_href
+	const starter = 'Over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core began in 2016 & continues today'
+	return `
+## ${ctx_core__tb_a_({ id })}
 
-Over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core began in 2016 & continues today ${ctx_core_catch_all__footnote__sup_?.() ?? ''}.
+${starter}${ctx_core_catch_all__footnote__sup_?.() ?? ''}.
 
 ### Motivation
 
@@ -161,7 +364,23 @@ I use ctx-core to maintain software with:
 ctx-core uses dependency-injection of a \`ctx\` & "beings". A "being" is a function created with the \`be_\` factory function. The flat architecture reduces incidental complexity. To manage complex domains, nested architecture provides scoping. I created the [Tag Vector](/posts/tag-vector-0-introduction) Convention while working on ctx-core. Tag Vector encodes tags  joined by vectors. Tag Vector express data structure shapes & complex domains within a flat architecture.
 
 I use ctx-core along with ${rmemo__tb_a_()} to manage reactive state on the server & the browser. In my work, I favor ${rmemo__tb_a_()} to render components on the server & browser. ctx-core also supports reactive state with ${nanostores__tb_a_()}, ${solidjs__tb_a_()} signals, & ${svelte_stores__tb_a_()}.
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description: starter + '.',
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2016-04-27',
+	author,
+	about
+})))}
 `
+}
 /// language=md
 export const nanostores_md_ = (nanostores_breadth_first_queue__footnote__sup_?:()=>tag_dom_T)=>`
 ## ${nanostores__tb_a_({ id: 'nanostores' })}
@@ -177,23 +396,95 @@ export const sveltejs_md_ = (
 I contributed the breadth first queuing algorithm to svelte stores${svelte_cyclic_breadth_first_queue__footnote__sup_?.() ?? ''}.
 `
 /// language=md
-export const backbone_signal_md_ = ()=>`
-## ${backbone_signal__tb_a_({ id: 'backbone_signal' })}
+export const backbone_signal_md_ = ()=>{
+	const id = 'backbone_signal'
+	const name = backbone_signal_name
+	const url = backbone_signal_href
+	const codeRepository = backbone_signal_href
+	const description = 'A rich Signal & Slots (Reactive Programming) api on Backbone Models. It is composable, allows you to encapsulate loader logic, and have fine grained control over listening to change events.'
+	return `
+## ${backbone_signal__tb_a_({ id })}
 
-I started using global state management with ${backbonejs__tb_a_()} while Lead Developer at ${honk__tb_a_()}. I created  ${a_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript' }, `backbone-signal`)} to add global state management to Backbone.js. I used this across different projects including ${rundavoo__tb_a_()}.
+${description}
+
+I started using global state management with ${backbonejs__tb_a_()} while Lead Developer at ${honk__tb_a_()}. I created ${a_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript' }, `backbone-signal`)} to add global state management to Backbone.js. I used this across different projects including ${rundavoo__tb_a_()}.
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2013-08-30',
+	author,
+	about
+})))}
 `
+}
 /// language=md
-export const jasmine_flow_md_ = ()=>`
-## ${jasmine_flow__tb_a_({ id: 'jasmine_flow' })}
+export const jasmine_flow_md_ = ()=>{
+	const id = 'jasmine_flow'
+	const name = jasmine_flow_name
+	const url = jasmine_flow_href
+	const codeRepository = jasmine_flow_href
+	const description = 'Flow testing for Jasmine.'
+	return `
+## ${jasmine_flow__tb_a_({ id })}
+
+${description}
 
 At ${rundavoo__tb_a_()}, I created ${a_({ href: '/posts/jasmine-flow-fast-and-thourough-testing' }, `jasmine-flow`)}. Jasmine-flow facilitates linear flow testing...saving effort in maintaining automated tests. This was hard-learned from maintaining various large apps while at ${honk__tb_a_()} & ${pivotal_labs__tb_a_()}.
-`
-/// language=md
-export const rr_md_ = ()=>`
-## ${rr__tb_a_({ id: 'rr' })}
 
-RR (double Ruby) is a test double library for the Ruby language. I ${a_({ href: '/posts/introducing-rr' }, `released RR`)} back in 2008. RR features a terse api to for a high signal to syntax noise ratio. Which allows a read & write friendly automated testing. I used global state management to manage complex data interactions. I stopped development when I moved to full-stack Javascript development. ${tb_a_({ href: 'https://github.com/kou', nofollow: true }, `Sutou Kouhei`)} began maintaining this project in 2015.
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2013-09-10',
+	author,
+	about
+})))}
 `
+}
+/// language=md
+export const rr_md_ = ()=>{
+	const id = 'rr'
+	const name = rr_name
+	const url = rr_href
+	const codeRepository = rr_href
+	const description = 'RR is a test double framework for Ruby that features a rich selection of double techniques and a terse syntax.'
+	return `
+## ${rr__tb_a_({ id })}
+
+${description}
+
+I ${a_({ href: '/posts/introducing-rr' }, `released RR`)} back in 2008. RR features a terse api to for a high signal to syntax noise ratio. Which allows a read & write friendly automated testing. I used global state management to manage complex data interactions. I stopped development when I moved to full-stack Javascript development. ${tb_a_({ href: 'https://github.com/kou', nofollow: true }, `Sutou Kouhei`)} began maintaining this project in 2015.
+
+${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCode>{
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareSourceCode',
+	'@id': '#' + id,
+	applicationCategory: 'SoftwareApplication',
+	name,
+	url,
+	codeRepository,
+	description,
+	license: url__join(codeRepository, '/blob/main/LICENSE'),
+	dateCreated: '2013-08-30',
+	author,
+	about
+})))}
+`
+}
 /// language=md
 export const rspec_md_ = (rspec_nested_describes__footnote__sup_?:()=>tag_dom_T)=>`
 ## ${rspec__tb_a_({ id: 'rspec' })}

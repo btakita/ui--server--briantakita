@@ -86,7 +86,6 @@ export function layout__doc_html_({
 								: 'light')
 				`.trim().replaceAll('					', ''))),
 				title_(title),
-				script_({ type: 'application/ld+json'}, raw_(JSON.stringify(ld_json)))
 			]),
 			body_({
 				class: class_(
@@ -110,7 +109,8 @@ export function layout__doc_html_({
   gtag('config', 'G-F2F171MSE3');
 </script>
 				`.trim()),
-				children
+				children,
+				script_({ type: 'application/ld+json'}, raw_(JSON.stringify(ld_json)))
 			])
 		])
 	)
