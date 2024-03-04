@@ -7,6 +7,7 @@ export default async ()=>{
 	const root_AboutPage_id = url__join(root_Person_id, '#about')
 	const root_ContactPage_id = url__join(root_Person_id, '#contact')
 	const about_WebPage_id = url__join(website, 'about')
+	const occupation_description = 'Develops many interoperable apps + open source libraries that are simple & small in size. Creates flat architectures that scale large & small. These libraries & apps build on each other. Reactive programming with general purpose contexts. Precise & scalable domain ontology. These techniques remove incidental complexity & bloat that come with other programming paradigms.'
 	return JSON.stringify(<Graph>{
 		'@context': 'https://schema.org',
 		'@graph': [
@@ -18,7 +19,11 @@ export default async ()=>{
 				hasOccupation: {
 					'@type': 'Occupation',
 					name: 'Full Stack Developer',
-					qualifications: 'Develops many interoperable apps + open source libraries that are simple & small in size. Creates flat architectures that scale large & small. These libraries & apps build on each other. Reactive programming with general purpose contexts. Precise & scalable domain ontology. These techniques remove incidental complexity & bloat that come with other programming paradigms.',
+					description: occupation_description,
+					qualifications: occupation_description,
+					mainEntityOfPage: root_Person_id,
+					estimatedSalary: 'N/A',
+					occupationLocation: 'online'
 				},
 				mainEntityOfPage: [
 					about_WebPage_id,
