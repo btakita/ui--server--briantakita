@@ -38,7 +38,7 @@ export function layout__doc_html_({
 			lang: 'en'
 		}, [
 			head_([
-				meta_({ charset: 'utf-8' }),
+				meta_({ 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' }),
 				meta_({ name: 'viewport', content: 'width=device-width' }),
 				meta_({ name: 'title', content: title }),
 				meta_({ name: 'description', content: description }),
