@@ -99,6 +99,7 @@ export function layout__doc_html_({
 					'selection:bg-opacity-70',
 					'selection:text-skin-inverted')
 			}, [
+				children,
 				raw_(`
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2F171MSE3"></script>
@@ -109,7 +110,6 @@ export function layout__doc_html_({
   gtag('config', 'G-F2F171MSE3');
 </script>
 				`.trim()),
-				children,
 				script_({ type: 'application/ld+json'}, raw_(JSON.stringify(ld_json)))
 			])
 		])
