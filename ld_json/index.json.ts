@@ -19,19 +19,39 @@ export default async ()=>{
 				name: author,
 				hasOccupation: [
 					{
-						'@type': 'Role',
-						name: 'Full Stack Engineer',
+						'@type': 'Occupation',
+						name: 'Sr. Full Stack Engineer',
 						description: full_stack_engineer_description,
 						qualifications: full_stack_engineer_description,
 						mainEntityOfPage: about_WebPage_id,
+						/** @see {https://www.glassdoor.com/Salaries/senior-full-stack-engineer-salary-SRCH_KO0,26.htm} */
+						estimatedSalary: [{
+							"@type":"MonetaryAmountDistribution",
+							"name":"base",
+							"currency":"USD",
+							"duration":"P1Y",
+							"percentile10":"149529",
+							"median":"185417",
+							"percentile90":"232831"
+						}],
 						occupationLocation: 'remote'
 					},
 					{
-						'@type': 'Role',
+						'@type': 'Occupation',
 						name: 'Digital Marketer',
 						description: digital_marketer_description,
 						qualifications: digital_marketer_description,
 						mainEntityOfPage: about_WebPage_id,
+						/** @see {https://www.glassdoor.com/Salaries/digital-marketer-salary-SRCH_KO0,16.htm} */
+						estimatedSalary: [{
+							"@type":"MonetaryAmountDistribution",
+							"name":"base",
+							"currency":"USD",
+							"duration":"P1Y",
+							"percentile10":"51949",
+							"median":"68783",
+							"percentile90":"91627"
+						}],
 						occupationLocation: 'remote'
 					},
 				],
