@@ -39,7 +39,17 @@ export default async ()=>{
 					root_ContactPage_id,
 				],
 				subjectOf: { '@id': about_WebPage_id },
-				sameAs: social_a1.filter(social=>social.active).map(social=>social.href),
+				sameAs: [
+					...social_a1.filter(social=>social.active).map(social=>social.href),
+					'https://linktr.ee/briantakita',
+					'https://www.youtube.com/channel/UC3gg23rxm1sM43sQWRGKEqQ',
+					'https://twitter.com/BrianTakita/',
+					'https://www.facebook.com/brian.takita',
+					'https://angel.co/brian-takita',
+					'https://www.pinterest.com/briantakita/',
+					'http://hunch.com/briantakita/profile',
+					'https://briantakita.brandyourself.com/',
+				],
 			},
 			{
 				'@type': 'AboutPage',
