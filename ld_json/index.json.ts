@@ -58,6 +58,8 @@ export default async ()=>{
 					'https://www.slideshare.net/brian_takita',
 					'https://www.pinterest.com/briantakita/',
 					'https://www.quora.com/profile/Brian-Takita',
+					'https://substack.com/@btak',
+					'https://www.tiktok.com/@briantakita',
 					'https://about.me/brian_takita',
 					'https://www.reddit.com/user/briantakita/',
 					'https://soundcloud.com/brian-takita',
