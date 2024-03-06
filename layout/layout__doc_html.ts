@@ -1,11 +1,12 @@
+import { site__ld_json_ } from '@rappstack/domain--server/ld_json'
 import { site__author_, site__description_, site__title_ } from '@rappstack/domain--server/site'
+import { ld_json__script_ } from '@rappstack/ui--server/ld_json'
 import { import_meta_env_ } from 'ctx-core/env'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
 import { doc_html_ } from 'relementjs/server'
 import { assets_, assets__new, type assets_T, type request_ctx_T, request_url_ } from 'relysjs/server'
-import ld_json from '../ld_json/index.json.js'
 import favicon_svg from '../public/assets/favicon.svg'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
 const google_site_verification = import_meta_env_().PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -119,7 +120,7 @@ export function layout__doc_html_({
   })
 </script>
 				`.trim()),
-				script_({ type: 'application/ld+json'}, raw_(JSON.stringify(ld_json)))
+				ld_json__script_(site__ld_json_(ctx)),
 			])
 		])
 	)
