@@ -142,7 +142,14 @@ You add or replace securities by the following. Name, Industry Peers, Industry S
 
 ### ${tb_a_({ href: 'https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership', nofollow: true }, `Women In Leadership Report`)}
 
-Market survey of Women in corporate leadership positions. Scoring  applied to analysis. Analysis includes Best Performing Companies, Best Performing Large Companies, Worst Performing Companies, Best & Worst Performing Funds, Largest Funds, & Socially Responsible Funds.
+Market survey of Women in corporate leadership positions. Scoring applied to analysis. Analysis includes:
+
+- Best Performing Companies
+- Best Performing Large Companies
+- Worst Performing Companies
+- Best & Worst Performing Funds
+- Largest Funds
+- Socially Responsible Funds.
 
 ${stack__details_(
 	nodejs__tb_a_,
