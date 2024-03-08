@@ -1,6 +1,6 @@
-import { site__ld_json_ } from '@rappstack/domain--server/ld_json'
+import { jsonld_Graph_ } from '@rappstack/domain--server/jsonld'
 import { site__author_, site__description_, site__title_ } from '@rappstack/domain--server/site'
-import { ld_json__script_ } from '@rappstack/ui--server/ld_json'
+import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
 import { import_meta_env_ } from 'ctx-core/env'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
@@ -120,7 +120,7 @@ export function layout__doc_html_({
   })
 </script>
 				`.trim()),
-				ld_json__script_(site__ld_json_(ctx)),
+				jsonld__script_(jsonld_Graph_(ctx)),
 			])
 		])
 	)

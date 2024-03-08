@@ -36,11 +36,12 @@
 		"@btakita/ui--server--linkument": "workspace:*",
 		"ctx-core": "^6.5.4",
 		"marked": "^12.0.1",
-		"relementjs": "^0.74.4",
-		"schema-dts": "^1.1.2"
+		"relementjs": "^0.74.4"
 	},
 	"devDependencies": {
-		"bun-types": "latest"
+		"@btakita/schema-dts": "^1.1.3-patch",
+		"bun-types": "latest",
+		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
 		"typescript": "^5.4.2"
