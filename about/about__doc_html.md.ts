@@ -1,9 +1,21 @@
-import { site__title_ } from '@rappstack/domain--server/site'
+import type { WebPage } from '@btakita/schema-dts'
+import { BreadcrumbList_id_ref_ } from '@rappstack/domain--server--blog/breadcrumb'
+import { jsonld__add } from '@rappstack/domain--server/jsonld'
+import { site__title_, site__website_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
-import { jsonld_AboutPage__description_ } from 'briantakita.me/config/index.js'
+import {
+	AboutPage__description_,
+	AboutPage_id_ref_,
+	type schema_org_rdfa_props_T,
+	schema_org_rdfa_vocab
+} from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
-import { type request_ctx_T } from 'relysjs/server'
+import { url__join } from 'ctx-core/uri'
+import { raw_ } from 'relementjs'
+import { div_ } from 'relementjs/html'
+import { type request_ctx_T, request_url_ } from 'relysjs/server'
 import {
 	bunjs__tb_a_,
 	ctx_core__tb_a_,
@@ -31,31 +43,36 @@ export function about__doc_html_({
 }:{
 	ctx:request_ctx_T
 }) {
+	jsonld__add(ctx, <WebPage>{
+		'@type': 'WebPage',
+		'@id': url__join(site__website_(ctx)!, request_url_(ctx).pathname, '#WebPage'),
+		'about': AboutPage_id_ref_(ctx),
+		breadcrumb: BreadcrumbList_id_ref_(ctx),
+	})
 	return (
 		md_layout__doc_html_({
 			ctx,
 			title: 'About | ' + site__title_(ctx),
 			h1_text: 'About ' + site__title_(ctx),
-			description: jsonld_AboutPage__description_(ctx),
+			description: AboutPage__description_(ctx),
 			active_link: 'about',
+			article_props: <schema_org_rdfa_props_T>{
+				vocab: schema_org_rdfa_vocab,
+				typeof: 'Article',
+			},
 		}, [
 			// @formatter:off
 			// language=md
 			md__raw_(`
-I create full stack software solutions.
-
-My preferred tooling is:
-
-${[
-	bunjs__tb_a_, drizzle_orm__tb_a_, ctx_core__tb_a_, relysjs__tb_a_, rmemo__tb_a_, relementjs__tb_a_, redis__tb_a_, sqlite__tb_a_, rappstack__tb_a_
-].map(a_=>a_({ class: class_(tag_class) })).join(' ')}
-
-With over 20 years of professional development experience. I have been a part of many projects & fantastic teams. See a [portfolio](/portfolio) of some of my work. I'm excited about the latest set of tools. The javascript ecosystem has a comprehensive, high-performance, set of isomorphic full-stack solutions. And machine learning + vector databases. Over the last few years, I have worked on libraries to take advantage of this inevitable outcome.
+I create full stack software solutions${footnote__sup_({ ctx, id: 'preferred-tooling' }, [
+	'My preferred tooling is:',
+	raw_([bunjs__tb_a_, drizzle_orm__tb_a_, ctx_core__tb_a_, relysjs__tb_a_, rmemo__tb_a_, relementjs__tb_a_, redis__tb_a_, sqlite__tb_a_, rappstack__tb_a_].map(a_=>a_({ class: class_(tag_class) })).join(' '))
+])}. With over 20 years of professional development experience. Here is a [portfolio](/portfolio) of some of my work. I focus on creating isomorphic codebases. Sharing logic & rendering between the server & browser. This maximizes flexibility with crafting web apps. This detailed crafting creates efficient apps free from bloat.
 
 [//]: 💖
 ## Crafting software since 2002 with ${svgrepo_sparkling_heart_({ class: 'inline-block h-6 w-6' })}
 
-Personal systems has been an instrumental tool in working with the chaos of the world. My career began during the .com collapse. It continued with the rise of Web 2.0, consulting gigs with startups, Web 3.0, & the rise of machine learning. With these changes, I strive to create continuity in work.
+Personal systems has been an instrumental tool in working with the chaos of the world. My career began during the .com collapse. It continued with the rise of Web 2.0, consulting gigs with startups, Web 3.0, & the rise of machine learning. With these changes, I strive to create continuity in work & the rest of my life.
 
 [//]: 👊🏼
 ## ${svgrepo_oncoming_fist_skin_2_({ class: 'inline-block h-6 w-6' })} Skin in the game
@@ -80,7 +97,7 @@ Development methods, frameworks, & patterns help. To improve code re-use, mainta
 
 * Domain Driven Design
 * Flat Architecture & Name Systems
-* MPA & SPA web app architectures
+* Multi Page App & Single Page App architectures
 * Software prototypes
 * Using Monorepos & Git submodules to maximize code re-use
 

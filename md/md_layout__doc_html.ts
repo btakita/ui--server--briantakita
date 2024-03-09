@@ -2,6 +2,7 @@ import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
+import type { tag_props_T } from 'relementjs/any'
 import { article_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
@@ -15,6 +16,7 @@ export function md_layout__doc_html_({
 	description,
 	active_link,
 	article_class,
+	article_props,
 }:{
 	ctx:request_ctx_T
 	title:string
@@ -22,6 +24,7 @@ export function md_layout__doc_html_({
 	description?:string
 	active_link?:briantakita_header__link_T
 	article_class?:string
+	article_props?:Exclude<tag_props_T<HTMLElement>, 'class'>
 }, ...children:tag_dom_T[]) {
 	return (
 		layout__doc_html_({
@@ -46,7 +49,8 @@ export function md_layout__doc_html_({
 						'mb-8',
 						'max-w-3xl',
 						'prose-img:border-0',
-						article_class)
+						article_class),
+					...article_props,
 				}, [
 					...children,
 					footnote_list__div_({ ctx })
