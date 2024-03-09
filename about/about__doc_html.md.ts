@@ -1,6 +1,7 @@
 import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
+import { jsonld_AboutPage__description_ } from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
@@ -35,7 +36,7 @@ export function about__doc_html_({
 			ctx,
 			title: 'About | ' + site__title_(ctx),
 			h1_text: 'About ' + site__title_(ctx),
-			description: 'Contextual full stack systems developer',
+			description: jsonld_AboutPage__description_(ctx),
 			active_link: 'about',
 		}, [
 			// @formatter:off
