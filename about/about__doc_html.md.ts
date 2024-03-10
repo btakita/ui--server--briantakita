@@ -1,20 +1,22 @@
-import type { WebPage } from '@btakita/schema-dts'
+import { AboutPage__description_, AboutPage_id_, AboutPage_id_ref_ } from '@btakita/domain--server--briantakita/jsonld'
+import type { Article, WebPage } from '@btakita/schema-dts'
 import { BreadcrumbList_id_ref_ } from '@rappstack/domain--server--blog/breadcrumb'
-import { jsonld__add } from '@rappstack/domain--server/jsonld'
+import { id_be_id_ref_jsonld_pair_ } from '@rappstack/domain--server/jsonld'
+import {
+	type schema_org_props_rdfa_T,
+	schema_org_rdfa_vocab,
+	type schema_org_thing_rdfa_T
+} from '@rappstack/domain--server/rdfa'
+import { request_url__pathname_ } from '@rappstack/domain--server/request'
 import { site__title_, site__website_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
-import {
-	AboutPage__description_,
-	AboutPage_id_ref_,
-	type schema_org_rdfa_props_T,
-	schema_org_rdfa_vocab
-} from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
 import { raw_ } from 'relementjs'
-import { type request_ctx_T, request_url_ } from 'relysjs/server'
+import { link_ } from 'relementjs/html'
+import { type request_ctx_T } from 'relysjs/server'
 import {
 	bunjs__tb_a_,
 	ctx_core__tb_a_,
@@ -42,12 +44,6 @@ export function about__doc_html_({
 }:{
 	ctx:request_ctx_T
 }) {
-	jsonld__add(ctx, <WebPage>{
-		'@type': 'WebPage',
-		'@id': url__join(site__website_(ctx)!, request_url_(ctx).pathname, '#WebPage'),
-		'about': AboutPage_id_ref_(ctx),
-		breadcrumb: BreadcrumbList_id_ref_(ctx),
-	})
 	return (
 		md_layout__doc_html_({
 			ctx,
@@ -55,11 +51,8 @@ export function about__doc_html_({
 			h1_text: 'About ' + site__title_(ctx),
 			description: AboutPage__description_(ctx),
 			active_link: 'about',
-			article_props: <schema_org_rdfa_props_T>{
-				vocab: schema_org_rdfa_vocab,
-				typeof: 'Article',
-			},
 		}, [
+			link_(<schema_org_props_rdfa_T<Article>>{ property: 'about', href: AboutPage_id_(ctx) }),
 			// @formatter:off
 			// language=md
 			md__raw_(`

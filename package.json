@@ -27,6 +27,7 @@
 		"./package.json": "./package.json"
 	},
 	"dependencies": {
+		"@btakita/domain--server--briantakita": "workspace:*",
 		"@rappstack/domain--any--blog": "workspace:*",
 		"@rappstack/domain--server": "workspace:*",
 		"@rappstack/domain--server--blog": "workspace:*",
