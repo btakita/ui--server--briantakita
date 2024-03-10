@@ -1,19 +1,11 @@
-import { AboutPage__description_, AboutPage_id_, AboutPage_id_ref_ } from '@btakita/domain--server--briantakita/jsonld'
-import type { Article, WebPage } from '@btakita/schema-dts'
-import { BreadcrumbList_id_ref_ } from '@rappstack/domain--server--blog/breadcrumb'
-import { id_be_id_ref_jsonld_pair_ } from '@rappstack/domain--server/jsonld'
-import {
-	type schema_org_props_rdfa_T,
-	schema_org_rdfa_vocab,
-	type schema_org_thing_rdfa_T
-} from '@rappstack/domain--server/rdfa'
-import { request_url__pathname_ } from '@rappstack/domain--server/request'
-import { site__title_, site__website_ } from '@rappstack/domain--server/site'
+import { AboutPage__description_, AboutPage_id_ } from '@btakita/domain--server--briantakita/jsonld'
+import type { Article } from '@btakita/schema-dts'
+import { type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
 import { class_ } from 'ctx-core/html'
-import { url__join } from 'ctx-core/uri'
 import { raw_ } from 'relementjs'
 import { link_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
