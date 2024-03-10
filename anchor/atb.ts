@@ -1,6 +1,4 @@
-import { type target_blank_a__props_T, tb_a_, tb_a___new } from '@rappstack/ui--any/anchor'
-import { type relement_env_T, type tag_dom_T } from 'relementjs'
-import type { Node_T } from 'relementjs/isomorphic'
+import { tb_a___new } from '@rappstack/ui--any/anchor'
 export const abstraction__tb_a_ = tb_a___new({ href: 'https://github.com/btakita/philosophy/blob/master/src/abstraction.md' }, 'Abstraction')
 export const ado_net__tb_a_ = tb_a___new({ href: 'https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview' }, 'ADO.NET')
 export const apache2_license__tb_a_ = tb_a___new({ href: 'https://www.apache.org/licenses/LICENSE-2.0.html', nofollow: true }, 'Apache 2 license')
