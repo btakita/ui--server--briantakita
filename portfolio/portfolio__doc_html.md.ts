@@ -72,7 +72,7 @@ export function portfolio__doc_html_({
 	ctx:request_ctx_T
 }) {
 	const title = 'Portfolio | ' + site__title_(ctx)
-	const description = "Brian Takita's client project work."
+	const description = 'Brian Takita\'s client project work.'
 	WebPage__name__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	return (

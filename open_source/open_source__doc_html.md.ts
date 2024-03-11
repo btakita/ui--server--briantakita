@@ -114,7 +114,10 @@ ${poof_md_()}
 				ctx,
 				id: 'nanostores_breadth_first_queue'
 			}, [
-				tb_a_({ href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f', nofollow: true },
+				tb_a_({
+						href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f',
+						nofollow: true
+					},
 					'Nano Stores breadth first queue')
 			])
 		)
@@ -122,7 +125,10 @@ ${poof_md_()}
 	function svelte_cyclic_breadth_first_queue__footnote__sup_() {
 		return (
 			footnote__sup_({ ctx, id: 'svelte_cyclic_breadth_first_queue' }, [
-				tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6', nofollow: true },
+				tb_a_({
+						href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6',
+						nofollow: true
+					},
 					'Svelte Cyclic breadth first queue')
 			])
 		)
