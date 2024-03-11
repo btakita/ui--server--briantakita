@@ -5,7 +5,7 @@ import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
-import { schema_org_Article__link_a1_, schema_org_WebPage__link_a1_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { article_, div_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { apache2_license__tb_a_ } from '../anchor/index.js'
@@ -50,9 +50,8 @@ export function open_source__doc_html_({
 			h1_text: 'Open Source',
 			active_link: 'open-source',
 		}, [
-			schema_org_WebPage__link_a1_(ctx),
 			article_({
-				...schema_org_Article_rdfa
+				...schema_org_Article_rdfa,
 			}, [
 				schema_org_Article__link_a1_(ctx),
 				div_({
