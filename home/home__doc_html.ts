@@ -1,8 +1,9 @@
 import { sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
-import { WebPage__description__set, WebPage_ref_id_ } from '@rappstack/domain--server/jsonld'
+import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_Article_rdfa, } from '@rappstack/domain--server/rdfa'
+import { site__title_ } from '@rappstack/domain--server/site'
 import { social_a1_ } from '@rappstack/domain--server/social'
 import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
@@ -11,7 +12,7 @@ import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { right_arrow_ } from '@rappstack/ui--server--blog/icon'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
-import { schema_org_Article_id__link_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article_id__link_, schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { a_, article_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -31,16 +32,20 @@ export function home__doc_html_({
 	const featured__dehydrated_post_meta_a =
 		sorted_dehydrated_post_meta_a1_(ctx)
 			.filter(({ featured })=>featured)
+	const title = 'Home | ' + site__title_(ctx)
+	WebPage__name__set(ctx, title)
 	WebPage__description__set(ctx, description)
-	WebPage_ref_id_(ctx)
 	return (
 		layout__doc_html_({
-			ctx
+			ctx,
+			title,
+			description,
 		}, [
 			briantakita__header_({ ctx }),
 			blog__main_fragment_({
 				ctx
 			}, [
+				schema_org_WebPage_id__link_(ctx),
 				article_({
 					...schema_org_Article_rdfa,
 				}, [

@@ -1,7 +1,9 @@
+import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
+import { schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
 import { type request_ctx_T } from 'relysjs/server'
 import { apache2_license__tb_a_ } from '../anchor/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
@@ -33,13 +35,19 @@ export function open_source__doc_html_({
 }:{
 	ctx:request_ctx_T
 }) {
+	const title = 'Open Source | ' + site__title_(ctx)
+	const description = 'Brian Takita\'s open source work.'
+	WebPage__name__set(ctx, title)
+	WebPage__description__set(ctx, description)
 	return (
 		md_layout__doc_html_({
 			ctx,
-			title: 'Open Source | ' + site__title_(ctx),
+			title,
+			description,
 			h1_text: 'Open Source',
 			active_link: 'open-source',
 		}, [
+			schema_org_WebPage_id__link_(ctx),
 			// @formatter:off
 			// language=md
 			md__raw_(`
