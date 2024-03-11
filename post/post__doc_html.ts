@@ -2,7 +2,7 @@ import { blog_post__description_, blog_post__title_ } from '@rappstack/domain--s
 import { WebPage__description__set, WebPage__name__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { blog_post__main_fragment_ } from '@rappstack/ui--server--blog/post'
-import { schema_org_WebPage_id__link_a1_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_WebPage__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
@@ -23,7 +23,7 @@ export function post__doc_html_({
 			title,
 			description,
 		}, [
-			schema_org_WebPage_id__link_a1_(ctx),
+			schema_org_WebPage__link_a1_(ctx),
 			briantakita__header_({
 				ctx,
 				active_link: 'posts'

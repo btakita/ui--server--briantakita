@@ -4,7 +4,7 @@ import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
-import { schema_org_Article_id__link_a1_, schema_org_WebPage_id__link_a1_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article__link_a1_, schema_org_WebPage__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { article_, span_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
@@ -84,11 +84,11 @@ export function portfolio__doc_html_({
 			h1_text: 'Portfolio',
 			active_link: 'portfolio',
 		}, [
-			schema_org_WebPage_id__link_a1_(ctx),
+			schema_org_WebPage__link_a1_(ctx),
 			article_({
 				...schema_org_Article_rdfa
 			},[
-				schema_org_Article_id__link_a1_(ctx),
+				schema_org_Article__link_a1_(ctx),
 				// @formatter:off
 				// language=md
 				md__raw_(`

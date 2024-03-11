@@ -1,7 +1,7 @@
 import { schema_org_Article_rdfa, } from '@rappstack/domain--server/rdfa'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
-import { schema_org_Article_id__link_a1_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
 import type { tag_props_T } from 'relementjs/any'
@@ -55,7 +55,7 @@ export function md_layout__doc_html_({
 					...schema_org_Article_rdfa,
 					...article_props,
 				}, [
-					schema_org_Article_id__link_a1_(ctx),
+					schema_org_Article__link_a1_(ctx),
 					...children,
 					footnote_list__div_({ ctx })
 				])

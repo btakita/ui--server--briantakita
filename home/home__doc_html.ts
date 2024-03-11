@@ -5,14 +5,14 @@ import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain
 import { schema_org_Article_rdfa, } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { social_a1_ } from '@rappstack/domain--server/social'
-import { blog_card__li_ } from '@rappstack/ui--any--blog/card'
 import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
+import { server_blog_card__li_ } from '@rappstack/ui--server--blog/card'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { right_arrow_ } from '@rappstack/ui--server--blog/icon'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
-import { schema_org_Article_id__link_a1_, schema_org_WebPage_id__link_a1_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article__link_a1_, schema_org_WebPage__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { a_, article_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -45,11 +45,11 @@ export function home__doc_html_({
 			blog__main_fragment_({
 				ctx
 			}, [
-				schema_org_WebPage_id__link_a1_(ctx),
+				schema_org_WebPage__link_a1_(ctx),
 				article_({
 					...schema_org_Article_rdfa,
 				}, [
-					schema_org_Article_id__link_a1_(ctx),
+					schema_org_Article__link_a1_(ctx),
 					section_({
 						id: 'hero',
 						class: class_(
@@ -132,7 +132,8 @@ export function home__doc_html_({
 										'tracking-wide')
 								}, `Featured`),
 								ul_(featured__dehydrated_post_meta_a.map(dehydrated_post_meta=>
-									blog_card__li_({
+									server_blog_card__li_({
+										ctx,
 										href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
 										dehydrated_post_meta,
 										show_heading: false
@@ -155,7 +156,8 @@ export function home__doc_html_({
 						ul_(unfeatured__dehydrated_post_meta_a
 							.slice(0, site__home__post_count_(ctx))
 							.map(post=>
-								blog_card__li_({
+								server_blog_card__li_({
+									ctx,
 									href: `/posts/${post_slug__new(post)}`,
 									dehydrated_post_meta: post,
 									show_heading: false
