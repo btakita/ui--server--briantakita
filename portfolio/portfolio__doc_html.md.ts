@@ -1,7 +1,10 @@
+import { Article } from '@btakita/schema-dts'
+import { WebPage__description__set, WebPage_id_, WebPage_ref_id_ } from '@rappstack/domain--server/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
+import { schema_org_rdfa__link_ } from '@rappstack/ui--server/rdfa'
 import { span_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
@@ -69,6 +72,8 @@ export function portfolio__doc_html_({
 }:{
 	ctx:request_ctx_T
 }) {
+	WebPage__description__set(ctx, 'Some of Brian Takita\'s previous work.')
+	WebPage_ref_id_(ctx)
 	return (
 		md_layout__doc_html_({
 			ctx,
@@ -76,6 +81,7 @@ export function portfolio__doc_html_({
 			h1_text: 'Portfolio',
 			active_link: 'portfolio',
 		}, [
+			schema_org_rdfa__link_<Article>({ property: 'isPartOf', href: WebPage_id_(ctx)}),
 			// @formatter:off
 			// language=md
 			md__raw_(`

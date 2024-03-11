@@ -1,17 +1,11 @@
-import {
-	schema_org_props_rdfa_T,
-	schema_org_rdfa_vocab,
-	type schema_org_thing_rdfa_T
-} from '@rappstack/domain--server/rdfa'
-import { request_url__pathname_ } from '@rappstack/domain--server/request'
-import { site__website_ } from '@rappstack/domain--server/site'
+import { schema_org_Article_rdfa, } from '@rappstack/domain--server/rdfa'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
+import { schema_org_Article_id__link_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
-import { url__join } from 'ctx-core/uri'
 import { type tag_dom_T } from 'relementjs'
 import type { tag_props_T } from 'relementjs/any'
-import { article_, link_ } from 'relementjs/html'
+import { article_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_, type briantakita_header__link_T } from '../header/index.js'
@@ -58,16 +52,10 @@ export function md_layout__doc_html_({
 						'max-w-3xl',
 						'prose-img:border-0',
 						article_class),
-					...<schema_org_thing_rdfa_T>{
-						vocab: schema_org_rdfa_vocab,
-						typeof: 'Article',
-					},
+					...schema_org_Article_rdfa,
 					...article_props,
 				}, [
-					link_(<schema_org_props_rdfa_T<any>>{
-						property: '@id',
-						href: url__join(site__website_(ctx)!, request_url__pathname_(ctx), '#Article')
-					}),
+					schema_org_Article_id__link_(ctx),
 					...children,
 					footnote_list__div_({ ctx })
 				])
