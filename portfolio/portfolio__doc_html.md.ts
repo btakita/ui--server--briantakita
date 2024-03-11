@@ -1,10 +1,11 @@
 import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
+import { schema_org_Article_rdfa } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
-import { schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
-import { span_ } from 'relementjs/html'
+import { schema_org_Article_id__link_a1_, schema_org_WebPage_id__link_a1_ } from '@rappstack/ui--server/rdfa'
+import { article_, span_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import {
 	astrojs__tb_a_,
@@ -83,44 +84,48 @@ export function portfolio__doc_html_({
 			h1_text: 'Portfolio',
 			active_link: 'portfolio',
 		}, [
-			schema_org_WebPage_id__link_(ctx),
-			// @formatter:off
-			// language=md
-			md__raw_(`
+			schema_org_WebPage_id__link_a1_(ctx),
+			article_({
+				...schema_org_Article_rdfa
+			},[
+				schema_org_Article_id__link_a1_(ctx),
+				// @formatter:off
+				// language=md
+				md__raw_(`
 ## [briantakita.me](https://briantakita.me)
 
 ${briantakita_me_dev__tb_a_()} started from a fork from ${astropaper__tb_a_()}. Optimized the performance, SEO, & semantic markup with json-ld. I develop & experiment with software tech on this site.
 
 ${stack__details_(
-	rappstack__tb_a_,
-	bunjs__tb_a_,
-	elysiajs__tb_a_,
-	ctx_core__tb_a_,
-	relysjs__tb_a_,
-	relementjs__tb_a_,
-	rmemo__tb_a_,
-	docker__tb_a_,
-	($p:{ class?:string })=>span_($p, 'VPS'),
-)}
+					rappstack__tb_a_,
+					bunjs__tb_a_,
+					elysiajs__tb_a_,
+					ctx_core__tb_a_,
+					relysjs__tb_a_,
+					relementjs__tb_a_,
+					rmemo__tb_a_,
+					docker__tb_a_,
+					($p:{ class?:string })=>span_($p, 'VPS'),
+				)}
 
 ## ${brookebrodack_net__tb_a_()}
 
 Brooke Brodack is one of the original YouTube personalities. Her character, Brookers, once had the most subscribers on YouTube. This site features the Brookers Timeline & Brooke Brodack's current Youtube Content. Embedding the YouTube & Internet Archive players. rmemo shines in this implementation to manage the player state & web animations. The web animation logic improved after switching from ${motion_one__tb_a_()} to rmemo. The ${brookebrodack_dev__tb_a_('source code')} is under the Apache 2 license.
 
 ${stack__details_(
-	rappstack__tb_a_,
-	bunjs__tb_a_,
-	sqlite__tb_a_,
-	drizzle_orm__tb_a_,
-	elysiajs__tb_a_,
-	hyop__tb_a_,
-	ctx_core__tb_a_,
-	relysjs__tb_a_,
-	relementjs__tb_a_,
-	rmemo__tb_a_,
-	docker__tb_a_,
-	($p:{ class?:string })=>span_($p, 'VPS'),
-)}
+					rappstack__tb_a_,
+					bunjs__tb_a_,
+					sqlite__tb_a_,
+					drizzle_orm__tb_a_,
+					elysiajs__tb_a_,
+					hyop__tb_a_,
+					ctx_core__tb_a_,
+					relysjs__tb_a_,
+					relementjs__tb_a_,
+					rmemo__tb_a_,
+					docker__tb_a_,
+					($p:{ class?:string })=>span_($p, 'VPS'),
+				)}
 
 ## ${martin_investments__tb_a_()}
 
@@ -131,16 +136,16 @@ Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & h
 Built SVG & PDF exporters of portfolio & company ESG reports.
 
 ${stack__details_(
-	nodejs__tb_a_,
-	pnpm__tb_a_,
-	ctx_core__tb_a_,
-	astrojs__tb_a_,
-	nanostores__tb_a_,
-	solidjs__tb_a_,
-	redis__tb_a_,
-	docker__tb_a_,
-	($p:{ class?:string })=>span_($p, 'VPS'),
-)}
+					nodejs__tb_a_,
+					pnpm__tb_a_,
+					ctx_core__tb_a_,
+					astrojs__tb_a_,
+					nanostores__tb_a_,
+					solidjs__tb_a_,
+					redis__tb_a_,
+					docker__tb_a_,
+					($p:{ class?:string })=>span_($p, 'VPS'),
+				)}
 
 ## ${censible__tb_a_()}
 
@@ -160,49 +165,49 @@ Market survey of Women in corporate leadership positions. Scoring applied to ana
 - Socially Responsible Funds.
 
 ${stack__details_(
-	nodejs__tb_a_,
-	pnpm__tb_a_,
-	ctx_core__tb_a_,
-	astrojs__tb_a_,
-	nanostores__tb_a_,
-	solidjs__tb_a_,
-	solid_start__tb_a_,
-	postgres__tb_a_,
-	redis__tb_a_,
-	heroku__tb_a_,
-)}
+					nodejs__tb_a_,
+					pnpm__tb_a_,
+					ctx_core__tb_a_,
+					astrojs__tb_a_,
+					nanostores__tb_a_,
+					solidjs__tb_a_,
+					solid_start__tb_a_,
+					postgres__tb_a_,
+					redis__tb_a_,
+					heroku__tb_a_,
+				)}
 
 ## ${menu__tb_a_()}
 
 Front end development of the menu.com multi-tenant app. Consumer web app, restaurant back-office, & back-office Cordova app.
 
 ${stack__details_(
-	sveltejs__tb_a_,
-	ctx_core__tb_a_,
-	sapper__tb_a_,
-	cordova__tb_a_,
-	aws__tb_a_,
-)}
+					sveltejs__tb_a_,
+					ctx_core__tb_a_,
+					sapper__tb_a_,
+					cordova__tb_a_,
+					aws__tb_a_,
+				)}
 
 ## ${foresight_host__tb_a_()}
 
 Private NextCloud groupware site with some custom plugins.
 
 ${stack__details_(
-	nextcloud__tb_a_,
-	docker__tb_a_, 
-	()=>'VPS')}
+					nextcloud__tb_a_,
+					docker__tb_a_,
+					()=>'VPS')}
 
 ## ${neo__tb_a_()}
 
 Worked with the previous incarnation of Neo before it's acquisition. The client was Tenfore Holdings, an investment fund. A low-code document writer integrating search into the client's ${salesforce__tb_a_()} cloud account.
 
 ${stack__details_(
-	nodejs__tb_a_,
-	riotjs__tb_a_,
-	rethinkdb__tb_a_,
-	heroku__tb_a_,
-)}
+					nodejs__tb_a_,
+					riotjs__tb_a_,
+					rethinkdb__tb_a_,
+					heroku__tb_a_,
+				)}
 
 ## Rundavoo
 
@@ -211,35 +216,35 @@ Web front-end development for social planning & decision app for restaurant patr
 Web front-end development for social planning & decision app for restaurant patrons.
 
 ${stack__details_(
-	riotjs__tb_a_,
-	backbonejs__tb_a_, 
-	heroku__tb_a_)}
+					riotjs__tb_a_,
+					backbonejs__tb_a_,
+					heroku__tb_a_)}
 
 ## ${milyoni__tb_a_()}
 
 Consulting developer for social entertainment platform. Scalable live video events with admin message moderation & components. On-demand movies with time-coded chat & interactive components.
 
 ${stack__details_(
-	ruby_on_rails__tb_a_,
-	nodejs__tb_a_,
-	postgres__tb_a_, 
-	redis__tb_a_,
-	heroku__tb_a_,
-)}
+					ruby_on_rails__tb_a_,
+					nodejs__tb_a_,
+					postgres__tb_a_,
+					redis__tb_a_,
+					heroku__tb_a_,
+				)}
 
 ## ${honk__tb_a_()}
 
 Lead developer for automotive pricing & info startup. Built product from initial concept through acquisition by ${truecar__tb_a_()}. Key partnerships include ${news_corp__tb_a_()}, ${wsj__tb_a_()}, ${usaa__tb_a_()}.
 
 ${stack__details_(
-	ruby_on_rails__tb_a_,
-	sinatrarb__tb_a_,
-	erector__tb_a_,
-	backbonejs__tb_a_, 
-	postgres__tb_a_,
-	lucene__tb_a_,
-	engine_yard__tb_a_,
-)}
+					ruby_on_rails__tb_a_,
+					sinatrarb__tb_a_,
+					erector__tb_a_,
+					backbonejs__tb_a_,
+					postgres__tb_a_,
+					lucene__tb_a_,
+					engine_yard__tb_a_,
+				)}
 
 ## Pivotal Labs
 
@@ -250,18 +255,19 @@ ${[rspec__tb_a_, rr__tb_a_, erector__tb_a_, unison__tb_a_, cacheable_flash__tb_a
 I spoke at the ${tb_a_({ href: 'https://www.oreilly.com/pub/pr/1966', nofollow: true }, `2008 Rails Conf`)}.
 
 ${stack__details_(
-	ruby_on_rails__tb_a_,
-	sinatrarb__tb_a_,
-	erector__tb_a_,
-	backbonejs__tb_a_, 
-	jquery__tb_a_,
-	postgres__tb_a_,
-	lucene__tb_a_,
-	aws__tb_a_,
-	heroku__tb_a_,
-)}
+					ruby_on_rails__tb_a_,
+					sinatrarb__tb_a_,
+					erector__tb_a_,
+					backbonejs__tb_a_,
+					jquery__tb_a_,
+					postgres__tb_a_,
+					lucene__tb_a_,
+					aws__tb_a_,
+					heroku__tb_a_,
+				)}
 `.trim())
-			// @formatter:on
+				// @formatter:on
+			]),
 		])
 	)
 }

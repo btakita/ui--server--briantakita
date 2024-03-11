@@ -12,7 +12,7 @@ import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { right_arrow_ } from '@rappstack/ui--server--blog/icon'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
-import { schema_org_Article_id__link_, schema_org_WebPage_id__link_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_Article_id__link_a1_, schema_org_WebPage_id__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { a_, article_, div_, h1_, h2_, p_, section_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -45,11 +45,11 @@ export function home__doc_html_({
 			blog__main_fragment_({
 				ctx
 			}, [
-				schema_org_WebPage_id__link_(ctx),
+				schema_org_WebPage_id__link_a1_(ctx),
 				article_({
 					...schema_org_Article_rdfa,
 				}, [
-					schema_org_Article_id__link_(ctx),
+					schema_org_Article_id__link_a1_(ctx),
 					section_({
 						id: 'hero',
 						class: class_(
