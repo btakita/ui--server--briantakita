@@ -1,8 +1,9 @@
+import type { Article } from '@btakita/schema-dts'
 import { sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
 import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
-import { schema_org_Article_rdfa, } from '@rappstack/domain--server/rdfa'
+import { schema_org_Article_rdfa, type schema_org_props_rdfa_T, } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { social_a1_ } from '@rappstack/domain--server/social'
 import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
@@ -50,139 +51,145 @@ export function home__doc_html_({
 					...schema_org_Article_rdfa,
 				}, [
 					schema_org_Article__link_a1_(ctx),
-					section_({
-						id: 'hero',
-						class: class_(
-							'pt-8',
-							'pb-6')
+					div_({
+						...<schema_org_props_rdfa_T<Article>>{
+							property: 'articleBody'
+						}
 					}, [
-						h1_({
+						section_({
+							id: 'hero',
 							class: class_(
-								'my-4',
-								'sm:my-8',
-								'mr-2',
-								'inline-block',
-								'text-3xl',
-								'sm:text-5xl',
-								'font-bold')
-						}, `Brian Takita`),
-						a_({
-							target: '_blank',
-							href: '/rss',
-							class: class_(
-								'rss-link',
-								'mb-6'),
-							'aria-label': 'rss feed',
-							title: 'RSS Feed',
+								'pt-8',
+								'pb-6')
 						}, [
-							iconify_rss_({
+							h1_({
 								class: class_(
-									'rss-icon',
+									'my-4',
+									'sm:my-8',
+									'mr-2',
 									'inline-block',
-									'mb-2',
-									'sm:mb-3',
-									'h-6',
-									'w-6',
-									'scale-110',
-									'sm:scale-125',
-									'fill-skin-accent')
-							})
-						]),
-						// @formatter:off
-						p_({ id: 'about', class: 'my-2' }, description),
-						// @formatter:on
-						social_a1_(ctx).length > 0 ?
-							div_({
+									'text-3xl',
+									'sm:text-5xl',
+									'font-bold')
+							}, `Brian Takita`),
+							a_({
+								target: '_blank',
+								href: '/rss',
 								class: class_(
-									'social-wrapper',
-									'mt-4',
-									'flex',
-									'flex-col',
-									'sm:flex-row',
-									'sm:items-center')
+									'rss-link',
+									'mb-6'),
+								'aria-label': 'rss feed',
+								title: 'RSS Feed',
 							}, [
+								iconify_rss_({
+									class: class_(
+										'rss-icon',
+										'inline-block',
+										'mb-2',
+										'sm:mb-3',
+										'h-6',
+										'w-6',
+										'scale-110',
+										'sm:scale-125',
+										'fill-skin-accent')
+								})
+							]),
+							// @formatter:off
+							p_({ id: 'about', class: 'my-2' }, description),
+							// @formatter:on
+							social_a1_(ctx).length > 0 ?
 								div_({
 									class: class_(
-										'social-links',
-										'mb-1',
-										'sm:mb-0',
-										'mr-2',
-										'whitespace-nowrap')
-								}),
-								socials__div_({
-									ctx,
-									link_button_svg_class: social_link_button_svg_class,
-								})
-							])
-							: undefined,
-					]),
-					hr_div_(),
-					featured__dehydrated_post_meta_a.length > 0
-						? [
-							section_({
-								id: 'featured',
-								class: class_(
-									'pt-12',
-									'pb-6')
-							}, [
-								h2_({
+										'social-wrapper',
+										'mt-4',
+										'flex',
+										'flex-col',
+										'sm:flex-row',
+										'sm:items-center')
+								}, [
+									div_({
+										class: class_(
+											'social-links',
+											'mb-1',
+											'sm:mb-0',
+											'mr-2',
+											'whitespace-nowrap')
+									}),
+									socials__div_({
+										ctx,
+										link_button_svg_class: social_link_button_svg_class,
+									})
+								])
+								: undefined,
+						]),
+						hr_div_(),
+						featured__dehydrated_post_meta_a.length > 0
+							? [
+								section_({
+									id: 'featured',
 									class: class_(
-										'text-2xl',
-										'font-semibold',
-										'tracking-wide')
-								}, `Featured`),
-								ul_(featured__dehydrated_post_meta_a.map(dehydrated_post_meta=>
+										'pt-12',
+										'pb-6')
+								}, [
+									h2_({
+										class: class_(
+											'text-2xl',
+											'font-semibold',
+											'tracking-wide')
+									}, `Featured`),
+									ul_(featured__dehydrated_post_meta_a.map(dehydrated_post_meta=>
+										server_blog_card__li_({
+											ctx,
+											href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
+											dehydrated_post_meta,
+											show_heading: false
+										})
+									))
+								])
+							] : null,
+						hr_div_(),
+						section_({
+							id: 'recent-posts',
+							class: class_(
+								'pt-12')
+						}, [
+							h2_({
+								class: class_(
+									'text-2xl',
+									'font-semibold',
+									'tracking-wide')
+							}, 'Recent Posts'),
+							ul_(unfeatured__dehydrated_post_meta_a
+								.slice(0, site__home__post_count_(ctx))
+								.map(post=>
 									server_blog_card__li_({
 										ctx,
-										href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
-										dehydrated_post_meta,
+										href: `/posts/${post_slug__new(post)}`,
+										dehydrated_post_meta: post,
 										show_heading: false
-									})
-								))
-							])
-						] : null,
-					hr_div_(),
-					section_({
-						id: 'recent-posts',
-						class: class_(
-							'pt-12')
-					}, [
-						h2_({
+									}))),
+						]),
+						div_({
 							class: class_(
-								'text-2xl',
-								'font-semibold',
-								'tracking-wide')
-						}, 'Recent Posts'),
-						ul_(unfeatured__dehydrated_post_meta_a
-							.slice(0, site__home__post_count_(ctx))
-							.map(post=>
-								server_blog_card__li_({
-									ctx,
-									href: `/posts/${post_slug__new(post)}`,
-									dehydrated_post_meta: post,
-									show_heading: false
-								}))),
-					]),
-					div_({
-						class: class_(
-							'all-posts-btn-wrapper',
-							'my-8',
-							'text-center',
-							'group')
-					}, [
-						button__a_({ href: '/posts' }, [
-							`All Posts`,
-							right_arrow_({
-								class: class_(
-									'inline-block',
-									'h-6',
-									'w-6',
-									'scale-125',
-									'fill-skin-base',
-									'group-hover:fill-skin-accent')
-							})
+								'all-posts-btn-wrapper',
+								'my-8',
+								'text-center',
+								'group')
+						}, [
+							button__a_({ href: '/posts' }, [
+								`All Posts`,
+								right_arrow_({
+									class: class_(
+										'inline-block',
+										'h-6',
+										'w-6',
+										'scale-125',
+										'fill-skin-base',
+										'group-hover:fill-skin-accent')
+								})
+							])
 						])
-					])
+					]),
 				])
 			]),
 			briantakita__footer_({ ctx })

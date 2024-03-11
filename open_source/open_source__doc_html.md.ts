@@ -1,11 +1,12 @@
+import type { Article } from '@btakita/schema-dts'
 import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
-import { schema_org_Article_rdfa } from '@rappstack/domain--server/rdfa'
+import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { schema_org_Article__link_a1_, schema_org_WebPage__link_a1_ } from '@rappstack/ui--server/rdfa'
-import { article_ } from 'relementjs/html'
+import { article_, div_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { apache2_license__tb_a_ } from '../anchor/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
@@ -54,9 +55,14 @@ export function open_source__doc_html_({
 				...schema_org_Article_rdfa
 			}, [
 				schema_org_Article__link_a1_(ctx),
-				// @formatter:off
-				// language=md
-				md__raw_(`
+				div_({
+					...<schema_org_props_rdfa_T<Article>>{
+						property: 'articleBody'
+					}
+				}, [
+					// @formatter:off
+					// language=md
+					md__raw_(`
 I work on open source projects, licensed with the ${apache2_license__tb_a_()}. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more open source components & apps. Here are some notable projects:
 
 ${rappstack_md_()}
@@ -101,7 +107,8 @@ ${generic_query_analyzer_md_()}
 
 ${poof_md_()}
 			`.trim())
-				// @formatter:on
+					// @formatter:on
+				]),
 			]),
 		])
 	)

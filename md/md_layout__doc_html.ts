@@ -1,11 +1,12 @@
-import { schema_org_Article_rdfa, } from '@rappstack/domain--server/rdfa'
+import type { Article } from '@btakita/schema-dts'
+import { schema_org_Article_rdfa, type schema_org_props_rdfa_T, } from '@rappstack/domain--server/rdfa'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { type tag_dom_T } from 'relementjs'
 import type { tag_props_T } from 'relementjs/any'
-import { article_ } from 'relementjs/html'
+import { article_, div_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_, type briantakita_header__link_T } from '../header/index.js'
@@ -56,7 +57,11 @@ export function md_layout__doc_html_({
 					...article_props,
 				}, [
 					schema_org_Article__link_a1_(ctx),
-					...children,
+					div_({
+						...<schema_org_props_rdfa_T<Article>>{
+							property: 'articleBody'
+						}
+					}, ...children),
 					footnote_list__div_({ ctx })
 				])
 			]),
