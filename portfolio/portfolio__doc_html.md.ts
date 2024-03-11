@@ -1,5 +1,5 @@
 import type { Article } from '@btakita/schema-dts'
-import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
+import { WebPage__description__set, WebPage__headline__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
@@ -76,6 +76,7 @@ export function portfolio__doc_html_({
 	const title = 'Portfolio | ' + site__title_(ctx)
 	const description = 'Brian Takita\'s client project work.'
 	WebPage__name__set(ctx, title)
+	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	return (
 		md_layout__doc_html_({

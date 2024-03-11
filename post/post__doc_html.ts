@@ -1,5 +1,10 @@
 import { blog_post__description_, blog_post__title_ } from '@rappstack/domain--server--blog/post'
-import { WebPage__description__set, WebPage__name__set, WebPage__type__set } from '@rappstack/domain--server/jsonld'
+import {
+	WebPage__description__set,
+	WebPage__headline__set,
+	WebPage__name__set,
+	WebPage__type__set
+} from '@rappstack/domain--server/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { blog_post__main_fragment_ } from '@rappstack/ui--server--blog/post'
 import { type request_ctx_T } from 'relysjs/server'
@@ -14,6 +19,7 @@ export function post__doc_html_({
 	const title = blog_post__title_(ctx) + ' | ' + site__title_(ctx)
 	const description = blog_post__description_(ctx)
 	WebPage__name__set(ctx, title)
+	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'ItemPage')
   return (

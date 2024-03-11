@@ -2,7 +2,7 @@ import type { Article } from '@btakita/schema-dts'
 import { sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
-import { WebPage__description__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
+import { WebPage__description__set, WebPage__headline__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_Article_rdfa, type schema_org_props_rdfa_T, } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { social_a1_ } from '@rappstack/domain--server/social'
@@ -35,6 +35,7 @@ export function home__doc_html_({
 			.filter(({ featured })=>featured)
 	const title = 'Home | ' + site__title_(ctx)
 	WebPage__name__set(ctx, title)
+	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	return (
 		layout__doc_html_({
