@@ -4,8 +4,7 @@ import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
 import { WebPage__description__set, WebPage__headline__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
 import { schema_org_Article_rdfa, type schema_org_props_rdfa_T, } from '@rappstack/domain--server/rdfa'
-import { site__title_ } from '@rappstack/domain--server/site'
-import { social_a1_ } from '@rappstack/domain--server/social'
+import { site__social_a1_, site__title_ } from '@rappstack/domain--server/site'
 import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { server_blog_card__li_ } from '@rappstack/ui--server--blog/card'
@@ -97,30 +96,31 @@ export function home__doc_html_({
 							// @formatter:off
 							p_({ id: 'about', class: 'my-2' }, description),
 							// @formatter:on
-							social_a1_(ctx).length > 0 ?
-								div_({
-									class: class_(
-										'social-wrapper',
-										'mt-4',
-										'flex',
-										'flex-col',
-										'sm:flex-row',
-										'sm:items-center')
-								}, [
+							site__social_a1_(ctx)?.length
+								? [
 									div_({
 										class: class_(
-											'social-links',
-											'mb-1',
-											'sm:mb-0',
-											'mr-2',
-											'whitespace-nowrap')
-									}),
-									socials__div_({
-										ctx,
-										link_button_svg_class: social_link_button_svg_class,
-									})
-								])
-								: undefined,
+											'social-wrapper',
+											'mt-4',
+											'flex',
+											'flex-col',
+											'sm:flex-row',
+											'sm:items-center')
+									}, [
+										div_({
+											class: class_(
+												'social-links',
+												'mb-1',
+												'sm:mb-0',
+												'mr-2',
+												'whitespace-nowrap')
+										}),
+										socials__div_({
+											ctx,
+											link_button_svg_class: social_link_button_svg_class,
+										})
+									])
+								] : undefined,
 						]),
 						hr_div_(),
 						featured__dehydrated_post_meta_a.length > 0
