@@ -1,24 +1,24 @@
 import { jsonld_Graph_ } from '@rappstack/domain--server/jsonld'
+import { request_url__href_, request_url__origin_ } from '@rappstack/domain--server/request'
 import {
 	font__meta_props_a1_,
 	type icon_link_props_T,
 	site__author_,
 	site__body_class_,
 	site__description_,
+	site__favicon_,
 	site__google_site_verification_,
 	site__gtag_id_,
-	site__icon_,
 	site__light_and_dark_mode_,
 	site__social_image_url_,
 	site__title_
 } from '@rappstack/domain--server/site'
 import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
-import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
 import { doc_html_ } from 'relementjs/server'
-import { assets_, assets__new, type assets_T, type request_ctx_T, request_url_ } from 'relysjs/server'
+import { assets_, assets__new, type assets_T, type request_ctx_T } from 'relysjs/server'
 export function layout__doc_html_({
 	ctx,
 	assets,
@@ -26,7 +26,7 @@ export function layout__doc_html_({
 	title,
 	author,
 	description,
-	icon,
+	favicon,
 	social_image_url,
 	body_class,
 }:{
@@ -36,15 +36,15 @@ export function layout__doc_html_({
 	title?:string
 	author?:string
 	description?:string
-	icon?:icon_link_props_T
+	favicon?:icon_link_props_T
 	social_image_url?:string
 	body_class?:string
 }, ...children:tag_dom_T[]) {
-	canonical_url ??= request_url_(ctx).href
+	canonical_url ??= request_url__href_(ctx)
 	title ??= site__title_(ctx)
 	description ??= site__description_(ctx)
 	author ??= site__author_(ctx)
-	icon ??= site__icon_(ctx)
+	favicon ??= site__favicon_(ctx)
 	social_image_url = new URL(social_image_url ?? site__social_image_url_(ctx), request_url__origin_(ctx)).href
 	const google_site_verification = site__google_site_verification_(ctx)
 	const site__light_and_dark_mode = site__light_and_dark_mode_(ctx)
@@ -80,7 +80,7 @@ export function layout__doc_html_({
 				font__meta_props_a1_(ctx).map(meta_props=>
 					meta_(meta_props)),
 				meta_({ name: 'theme-color', content: '' }),
-				link_({ rel: 'icon', ...icon }),
+				link_({ rel: 'icon', ...favicon }),
 				link_({ rel: 'canonical', href: canonical_url }),
 				link_({ rel: 'sitemap', href: '/sitemap.xml' }),
 				google_site_verification
