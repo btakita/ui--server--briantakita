@@ -1,5 +1,5 @@
 import { AboutPage__description_, AboutPage_id_ } from '@btakita/domain--server--briantakita/jsonld'
-import type { Article } from '@btakita/schema-dts'
+import type { Article } from 'schema-dts'
 import { type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'

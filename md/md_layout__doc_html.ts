@@ -1,4 +1,4 @@
-import type { Article } from '@btakita/schema-dts'
+import type { Article } from 'schema-dts'
 import { schema_org_Article_rdfa, type schema_org_props_rdfa_T, } from '@rappstack/domain--server/rdfa'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
