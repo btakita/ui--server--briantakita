@@ -11,6 +11,7 @@ import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
+import { prose_class } from '../prose/index.js'
 export function post__doc_html_({
 	ctx
 }:{
@@ -32,7 +33,10 @@ export function post__doc_html_({
 				ctx,
 				active_link: 'posts'
 			}),
-			blog_post__main_fragment_({ ctx }),
+			blog_post__main_fragment_({
+				ctx,
+				article_class: prose_class
+			}),
 			briantakita__footer_({ ctx }),
 		])
 	)
