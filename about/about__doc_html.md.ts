@@ -1,9 +1,10 @@
 import {
 	AboutPage__description_,
-	AboutPage_id_,
-	Person_id_,
+	AboutPage_id_, AboutPage_id_ref_,
+	Person_id_, Person_id_ref_,
 	Person_image
 } from '@btakita/domain--server--briantakita/jsonld'
+import { jsonld__add, jsonld_id__new } from '@rappstack/domain--server/jsonld'
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
@@ -36,33 +37,18 @@ import {
 	svgrepo_sparkling_heart_
 } from '../icon/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
-export function about__doc_html_({
+export function about_content__html_({
 	ctx,
 }:{
 	ctx:request_ctx_T
 }) {
-	const title = 'About | ' + site__title_(ctx)
-	return (
-		md_layout__doc_html_({
-			ctx,
-			title,
-			h1_text: title,
-			description: AboutPage__description_(ctx),
-			active_link: 'about',
-		}, [
-			schema_org_rdfa__link_<Article>({ property: 'author', href: Person_id_(ctx) }),
-			schema_org_rdfa__link_<Article>({ property: 'about', href: AboutPage_id_(ctx) }),
-			schema_org_rdfa__meta_<Article>({ property: 'headline', content: title }),
-			schema_org_rdfa__meta_<Article>({ property: 'image', content: Person_image }),
-			schema_org_rdfa__meta_<Article>({ property: 'name', content: title }),
-			schema_org_rdfa__meta_<Article>({ property: 'url', content: request_url__href_(ctx) }),
-			// @formatter:off
-			// language=md
-			md__raw_(`
+	// @formatter:off
+	// language=md
+	return '' + md__raw_(`
 I create full stack software solutions${footnote__sup_({ ctx, id: 'preferred-tooling' }, [
-	'My preferred tooling is:',
-	raw_([bunjs__tb_a_, drizzle_orm__tb_a_, ctx_core__tb_a_, relysjs__tb_a_, rmemo__tb_a_, relementjs__tb_a_, redis__tb_a_, sqlite__tb_a_, rappstack__tb_a_].map(a_=>a_({ class: class_(tag_class) })).join(' '))
-])}. With over 20 years of professional development experience. Here is a [portfolio](/portfolio) of some of my work. I focus on creating isomorphic codebases. Sharing logic & rendering between the server & browser. This maximizes flexibility with crafting web apps. This detailed crafting creates efficient apps free from bloat.
+		'My preferred tooling is:',
+		raw_([bunjs__tb_a_, drizzle_orm__tb_a_, ctx_core__tb_a_, relysjs__tb_a_, rmemo__tb_a_, relementjs__tb_a_, redis__tb_a_, sqlite__tb_a_, rappstack__tb_a_].map(a_=>a_({ class: class_(tag_class) })).join(' '))
+	])}. With over 20 years of professional development experience. Here is a [portfolio](/portfolio) of some of my work. I focus on creating isomorphic codebases. Sharing logic & rendering between the server & browser. This maximizes flexibility with crafting web apps. This detailed crafting creates efficient apps free from bloat.
 
 [//]: 💖
 ## Crafting software since 2002 with ${svgrepo_sparkling_heart_({ class: 'inline-block h-6 w-6' })}
@@ -121,7 +107,38 @@ From the question "how do we model ${existence__tb_a_()}?" sprang a ${philosophy
 
 This meta-philosophy applies language to model any reified entity. Language patterns in software & speech to create models of Existence.
 			`.trim())
-			// @formatter:on
+	// @formatter:on
+}
+export function about__doc_html_({
+	ctx,
+	about_content__html,
+	articleBody,
+}:{
+	ctx:request_ctx_T
+	articleBody:string
+	about_content__html:string
+}) {
+	const title = 'About | ' + site__title_(ctx)
+	jsonld__add(ctx, ()=><Article>{
+		'@id': jsonld_id__new(ctx, 'Article'),
+		'@type': 'Article',
+		about: AboutPage_id_ref_(ctx),
+		author: Person_id_ref_(ctx),
+		headline: title,
+		image: Person_image,
+		name: title,
+		url: request_url__href_(ctx),
+		articleBody,
+	})
+	return (
+		md_layout__doc_html_({
+			ctx,
+			title,
+			h1_text: title,
+			description: AboutPage__description_(ctx),
+			active_link: 'about',
+		}, [
+			raw_(about_content__html)
 		])
 	)
 }
