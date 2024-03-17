@@ -18,7 +18,7 @@ import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { right_arrow_ } from '@rappstack/ui--server--blog/icon'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
-import { schema_org_rdfa__meta_ } from '@rappstack/ui--server/rdfa'
+import { schema_org_rdfa__link_, schema_org_rdfa__meta_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { a_, article_, div_, h1_, h2_, img_, p_, section_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -70,7 +70,7 @@ export function home__doc_html_({
 								'pb-6')
 						}, [
 							schema_org_rdfa__meta_<Article>({ property: 'headline', content: site__title_(ctx)! }),
-							schema_org_rdfa__meta_<Article>({ property: 'author', content: WebPage__author_(ctx)!['@id'] }),
+							schema_org_rdfa__link_<Article>({ property: 'author', href: WebPage__author_(ctx)!['@id'] }),
 							div_({
 								class: class_(
 									'flex',
