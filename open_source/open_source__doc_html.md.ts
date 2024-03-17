@@ -1,19 +1,19 @@
 import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import {
-	jsonld__add, jsonld_id__new,
-	jsonld_id_ref__new,
+	jsonld__add,
+	jsonld_id__new,
 	WebPage__description__set,
+	WebPage__hasPart__push,
 	WebPage__headline__set,
-	WebPage__name__set, WebPage_id_ref_
+	WebPage__name__set,
+	WebPage_id_ref_
 } from '@rappstack/domain--server/jsonld'
-import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { raw_ } from 'relementjs'
-import { article_, div_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import { apache2_license__tb_a_ } from '../anchor/index.js'
@@ -55,7 +55,7 @@ export function open_source__doc_html_({
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
-	jsonld__add(ctx, ()=><Article>{
+	const Article_id_ref = jsonld__add(ctx, ()=><Article>{
 		'@id': jsonld_id__new(ctx, 'Article'),
 		'@type': 'Article',
 		about: WebPage_id_ref_(ctx),
@@ -67,6 +67,7 @@ export function open_source__doc_html_({
 		url: request_url__href_(ctx),
 		articleBody,
 	})
+	WebPage__hasPart__push(ctx, Article_id_ref)
 	return (
 		md_layout__doc_html_({
 			ctx,

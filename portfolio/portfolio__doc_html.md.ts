@@ -2,7 +2,7 @@ import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantaki
 import {
 	jsonld__add,
 	jsonld_id__new,
-	WebPage__description__set,
+	WebPage__description__set, WebPage__hasPart__push,
 	WebPage__headline__set,
 	WebPage__name__set,
 	WebPage_id_ref_
@@ -90,7 +90,7 @@ export function portfolio__doc_html_({
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
-	jsonld__add(ctx, ()=><Article>{
+	const Article_id_ref = jsonld__add(ctx, ()=><Article>{
 		'@id': jsonld_id__new(ctx, 'Article'),
 		'@type': 'Article',
 		about: WebPage_id_ref_(ctx),
@@ -102,6 +102,7 @@ export function portfolio__doc_html_({
 		url: request_url__href_(ctx),
 		articleBody,
 	})
+	WebPage__hasPart__push(ctx, Article_id_ref)
 	return (
 		md_layout__doc_html_({
 			ctx,
