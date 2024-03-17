@@ -4,6 +4,7 @@ import {
 	Person_id_,
 	Person_image
 } from '@btakita/domain--server--briantakita/jsonld'
+import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
@@ -53,6 +54,8 @@ export function about__doc_html_({
 			schema_org_rdfa__link_<Article>({ property: 'about', href: AboutPage_id_(ctx) }),
 			schema_org_rdfa__meta_<Article>({ property: 'headline', content: title }),
 			schema_org_rdfa__meta_<Article>({ property: 'image', content: Person_image }),
+			schema_org_rdfa__meta_<Article>({ property: 'name', content: title }),
+			schema_org_rdfa__meta_<Article>({ property: 'url', content: request_url__href_(ctx) }),
 			// @formatter:off
 			// language=md
 			md__raw_(`
