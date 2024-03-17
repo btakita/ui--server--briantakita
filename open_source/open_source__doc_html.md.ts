@@ -1,14 +1,18 @@
+import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import {
+	jsonld__add, jsonld_id__new,
 	jsonld_id_ref__new,
 	WebPage__description__set,
 	WebPage__headline__set,
-	WebPage__name__set
+	WebPage__name__set, WebPage_id_ref_
 } from '@rappstack/domain--server/jsonld'
 import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
+import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
+import { raw_ } from 'relementjs'
 import { article_, div_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
@@ -39,15 +43,30 @@ import {
 } from './config.js'
 export function open_source__doc_html_({
 	ctx,
+	open_source__html,
+	articleBody,
 }:{
 	ctx:request_ctx_T
+	open_source__html:string
+	articleBody:string
 }) {
 	const title = 'Open Source | ' + site__title_(ctx)
 	const description = 'Brian Takita\'s open source work.'
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
-	const Article_id_ref = jsonld_id_ref__new(ctx, 'Article')
+	jsonld__add(ctx, ()=><Article>{
+		'@id': jsonld_id__new(ctx, 'Article'),
+		'@type': 'Article',
+		about: WebPage_id_ref_(ctx),
+		author: Person_id_ref_(ctx),
+		headline: title,
+		image: Person_image,
+		name: title,
+		description,
+		url: request_url__href_(ctx),
+		articleBody,
+	})
 	return (
 		md_layout__doc_html_({
 			ctx,
@@ -56,15 +75,14 @@ export function open_source__doc_html_({
 			h1_text: 'Open Source',
 			active_link: 'open-source',
 		}, [
-			article_({
-				...schema_org_rdfa_<Article>('Article', Article_id_ref),
-			}, [
-				div_({
-					...schema_org_rdfa_property_<Article>('articleBody'),
-				}, [
-					// @formatter:off
-					// language=md
-					md__raw_(`
+			raw_(open_source__html)
+		])
+	)
+}
+export function open_source__html_({ ctx }:{ ctx:request_ctx_T }) {
+	// @formatter:off
+	// language=md
+	return '' + md__raw_(`
 I work on open source projects, licensed with the ${apache2_license__tb_a_()}. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more open source components & apps. Here are some notable projects:
 
 ${rappstack_md_()}
@@ -109,11 +127,7 @@ ${generic_query_analyzer_md_()}
 
 ${poof_md_()}
 			`.trim())
-					// @formatter:on
-				]),
-			]),
-		])
-	)
+	// @formatter:on
 	function ctx_core_catch_all__footnote__sup_() {
 		return (
 			footnote__sup_({

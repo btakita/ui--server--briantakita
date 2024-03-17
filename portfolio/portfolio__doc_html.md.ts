@@ -78,11 +78,11 @@ import { md_layout__doc_html_ } from '../md/index.js'
 import { stack__details_ } from '../stack/index.js'
 export function portfolio__doc_html_({
 	ctx,
-	portfolio_content__html,
+	portfolio__html,
 	articleBody,
 }:{
 	ctx:request_ctx_T
-	portfolio_content__html:string
+	portfolio__html:string
 	articleBody:string
 }) {
 	const title = 'Portfolio | ' + site__title_(ctx)
@@ -98,6 +98,7 @@ export function portfolio__doc_html_({
 		headline: title,
 		image: Person_image,
 		name: title,
+		description,
 		url: request_url__href_(ctx),
 		articleBody,
 	})
@@ -109,11 +110,11 @@ export function portfolio__doc_html_({
 			h1_text: 'Portfolio',
 			active_link: 'portfolio',
 		}, [
-			raw_(portfolio_content__html)
+			raw_(portfolio__html)
 		])
 	)
 }
-export function portfolio_content__html_() {
+export function portfolio__html_() {
 	// @formatter:off
 	// language=md
 	return '' + md__raw_(`

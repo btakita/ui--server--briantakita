@@ -38,14 +38,15 @@ import {
 import { md_layout__doc_html_ } from '../md/index.js'
 export function about__doc_html_({
 	ctx,
-	about_content__html,
+	about__html,
 	articleBody,
 }:{
 	ctx:request_ctx_T
 	articleBody:string
-	about_content__html:string
+	about__html:string
 }) {
 	const title = 'About | ' + site__title_(ctx)
+	const description = AboutPage__description_(ctx)
 	jsonld__add(ctx, ()=><Article>{
 		'@id': jsonld_id__new(ctx, 'Article'),
 		'@type': 'Article',
@@ -54,6 +55,7 @@ export function about__doc_html_({
 		headline: title,
 		image: Person_image,
 		name: title,
+		description,
 		url: request_url__href_(ctx),
 		articleBody,
 	})
@@ -62,14 +64,14 @@ export function about__doc_html_({
 			ctx,
 			title,
 			h1_text: title,
-			description: AboutPage__description_(ctx),
+			description,
 			active_link: 'about',
 		}, [
-			raw_(about_content__html)
+			raw_(about__html)
 		])
 	)
 }
-export function about_content__html_({
+export function about__html_({
 	ctx,
 }:{
 	ctx:request_ctx_T
