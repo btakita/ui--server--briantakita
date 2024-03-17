@@ -1,7 +1,7 @@
 import {
 	AboutPage__description_,
-	AboutPage_id_, AboutPage_id_ref_,
-	Person_id_, Person_id_ref_,
+	AboutPage_id_ref_,
+	Person_id_ref_,
 	Person_image
 } from '@btakita/domain--server--briantakita/jsonld'
 import { jsonld__add, jsonld_id__new } from '@rappstack/domain--server/jsonld'
@@ -10,7 +10,6 @@ import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
-import { schema_org_rdfa__link_, schema_org_rdfa__meta_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
 import { type request_ctx_T } from 'relysjs/server'
@@ -37,6 +36,39 @@ import {
 	svgrepo_sparkling_heart_
 } from '../icon/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
+export function about__doc_html_({
+	ctx,
+	about_content__html,
+	articleBody,
+}:{
+	ctx:request_ctx_T
+	articleBody:string
+	about_content__html:string
+}) {
+	const title = 'About | ' + site__title_(ctx)
+	jsonld__add(ctx, ()=><Article>{
+		'@id': jsonld_id__new(ctx, 'Article'),
+		'@type': 'Article',
+		about: AboutPage_id_ref_(ctx),
+		author: Person_id_ref_(ctx),
+		headline: title,
+		image: Person_image,
+		name: title,
+		url: request_url__href_(ctx),
+		articleBody,
+	})
+	return (
+		md_layout__doc_html_({
+			ctx,
+			title,
+			h1_text: title,
+			description: AboutPage__description_(ctx),
+			active_link: 'about',
+		}, [
+			raw_(about_content__html)
+		])
+	)
+}
 export function about_content__html_({
 	ctx,
 }:{
@@ -108,37 +140,4 @@ From the question "how do we model ${existence__tb_a_()}?" sprang a ${philosophy
 This meta-philosophy applies language to model any reified entity. Language patterns in software & speech to create models of Existence.
 			`.trim())
 	// @formatter:on
-}
-export function about__doc_html_({
-	ctx,
-	about_content__html,
-	articleBody,
-}:{
-	ctx:request_ctx_T
-	articleBody:string
-	about_content__html:string
-}) {
-	const title = 'About | ' + site__title_(ctx)
-	jsonld__add(ctx, ()=><Article>{
-		'@id': jsonld_id__new(ctx, 'Article'),
-		'@type': 'Article',
-		about: AboutPage_id_ref_(ctx),
-		author: Person_id_ref_(ctx),
-		headline: title,
-		image: Person_image,
-		name: title,
-		url: request_url__href_(ctx),
-		articleBody,
-	})
-	return (
-		md_layout__doc_html_({
-			ctx,
-			title,
-			h1_text: title,
-			description: AboutPage__description_(ctx),
-			active_link: 'about',
-		}, [
-			raw_(about_content__html)
-		])
-	)
 }
