@@ -1,14 +1,18 @@
-import { AboutPage__description_, AboutPage_id_ } from '@btakita/domain--server--briantakita/jsonld'
-import type { Article } from 'schema-dts'
-import { type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import {
+	AboutPage__description_,
+	AboutPage_id_,
+	Person_id_,
+	Person_image
+} from '@btakita/domain--server--briantakita/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
+import { schema_org_rdfa__link_, schema_org_rdfa__meta_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { raw_ } from 'relementjs'
-import { link_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
+import type { Article } from 'schema-dts'
 import {
 	bunjs__tb_a_,
 	ctx_core__tb_a_,
@@ -36,15 +40,19 @@ export function about__doc_html_({
 }:{
 	ctx:request_ctx_T
 }) {
+	const title = 'About | ' + site__title_(ctx)
 	return (
 		md_layout__doc_html_({
 			ctx,
-			title: 'About | ' + site__title_(ctx),
-			h1_text: 'About ' + site__title_(ctx),
+			title,
+			h1_text: title,
 			description: AboutPage__description_(ctx),
 			active_link: 'about',
 		}, [
-			link_(<schema_org_props_rdfa_T<Article>>{ property: 'about', href: AboutPage_id_(ctx) }),
+			schema_org_rdfa__link_<Article>({ property: 'author', href: Person_id_(ctx) }),
+			schema_org_rdfa__link_<Article>({ property: 'about', href: AboutPage_id_(ctx) }),
+			schema_org_rdfa__meta_<Article>({ property: 'headline', content: title }),
+			schema_org_rdfa__meta_<Article>({ property: 'image', content: Person_image }),
 			// @formatter:off
 			// language=md
 			md__raw_(`
