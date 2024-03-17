@@ -3,6 +3,7 @@ import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
 import {
 	jsonld_id_ref__new,
+	WebPage__author_,
 	WebPage__description__set,
 	WebPage__headline__set,
 	WebPage__name__set,
@@ -69,6 +70,7 @@ export function home__doc_html_({
 								'pb-6')
 						}, [
 							schema_org_rdfa__meta_<Article>({ property: 'headline', content: site__title_(ctx)! }),
+							schema_org_rdfa__meta_<Article>({ property: 'author', content: WebPage__author_(ctx)!['@id'] }),
 							div_({
 								class: class_(
 									'flex',
@@ -84,7 +86,6 @@ export function home__doc_html_({
 										'text-3xl',
 										'sm:text-5xl',
 										'font-bold'),
-									...schema_org_rdfa_property_<Article>('author'),
 								}, `Brian Takita`),
 								a_({
 									target: '_blank',
