@@ -1,16 +1,17 @@
+import { Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
 import {
-	jsonld_id_ref__new,
+	jsonld__add,
+	jsonld_id__new,
 	WebPage__author_,
 	WebPage__description__set,
 	WebPage__headline__set,
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
-import { site__social_a1_, site__title_, site__website_ } from '@rappstack/domain--server/site'
+import { site__author_, site__social_a1_, site__title_, site__website_ } from '@rappstack/domain--server/site'
 import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { server_blog_card__li_ } from '@rappstack/ui--server--blog/card'
@@ -18,7 +19,6 @@ import { hr_div_ } from '@rappstack/ui--server--blog/hr'
 import { right_arrow_ } from '@rappstack/ui--server--blog/icon'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
-import { schema_org_rdfa__link_, schema_org_rdfa__meta_ } from '@rappstack/ui--server/rdfa'
 import { class_ } from 'ctx-core/html'
 import { a_, article_, div_, h1_, h2_, img_, p_, section_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -46,7 +46,16 @@ export function home__doc_html_({
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'ProfilePage')
-	const Article_id_ref = jsonld_id_ref__new(ctx, 'Article')
+	jsonld__add(ctx, ()=><Article>{
+		'@id': jsonld_id__new(ctx, 'Article'),
+		'@type': 'Article',
+		headline: site__title_(ctx)!,
+		url: site__website_(ctx)!,
+		author: WebPage__author_(ctx)!,
+		name: site__author_(ctx),
+		image: Person_image,
+		articleBody: description,
+	})
 	return (
 		layout__doc_html_({
 			ctx,
@@ -57,18 +66,13 @@ export function home__doc_html_({
 			blog__main_fragment_({
 				ctx
 			}, [
-				article_({
-					...schema_org_rdfa_<Article>('Article', Article_id_ref),
-				}, [
+				article_([
 					section_({
 						id: 'hero',
 						class: class_(
 							'pt-8',
 							'pb-6')
 					}, [
-						schema_org_rdfa__meta_<Article>({ property: 'headline', content: site__title_(ctx)! }),
-						schema_org_rdfa__meta_<Article>({ property: 'url', content: site__website_(ctx)! }),
-						schema_org_rdfa__link_<Article>({ property: 'author', href: WebPage__author_(ctx)!['@id'] }),
 						div_({
 							class: class_(
 								'flex',
@@ -84,7 +88,6 @@ export function home__doc_html_({
 									'text-3xl',
 									'sm:text-5xl',
 									'font-bold'),
-								...schema_org_rdfa_property_('name'),
 							}, `Brian Takita`),
 							a_({
 								target: '_blank',
@@ -120,12 +123,10 @@ export function home__doc_html_({
 								'w-32',
 								'-mt-20',
 								'translate-x-4'),
-							...schema_org_rdfa_property_<Article>('image'),
 						}),
 						// @formatter:off
 						p_({
 							class: 'my-2',
-							...schema_org_rdfa_property_<Article>('articleBody'),
 						}, [
 							'Hi ', svgrepo_waving_hand_({ class: class_('inline-block', 'h-4', 'w-4', 'mb-1' ) }),
 							description.slice('Hi!'.length)
