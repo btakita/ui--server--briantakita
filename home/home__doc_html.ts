@@ -1,4 +1,4 @@
-import { Person_image } from '@btakita/domain--server--briantakita/jsonld'
+import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { sorted_dehydrated_post_meta_a1_ } from '@rappstack/domain--any--blog/post'
 import { post_slug__new } from '@rappstack/domain--any--blog/slug'
 import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
@@ -51,7 +51,7 @@ export function home__doc_html_({
 		'@type': 'Article',
 		headline: site__title_(ctx)!,
 		url: site__website_(ctx)!,
-		author: WebPage__author_(ctx)!,
+		author: Person_id_ref_(ctx),
 		name: site__author_(ctx),
 		image: Person_image,
 		articleBody: description,
