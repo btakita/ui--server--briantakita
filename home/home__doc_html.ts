@@ -10,7 +10,7 @@ import {
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
 import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
-import { site__social_a1_, site__title_ } from '@rappstack/domain--server/site'
+import { site__social_a1_, site__title_, site__website_ } from '@rappstack/domain--server/site'
 import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { server_blog_card__li_ } from '@rappstack/ui--server--blog/card'
@@ -67,6 +67,7 @@ export function home__doc_html_({
 							'pb-6')
 					}, [
 						schema_org_rdfa__meta_<Article>({ property: 'headline', content: site__title_(ctx)! }),
+						schema_org_rdfa__meta_<Article>({ property: 'url', content: site__website_(ctx)! }),
 						schema_org_rdfa__link_<Article>({ property: 'author', href: WebPage__author_(ctx)!['@id'] }),
 						div_({
 							class: class_(
@@ -83,6 +84,7 @@ export function home__doc_html_({
 									'text-3xl',
 									'sm:text-5xl',
 									'font-bold'),
+								...schema_org_rdfa_property_('name'),
 							}, `Brian Takita`),
 							a_({
 								target: '_blank',
