@@ -1,3 +1,4 @@
+import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import {
 	WebPage__description__set,
 	WebPage__headline__set,
@@ -31,7 +32,11 @@ export function posts__doc_html_({
 				ctx,
 				active_link: 'posts'
 			}),
-			blog_posts__main_fragment_({ ctx, }),
+			blog_posts__main_fragment_({
+				ctx,
+				author_id_ref: Person_id_ref_(ctx),
+				image: Person_image,
+			}),
 			blog_posts__nav_({ ctx }),
 			briantakita__footer_({ ctx }),
 		])

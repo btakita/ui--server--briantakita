@@ -5,7 +5,6 @@ import { site__home__post_count_ } from '@rappstack/domain--server--blog/site'
 import {
 	jsonld__add,
 	jsonld_id__new,
-	WebPage__author_,
 	WebPage__description__set,
 	WebPage__headline__set,
 	WebPage__name__set,

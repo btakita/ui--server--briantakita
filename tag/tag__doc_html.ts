@@ -1,3 +1,4 @@
+import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { blog_tag__main_fragment_ } from '@rappstack/ui--server--blog/tag'
 import { type request_ctx_T } from 'relysjs/server'
@@ -15,7 +16,11 @@ export function tag__doc_html_({
 			title: 'Tag: ' + site__title_(ctx)
 		}, [
 			briantakita__header_({ ctx }),
-			blog_tag__main_fragment_({ ctx }),
+			blog_tag__main_fragment_({
+				ctx,
+				author_id_ref: Person_id_ref_(ctx),
+				image: Person_image,
+			}),
 			briantakita__footer_({ ctx }),
 		])
 	)
