@@ -1,13 +1,17 @@
-import type { Article } from 'schema-dts'
-import { WebPage__description__set, WebPage__headline__set, WebPage__name__set } from '@rappstack/domain--server/jsonld'
-import { schema_org_Article_rdfa, type schema_org_props_rdfa_T } from '@rappstack/domain--server/rdfa'
+import {
+	jsonld_id_ref__new,
+	WebPage__description__set,
+	WebPage__headline__set,
+	WebPage__name__set
+} from '@rappstack/domain--server/jsonld'
+import { schema_org_rdfa_, schema_org_rdfa_property_ } from '@rappstack/domain--server/rdfa'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
-import { schema_org_Article__link_a1_ } from '@rappstack/ui--server/rdfa'
 import { article_, div_, span_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
+import type { Article } from 'schema-dts'
 import {
 	astrojs__tb_a_,
 	astropaper__tb_a_,
@@ -78,6 +82,7 @@ export function portfolio__doc_html_({
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
+	const Article_id_ref = jsonld_id_ref__new(ctx, 'Article')
 	return (
 		md_layout__doc_html_({
 			ctx,
@@ -87,13 +92,10 @@ export function portfolio__doc_html_({
 			active_link: 'portfolio',
 		}, [
 			article_({
-				...schema_org_Article_rdfa,
+				...schema_org_rdfa_<Article>('Article', Article_id_ref),
 			},[
-				schema_org_Article__link_a1_(ctx),
 				div_({
-					...<schema_org_props_rdfa_T<Article>>{
-						property: 'articleBody'
-					}
+					...schema_org_rdfa_property_<Article>('articleBody'),
 				}, [
 					// @formatter:off
 					// language=md
