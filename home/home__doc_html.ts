@@ -19,7 +19,7 @@ import { right_arrow_ } from '@rappstack/ui--server--blog/icon'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { socials__div_ } from '@rappstack/ui--server--blog/social'
 import { class_ } from 'ctx-core/html'
-import { a_, article_, div_, h1_, h2_, img_, p_, section_, ul_ } from 'relementjs/html'
+import { a_, article_, div_, h1_, h2_, img_, li_, p_, section_, ul_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import { briantakita__footer_ } from '../footer/index.js'
@@ -118,7 +118,6 @@ export function home__doc_html_({
 								'w-full',
 								'sm:w-auto',
 								'sm:float-right',
-								'sm:-mt-20',
 								'sm:translate-x-4')
 						}, [
 							img_({
@@ -127,8 +126,12 @@ export function home__doc_html_({
 								class: class_(
 									'h-32',
 									'w-32',
-									'm-auto',
-									'rounded-full'),
+									'sm:h-64',
+									'sm:w-64',
+									'mx-auto',
+									'sm:my-2',
+									'rounded-full',
+									'sm:rounded'),
 							})
 						]),
 						// @formatter:off
@@ -136,7 +139,18 @@ export function home__doc_html_({
 							class: 'my-2',
 						}, [
 							'Hi ', svgrepo_waving_hand_({ class: class_('inline-block', 'h-4', 'w-4', 'mb-1' ) }),
-							description.slice('Hi!'.length)
+							'I build efficient apps & libraries using the web platform. With powerful libraries, I deliver results with simpler systems. Systems that emphasize:',
+							ul_({
+								class: class_(
+									'pl-4',
+									'pb-4',
+									'list-disc')
+							}, [
+								li_('powerful primitives'),
+								li_('bottom-up development'),
+								li_('domain ontology'),
+							]),
+							'Unlocking the vanilla web platform to deliver productivity without framework bloat. The result is fast web sites/apps & systems that expand to handle more with less.'
 						]),
 						// @formatter:on
 						site__social_a1_(ctx)?.length
