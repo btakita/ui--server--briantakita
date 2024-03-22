@@ -19,7 +19,7 @@ export function briantakita__footer_<env_T extends relement_env_T>({
 					? 'mt-auto'
 					: undefined)
 		}, [
-			hr_div_({ no_padding: true }),
+			hr_div_(),
 			div_({
 				class: class_(
 					'footer-wrapper',
