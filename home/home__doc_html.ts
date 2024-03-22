@@ -11,7 +11,7 @@ import {
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
 import { site__author_, site__social_a1_, site__title_, site__website_ } from '@rappstack/domain--server/site'
-import { iconify_rss_ } from '@rappstack/ui--any--blog/icon'
+import { heroicons_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { server_blog_card__li_ } from '@rappstack/ui--server--blog/card'
 import { hr_div_ } from '@rappstack/ui--server--blog/hr'
@@ -75,15 +75,15 @@ export function home__doc_html_({
 						div_({
 							class: class_(
 								'flex',
-								'items-center'
-							)
+								'items-center',
+								'justify-center')
 						}, [
 							h1_({
 								class: class_(
+									'inline-block',
 									'my-4',
 									'sm:my-8',
 									'mr-2',
-									'inline-block',
 									'text-3xl',
 									'sm:text-5xl',
 									'font-bold'),
@@ -92,37 +92,44 @@ export function home__doc_html_({
 								target: '_blank',
 								href: '/rss',
 								class: class_(
-									'rss-link',
-									'mb-3'),
+									'flex',
+									'items-end',
+									'justify-end',
+									'rss-link'),
 								'aria-label': 'rss feed',
 								title: 'RSS Feed',
 							}, [
-								iconify_rss_({
+								heroicons_rss_({
 									class: class_(
 										'rss-icon',
 										'inline-block',
-										'mb-2',
-										'sm:mb-3',
 										'h-6',
 										'w-6',
 										'scale-110',
 										'sm:scale-125',
-										'fill-skin-accent')
+										'text-skin-accent')
 								})
 							]),
 						]),
-						img_({
-							src: briantakita_profile_photo_webp,
-							title: 'Brian Takita',
+						div_({
 							class: class_(
-								'inline-block',
+								'sm:inline-block',
+								'w-full',
+								'sm:w-auto',
 								'sm:float-right',
-								'rounded-full',
-								'h-32',
-								'w-32',
-								'-mt-20',
-								'translate-x-4'),
-						}),
+								'sm:-mt-20',
+								'sm:translate-x-4')
+						}, [
+							img_({
+								src: briantakita_profile_photo_webp,
+								title: 'Brian Takita',
+								class: class_(
+									'h-32',
+									'w-32',
+									'm-auto',
+									'rounded-full'),
+							})
+						]),
 						// @formatter:off
 						p_({
 							class: 'my-2',
