@@ -36,6 +36,7 @@ export function posts__doc_html_({
 				ctx,
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
+				description: 'The articles that I have posted to this site…'
 			}),
 			blog_posts__nav_({ ctx }),
 			briantakita__footer_({ ctx }),
