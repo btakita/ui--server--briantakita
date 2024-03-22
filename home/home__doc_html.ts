@@ -76,7 +76,8 @@ export function home__doc_html_({
 							class: class_(
 								'flex',
 								'items-center',
-								'justify-center')
+								'justify-center',
+								'sm:justify-start')
 						}, [
 							h1_({
 								class: class_(
