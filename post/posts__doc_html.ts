@@ -34,6 +34,7 @@ export function posts__doc_html_({
 			}),
 			blog_posts__main_fragment_({
 				ctx,
+				h1_class: 'text-4xl',
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
 				description: 'The articles that I have posted to this site…'
