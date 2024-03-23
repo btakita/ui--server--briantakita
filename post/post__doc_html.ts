@@ -37,6 +37,8 @@ export function post__doc_html_({
 			blog_post__main_fragment_({
 				ctx,
 				article_class: prose_class,
+				progress_container_class: 'bg-skin-fill',
+				progress_class: 'bg-skin-accent',
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
 			}),
