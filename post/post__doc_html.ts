@@ -41,6 +41,8 @@ export function post__doc_html_({
 				progress_class: 'bg-skin-accent',
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
+				h1_class: 'text-4xl',
+				h2_class: 'text-2xl',
 			}),
 			briantakita__footer_({ ctx }),
 		])
