@@ -20,7 +20,12 @@ export function briantakita__header_<env_T extends relement_env_T>({
 	active_link?:briantakita_header__link_T
 }) {
 	return (
-		blog__header_<env_T>({ ctx }, [
+		blog__header_<env_T>({
+			ctx,
+			logo_image_class: class_(
+				'w-16',
+				'h-10')
+		}, [
 			blog__header__nav__li_({}, [
 				blog__header__nav__li__a_({
 					active: active_('about'),
