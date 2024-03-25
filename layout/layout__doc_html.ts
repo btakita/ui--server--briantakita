@@ -13,7 +13,7 @@ import {
 	site__social_image_url_,
 	site__title_
 } from '@rappstack/domain--server/site'
-import { fouc__remove__script_ } from '@rappstack/ui--server/fouc'
+import { fouc__remove__fragment_ } from '@rappstack/ui--server/fouc'
 import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
 import { dark_theme_color_fill, light_theme_color_fill } from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
@@ -92,7 +92,7 @@ export function layout__doc_html_({
 				title_(title),
 				site__light_and_dark_mode
 					? [
-						fouc__remove__script_({
+						fouc__remove__fragment_({
 							dark_bg_color: dark_theme_color_fill,
 							light_bg_color: light_theme_color_fill
 						})
