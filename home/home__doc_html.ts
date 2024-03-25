@@ -140,16 +140,18 @@ export function home__doc_html_({
 						}, [
 							'Hi ', svgrepo_waving_hand_({ class: class_('inline-block', 'h-4', 'w-4', 'mb-1' ) }),
 							'I build efficient apps & libraries using the web platform. With powerful libraries, I deliver results with simpler systems. Systems that emphasize:',
-							ul_({
-								class: class_(
-									'pl-4',
-									'pb-4',
-									'list-disc')
-							}, [
-								li_('powerful primitives'),
-								li_('bottom-up development'),
-								li_('domain ontology'),
-							]),
+						]),
+						ul_({
+							class: class_(
+								'pl-4',
+								'pb-4',
+								'list-disc')
+						}, [
+							li_('powerful primitives'),
+							li_('bottom-up development'),
+							li_('domain ontology'),
+						]),
+						p_([
 							'Unlocking the vanilla web platform to deliver productivity without framework bloat. The result is fast web sites/apps & systems that expand to handle more with less.'
 						]),
 						// @formatter:on

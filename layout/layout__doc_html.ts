@@ -13,7 +13,9 @@ import {
 	site__social_image_url_,
 	site__title_
 } from '@rappstack/domain--server/site'
+import { fouc__remove__script_ } from '@rappstack/ui--server/fouc'
 import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
+import { dark_theme_color_fill, light_theme_color_fill } from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
@@ -55,14 +57,6 @@ export function layout__doc_html_({
 			lang: 'en'
 		}, [
 			head_([
-				site__light_and_dark_mode
-					? [
-						// language=js
-						script_({ type: 'module' }, raw_(
-							// remove fouc
-							`let theme = localStorage.getItem('theme');document.firstElementChild.setAttribute('data-theme',theme ? theme : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')`))
-					]
-					: null,
 				meta_({ 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' }),
 				meta_({ name: 'viewport', content: 'width=device-width' }),
 				meta_({ name: 'title', content: title }),
@@ -96,6 +90,14 @@ export function layout__doc_html_({
 				...assets.css_a.map(href=>
 					link_({ rel: 'stylesheet', type: 'text/css', href })),
 				title_(title),
+				site__light_and_dark_mode
+					? [
+						fouc__remove__script_({
+							dark_bg_color: dark_theme_color_fill,
+							light_bg_color: light_theme_color_fill
+						})
+					]
+					: null,
 			]),
 			body_({
 				class: class_(
