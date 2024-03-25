@@ -18,6 +18,7 @@ export function tags__doc_html_({
 			briantakita__header_({ ctx }),
 			blog_tags__main_fragment_({
 				ctx,
+				h1_class: 'text-4xl',
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
 			}),
