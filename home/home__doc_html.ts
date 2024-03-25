@@ -82,8 +82,9 @@ export function home__doc_html_({
 							h1_({
 								class: class_(
 									'inline-block',
-									'my-4',
-									'sm:my-8',
+									'mt-0',
+									'mb-0',
+									'sm:mb-8',
 									'mr-2',
 									'text-3xl',
 									'sm:text-5xl',
