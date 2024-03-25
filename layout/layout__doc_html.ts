@@ -55,6 +55,14 @@ export function layout__doc_html_({
 			lang: 'en'
 		}, [
 			head_([
+				site__light_and_dark_mode
+					? [
+						// language=js
+						script_({ type: 'module' }, raw_(
+							// remove fouc
+							`let theme = localStorage.getItem('theme');document.firstElementChild.setAttribute('data-theme',theme ? theme : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')`))
+					]
+					: null,
 				meta_({ 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' }),
 				meta_({ name: 'viewport', content: 'width=device-width' }),
 				meta_({ name: 'title', content: title }),
@@ -87,22 +95,6 @@ export function layout__doc_html_({
 				&& meta_({ name: 'google-site-verification', content: google_site_verification }),
 				...assets.css_a.map(href=>
 					link_({ rel: 'stylesheet', type: 'text/css', href })),
-				site__light_and_dark_mode
-					? [
-						// language=js
-						script_({ type: 'module' }, raw_(`
-					// remove fouc
-					const localStorage__theme = localStorage.getItem('theme')
-					document.firstElementChild.setAttribute(
-						'data-theme',
-						localStorage__theme
-							? localStorage__theme
-							: window.matchMedia('(prefers-color-scheme: dark)').matches
-								? 'dark'
-								: 'light')
-				`.trim().replaceAll('					', '')))
-					]
-					: null,
 				title_(title),
 			]),
 			body_({
