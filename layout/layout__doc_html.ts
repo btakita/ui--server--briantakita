@@ -91,11 +91,11 @@ export function layout__doc_html_({
 				link_({ rel: 'icon', ...favicon }),
 				link_({ rel: 'canonical', href: canonical_url }),
 				link_({ rel: 'sitemap', href: '/sitemap.xml' }),
+				title_(title),
 				google_site_verification
 				&& meta_({ name: 'google-site-verification', content: google_site_verification }),
 				...assets.css_a.map(href=>
 					link_({ rel: 'stylesheet', type: 'text/css', href })),
-				title_(title),
 			]),
 			body_({
 				class: class_(

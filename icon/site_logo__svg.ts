@@ -1,22 +1,27 @@
 import { class_ } from 'ctx-core/html'
-import { svg_, text_, tspan_ } from 'relementjs/svg'
+import { path_, svg_ } from 'relementjs/svg'
 export function site_logo__svg_(props?:{
 	class?:string
 }) {
 	return (
 		svg_({
 			xmlns: 'http://www.w3.org/2000/svg',
-			viewBox: '0 0 67 48',
+			viewBox: '0 0 56 36',
 			'stroke-width': '1.5',
 			stroke: 'none',
 			fill: 'currentColor',
 			class: class_(props?.class)
 		}, [
-			text_({
-				// x: -3.1805108,
-				y: 67.733332 * 5 / 8,
-				style: 'font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52.91666794px;font-family:\'DejaVu Sans\';-inkscape-font-specification:\'DejaVu Sans, Normal\';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#FFFFFF;fill-opacity:1;stroke-width:0.26458332'
-			}, 'BT')
+			path_({
+				d: 'M 4.96 18.808 L 4.96 31.997 L 12.914 31.997 C 15.582 31.997 17.559 31.455 18.843 30.369 C 20.128 29.284 20.771 27.625 20.771 25.391 C 20.771 23.14 20.128 21.48 18.843 20.411 C 17.559 19.342 15.582 18.808 12.914 18.808 L 4.96 18.808 Z M 4.96 4.003 L 4.96 14.853 L 12.301 14.853 C 14.723 14.853 16.527 14.407 17.714 13.515 C 18.9 12.623 19.494 11.26 19.494 9.428 C 19.494 7.612 18.9 6.253 17.714 5.353 C 16.527 4.453 14.723 4.003 12.301 4.003 L 4.96 4.003 Z M 0 0 L 12.669 0 C 16.45 0 19.363 0.771 21.408 2.315 C 23.455 3.858 24.478 6.052 24.478 8.898 C 24.478 11.099 23.954 12.851 22.907 14.154 C 21.859 15.456 20.32 16.268 18.291 16.59 C 20.73 17.104 22.624 18.177 23.975 19.808 C 25.325 21.44 26 23.478 26 25.921 C 26 29.136 24.887 31.62 22.66 33.372 C 20.435 35.124 17.267 36 13.159 36 L 0 36 L 0 0 Z',
+				style: 'stroke-width: 0.255934px;',
+				'aria-label': 'B'
+			}),
+			path_({
+				d: 'M 26 0 L 56 0 L 56 4.099 L 43.411 4.099 L 43.411 36 L 38.589 36 L 38.589 4.099 L 26 4.099 L 26 0 Z',
+				style: 'stroke-width: 0.259089px;',
+				'aria-label': 'T'
+			})
 		])
 	)
 }
