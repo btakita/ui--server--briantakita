@@ -87,8 +87,6 @@ export function layout__doc_html_({
 				&& meta_({ name: 'google-site-verification', content: google_site_verification }),
 				...assets.css_a.map(href=>
 					link_({ rel: 'stylesheet', type: 'text/css', href })),
-				...assets.script_a.map(src=>
-					script_({ type: 'module', src })),
 				site__light_and_dark_mode
 					? [
 						// language=js
@@ -122,6 +120,8 @@ export function layout__doc_html_({
 					body_class)
 			}, [
 				children,
+				...assets.script_a.map(src=>
+					script_({ type: 'module', src })),
 				site__gtag_id
 					? [
 						// Google tag (gtag.js)
