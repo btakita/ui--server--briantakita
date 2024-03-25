@@ -57,6 +57,12 @@ export function layout__doc_html_({
 			lang: 'en'
 		}, [
 			head_([
+				site__light_and_dark_mode
+					? fouc__remove__fragment_({
+						dark_bg_color: dark_theme_color_fill,
+						light_bg_color: light_theme_color_fill
+					})
+					: null,
 				meta_({ 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' }),
 				meta_({ name: 'viewport', content: 'width=device-width' }),
 				meta_({ name: 'title', content: title }),
@@ -90,14 +96,6 @@ export function layout__doc_html_({
 				...assets.css_a.map(href=>
 					link_({ rel: 'stylesheet', type: 'text/css', href })),
 				title_(title),
-				site__light_and_dark_mode
-					? [
-						fouc__remove__fragment_({
-							dark_bg_color: dark_theme_color_fill,
-							light_bg_color: light_theme_color_fill
-						})
-					]
-					: null,
 			]),
 			body_({
 				class: class_(
