@@ -124,6 +124,7 @@ export function home__doc_html_({
 							img_({
 								src: briantakita_profile_photo_webp,
 								title: 'Brian Takita',
+								alt: 'Brian Takita',
 								class: class_(
 									'h-32',
 									'w-32',
