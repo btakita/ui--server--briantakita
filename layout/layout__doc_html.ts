@@ -15,6 +15,8 @@ import {
 } from '@rappstack/domain--server/site'
 import { fouc__remove__fragment_ } from '@rappstack/ui--server/fouc'
 import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
+import { og__meta_fragment_ } from '@rappstack/ui--server/og'
+import { twitter__meta_fragment_ } from '@rappstack/ui--server/twitter'
 import { dark_theme_color_fill, light_theme_color_fill } from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
@@ -28,8 +30,12 @@ export function layout__doc_html_({
 	title,
 	author,
 	description,
+	og__meta_fragment,
+	twitter__meta_fragment,
 	favicon,
 	social_image_url,
+	theme_color,
+	sitemap_url,
 	body_class,
 }:{
 	ctx:request_ctx_T
@@ -38,12 +44,16 @@ export function layout__doc_html_({
 	title?:string
 	author?:string
 	description?:string
+	og__meta_fragment?:tag_dom_T,
+	twitter__meta_fragment?:tag_dom_T,
 	favicon?:icon_link_props_T
 	social_image_url?:string
+	theme_color?:string
+	sitemap_url?:string
 	body_class?:string
 }, ...children:tag_dom_T[]) {
 	canonical_url ??= request_url__href_(ctx)
-	title ??= site__title_(ctx)
+	title ??= site__title_(ctx) ?? site__author_(ctx) ?? canonical_url ?? ''
 	description ??= site__description_(ctx)
 	author ??= site__author_(ctx)
 	favicon ??= site__favicon_(ctx)
@@ -69,16 +79,28 @@ export function layout__doc_html_({
 				meta_({ name: 'description', content: description }),
 				meta_({ name: 'author', content: author }),
 				//  Open Graph / Facebook
-				meta_({ property: 'og:title', content: title }),
-				meta_({ property: 'og:description', content: description }),
-				meta_({ property: 'og:url', content: canonical_url }),
-				meta_({ property: 'og:image', content: social_image_url }),
+				og__meta_fragment
+					? og__meta_fragment
+					: [
+						og__meta_fragment_({
+							title,
+							description,
+							url: canonical_url,
+							image: social_image_url,
+							type: 'website'
+						}),
+					],
 				// Twitter
-				meta_({ property: 'twitter:card', content: 'summary_large_image' }),
-				meta_({ property: 'twitter:url', content: canonical_url }),
-				meta_({ property: 'twitter:title', content: title }),
-				meta_({ property: 'twitter:description', content: description }),
-				meta_({ property: 'twitter:image', content: social_image_url }),
+				twitter__meta_fragment
+					? twitter__meta_fragment
+					: [
+						twitter__meta_fragment_({
+							card: 'summary_large_image',
+							title,
+							description,
+							image: social_image_url
+						})
+					],
 				site__light_and_dark_mode
 					? [
 						meta_({ name: 'darkreader-lock' }),
@@ -87,10 +109,10 @@ export function layout__doc_html_({
 					: null,
 				font__meta_props_a1_(ctx).map(meta_props=>
 					meta_(meta_props)),
-				meta_({ name: 'theme-color', content: '' }),
+				meta_({ name: 'theme-color', content: theme_color ?? '' }),
 				link_({ rel: 'icon', ...favicon }),
 				link_({ rel: 'canonical', href: canonical_url }),
-				link_({ rel: 'sitemap', href: '/sitemap.xml' }),
+				link_({ rel: 'sitemap', href: sitemap_url ?? '/sitemap.xml' }),
 				title_(title),
 				google_site_verification
 				&& meta_({ name: 'google-site-verification', content: google_site_verification }),
