@@ -5,7 +5,7 @@ import {
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import { site__title_ } from '@rappstack/domain--server/site'
+import { site__author_, site__title_ } from '@rappstack/domain--server/site'
 import { blog_posts__main_fragment_, blog_posts__nav_ } from '@rappstack/ui--server--blog/post'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -18,7 +18,7 @@ export function posts__doc_html_({
 	ctx:request_ctx_T
 }) {
 	const title = 'Posts | ' + site__title_(ctx)
-	const description = 'All posts on ' + site__title_(ctx)
+	const description = 'All articles & posts by ' + site__author_(ctx) + '.'
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)

@@ -21,6 +21,8 @@ export function md_layout__doc_html_({
 	title,
 	h1_text,
 	description,
+	hero_p_class,
+	hero_p_text,
 	active_link,
 	article_class,
 	article_props,
@@ -29,6 +31,8 @@ export function md_layout__doc_html_({
 	title:string
 	h1_text:string
 	description?:string
+	hero_p_class?:string
+	hero_p_text?:string
 	active_link?:briantakita_header__link_T
 	article_class?:string
 	article_props?:Exclude<tag_props_T<HTMLElement>, 'class'>
@@ -37,7 +41,8 @@ export function md_layout__doc_html_({
 	return (
 		layout__doc_html_({
 			ctx,
-			title
+			title,
+			description,
 		}, [
 			briantakita__header_({
 				ctx,
@@ -49,7 +54,8 @@ export function md_layout__doc_html_({
 					'prose',
 					prose_class),
 				h1_text,
-				description,
+				hero_p_class,
+				hero_p_text: hero_p_text ?? description,
 			}, [
 				article_({
 					id: active_link,

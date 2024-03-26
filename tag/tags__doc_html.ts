@@ -1,5 +1,5 @@
 import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
-import { site__title_ } from '@rappstack/domain--server/site'
+import { site__author_, site__title_ } from '@rappstack/domain--server/site'
 import { blog_tags__main_fragment_ } from '@rappstack/ui--server--blog/tag'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
@@ -10,10 +10,13 @@ export function tags__doc_html_({
 }:{
 	ctx:request_ctx_T
 }) {
+	const title = 'Tags | ' + site__title_(ctx)
+	const description = 'Tags used in all articles & posts by ' + site__author_(ctx) + '.'
   return (
 		layout__doc_html_({
 			ctx,
-			title: 'Tags | ' + site__title_(ctx)
+			title,
+			description,
 		}, [
 			briantakita__header_({ ctx }),
 			blog_tags__main_fragment_({

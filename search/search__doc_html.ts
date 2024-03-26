@@ -16,7 +16,7 @@ export function search__doc_html_({
 	ctx:request_ctx_T
 }) {
 	const title = 'Search | ' + site__title_(ctx)
-	const description = 'Search through blog posts authored by ' + site__author_(ctx)
+	const description = 'Search through blog posts & articles authored by ' + site__author_(ctx)
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)

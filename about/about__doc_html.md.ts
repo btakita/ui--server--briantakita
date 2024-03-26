@@ -65,6 +65,8 @@ export function about__doc_html_({
 			ctx,
 			title,
 			h1_text: title,
+			hero_p_text: '',
+			description,
 			active_link: 'about',
 		}, [
 			raw_(about__html)
@@ -79,7 +81,7 @@ export function about__html_({
 	// @formatter:off
 	// language=md
 	return '' + md__raw_(`
-## ${AboutPage__description_(ctx)}
+## Efficient full stack software systems that grow with you
 I create full stack software solutions${footnote__sup_({ ctx, id: 'preferred-tooling' }, [
 		'My preferred tooling is:',
 		raw_([bunjs__tb_a_, drizzle_orm__tb_a_, ctx_core__tb_a_, relysjs__tb_a_, rmemo__tb_a_, relementjs__tb_a_, redis__tb_a_, sqlite__tb_a_, rappstack__tb_a_].map(a_=>a_({ class: class_(tag_class) })).join(' '))
