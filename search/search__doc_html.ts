@@ -29,9 +29,12 @@ export function search__doc_html_({
 		}, [
 			briantakita__header_({
 				ctx,
-				active_link: 'search'
+				active_link: 'search',
 			}),
-			blog_search__main_fragment_({ ctx, }),
+			blog_search__main_fragment_({
+				ctx,
+				h1_text: `Search ` + site__author_(ctx) + `'s articles & blog posts`
+			}),
 			briantakita__footer_({ ctx })
 		])
 	)
