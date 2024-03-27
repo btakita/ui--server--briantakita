@@ -153,7 +153,7 @@ export const rmemo_md_ = ()=>{
 		['reactive state management library with the smallest full featured bundle size'],
 		['integration with garbage collector via WeakRef'],
 	]
-/// language=md
+// language=md
 	return `
 ## ${rmemo__tb_a_({ id })}
 
@@ -179,7 +179,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const relementjs_md_ = ()=>{
 	const id = 'relementjs'
 	const name = relementjs_name
@@ -207,7 +207,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const rebuildjs_md_ = ()=>{
 	const id = 'rebuildjs'
 	const name = rebuildjs_name
@@ -237,7 +237,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const relysjs_md_ = ()=>{
 	const id = 'relysjs'
 	const name = relysjs_name
@@ -265,7 +265,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const rebuildjs_tailwind_md_ = ()=>{
 	const id = 'rebuildjs_tailwind'
 	const name = rebuildjs_tailwind_name
@@ -293,7 +293,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const hyop_md_ = ()=>{
 	const id = 'hyop'
 	const name = hyop_name
@@ -321,7 +321,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const ctx_core_md_ = (ctx_core_catch_all__footnote__sup_?:()=>tag_dom_T)=>{
 	const id = 'ctx-core'
 	const name = ctx_core_name
@@ -381,13 +381,13 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const nanostores_md_ = (nanostores_breadth_first_queue__footnote__sup_?:()=>tag_dom_T)=>`
 ## ${nanostores__tb_a_({ id: 'nanostores' })}
 
 I learned about Nano Stores via ${astrojs__tb_a_()}. NanoStores was a natural replacement of I ${svelte_stores__tb_a_()} to support global reactive state. NanoStores is agnostic to component libraries, such as ${solidjs__tb_a_()}. I contributed a fix${nanostores_breadth_first_queue__footnote__sup_?.() ?? ''} to diamond dependency bugs. This fix uses a breadth first queuing algorithm.
 `
-/// language=md
+// language=md
 export const sveltejs_md_ = (
 	svelte_cyclic_breadth_first_queue__footnote__sup_?:()=>tag_dom_T,
 )=>`
@@ -395,7 +395,7 @@ export const sveltejs_md_ = (
 
 I contributed the breadth first queuing algorithm to svelte stores${svelte_cyclic_breadth_first_queue__footnote__sup_?.() ?? ''}.
 `
-/// language=md
+// language=md
 export const backbone_signal_md_ = ()=>{
 	const id = 'backbone_signal'
 	const name = backbone_signal_name
@@ -425,7 +425,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const jasmine_flow_md_ = ()=>{
 	const id = 'jasmine_flow'
 	const name = jasmine_flow_name
@@ -455,7 +455,7 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const rr_md_ = ()=>{
 	const id = 'rr'
 	const name = rr_name
@@ -485,13 +485,13 @@ ${script_({ type: 'application/ld+json' }, raw_(JSON.stringify(<SoftwareSourceCo
 })))}
 `
 }
-/// language=md
+// language=md
 export const rspec_md_ = (rspec_nested_describes__footnote__sup_?:()=>tag_dom_T)=>`
 ## ${rspec__tb_a_({ id: 'rspec' })}
 
 I was an early core maintainer on the rspec team. Rspec was the first DSL (Domain Specific Language) implementation of ${tb_a_({ href: 'https://dannorth.net/introducing-bdd/', nofollow: true }, 'BDD (Behavioral Driven Development)')}. Key contributions include the first known implementation of nested \`describe\` & \`context\` statements${rspec_nested_describes__footnote__sup_?.() ?? ''}. Nested describes were controversial at that time. Criticism included adding to the complexity & inhibit readability of the specs. Nesting \`describe\` & \`context\` enabled contextual nesting with separate usage of \`beforeEach\` & \`afterEach\`. I championed the idea & delivered the implementation. I integrated Rspec with ${tb_a_({ href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html', nofollow: true }, `Test::Unit`)}. Worked on the initial mock implementation. Worked on the ${ruby_on_rails__tb_a_()} integration.
 `
-/// language=md
+// language=md
 export const desertrb_md_ = ()=>`
 ## ${desertrb__tb_a_({ id: 'desert' })}
 
@@ -501,7 +501,7 @@ Reusability doesn’t come at the cost of extensibility. Desert made it easy to 
 
 Mixin classes in with your own or other plugins’ classes. This allows you to make full featured composable components.
 `
-/// language=md
+// language=md
 export const jellyrb_md_ = ()=>`
 ## ${jellyrb__tb_a_({ id: 'jellyrb' })}
 
@@ -509,19 +509,19 @@ Jelly is an unobtrusive Javascript framework for ${jquery__tb_a_()} and ${ruby_o
 
 Jelly encourages and enables unit testing your Javascript code. While using a Javascript testing framework such as ${jasminejs__tb_a_()} or ${screw_unit__tb_a_()}. Jelly allows testing AJAX and client-side events separate from your Rails app.
 `
-/// language=md
+// language=md
 export const poloniumrb_md_ = ()=>`
 ## ${poloniumrb__tb_a_({ id: 'poloniumrb' })}
 
 Selenium test runner & helpers for Rails. Featured a set of \`wait_for\` helpers to keep the tests in sync with the application.
 `
-/// language=md
+// language=md
 export const unison_md_ = ()=>`
 ## ${unison__tb_a_({ id: 'unison' })}
 
 Reactive in-memory relational caching library which syncs with upstream relational databases. Written in Ruby.
 `
-/// language=md
+// language=md
 export const screw_unit_md_ = ()=>`
 ## ${screw_unit__tb_a_({ id: 'screw-unit' })}
 
@@ -531,13 +531,13 @@ Screw.Unit is a Behavior-Driven Testing Framework for Javascript. It features ne
 * an interactive runner that can execute focused specs and describes;
 * and brief, extensible source-code.
 `
-/// language=md
+// language=md
 export const generic_query_analyzer_md_ = ()=>`
 ## ${generic_query_analyzer__tb_a_({ id: 'generic_query_analyzer' })}
 
 A query analyzer using ${ado_net__tb_a_()}. I built this tool to run SQL queries on the ${msaccess__tb_a_()} CRM ${msexcel__tb_a_()} database. Used by @ ${ccrcorp__tb_a_()}. Written with ${c_sharp__tb_a_()}, ${ado_net__tb_a_()}, ${winforms__tb_a_()}.
 `
-/// language=md
+// language=md
 export const poof_md_ = ()=>`
 ## ${poof__tb_a_({ id: 'poof' })}
 
