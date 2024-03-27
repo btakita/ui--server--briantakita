@@ -69,7 +69,6 @@ export function home__doc_html_({
 					section_({
 						id: 'hero',
 						class: class_(
-							'pt-8',
 							'pb-6')
 					}, [
 						div_({
@@ -84,7 +83,7 @@ export function home__doc_html_({
 									'inline-block',
 									'mt-0',
 									'mb-0',
-									'sm:mb-8',
+									'sm:mb-2',
 									'mr-2',
 									'text-3xl',
 									'sm:text-5xl',

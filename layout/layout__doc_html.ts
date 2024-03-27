@@ -62,6 +62,7 @@ export function layout__doc_html_({
 	const site__light_and_dark_mode = site__light_and_dark_mode_(ctx)
 	assets = assets__new(assets_(ctx), assets)
 	const site__gtag_id = site__gtag_id_(ctx)
+	theme_color ??= 'rgb(' + dark_theme_color_fill + ')'
 	return (
 		doc_html_({
 			lang: 'en'
@@ -109,7 +110,7 @@ export function layout__doc_html_({
 					: null,
 				font__meta_props_a1_(ctx).map(meta_props=>
 					meta_(meta_props)),
-				meta_({ name: 'theme-color', content: theme_color ?? '' }),
+				meta_({ name: 'theme-color', content: theme_color }),
 				link_({ rel: 'icon', ...favicon }),
 				link_({ rel: 'canonical', href: canonical_url }),
 				link_({ rel: 'sitemap', href: sitemap_url ?? '/sitemap.xml' }),
