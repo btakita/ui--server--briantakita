@@ -51,6 +51,7 @@ export function md_layout__doc_html_({
 			blog__main_fragment_({
 				ctx,
 				class: class_(
+					'nofouc',
 					'prose',
 					prose_class),
 				h1_text,

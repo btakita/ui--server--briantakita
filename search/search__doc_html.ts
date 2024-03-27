@@ -33,6 +33,7 @@ export function search__doc_html_({
 			}),
 			blog_search__main_fragment_({
 				ctx,
+				class: 'nofouc',
 				h1_text: `Search ` + site__author_(ctx) + `'s articles & blog posts`
 			}),
 			briantakita__footer_({ ctx })

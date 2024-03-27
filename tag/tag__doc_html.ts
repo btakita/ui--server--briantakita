@@ -1,6 +1,5 @@
 import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { tag_ } from '@rappstack/domain--server--blog/tag'
-import { site__title_ } from '@rappstack/domain--server/site'
 import { blog_tag__main_fragment_ } from '@rappstack/ui--server--blog/tag'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
@@ -25,6 +24,7 @@ export function tag__doc_html_({
 			}),
 			blog_tag__main_fragment_({
 				ctx,
+				class: 'nofouc',
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
 			}),

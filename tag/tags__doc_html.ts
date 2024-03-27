@@ -21,6 +21,7 @@ export function tags__doc_html_({ ctx }:tags__doc_html_props_T) {
 			}),
 			blog_tags__main_fragment_({
 				ctx,
+				class: 'nofouc',
 				h1_class: 'text-4xl',
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
