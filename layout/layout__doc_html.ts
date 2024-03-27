@@ -13,7 +13,7 @@ import {
 	site__social_image_url_,
 	site__title_
 } from '@rappstack/domain--server/site'
-import { fouc__remove__fragment_ } from '@rappstack/ui--server/fouc'
+import { nofouc__body_bg__script_, nofouc__theme__set__fragment_ } from '@rappstack/ui--server/fouc'
 import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
 import { og__meta_fragment_ } from '@rappstack/ui--server/og'
 import { twitter__meta_fragment_ } from '@rappstack/ui--server/twitter'
@@ -68,13 +68,13 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 	return (
 		doc_html_({
 			lang: 'en',
-			class: class_('fouc-ctx'),
-			/** @see {import('@btakita/ui--browser--briantakita/layout').fouc_ctx__hyop} */
-			hyop: 'fouc_ctx__hyop'
+			class: class_('nofouc'),
+			/** @see {import('@btakita/ui--browser--briantakita/layout').nofouc__hyop} */
+			hyop: 'nofouc__hyop'
 		}, [
 			head_([
 				site__light_and_dark_mode
-					? fouc__remove__fragment_({
+					? nofouc__theme__set__fragment_({
 						dark_bg_color: dark_theme_color_fill,
 						light_bg_color: light_theme_color_fill
 					})
@@ -123,7 +123,8 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 				google_site_verification
 				&& meta_({ name: 'google-site-verification', content: google_site_verification }),
 				style_({ type: 'text/css' }, raw_(
-					`html.fouc-ctx .fouc{opacity:0;}:root,html[data-theme="light"] {--color-fill: ${light_theme_color_fill};--color-text-base: 40,39,40;--color-accent: 0,108,172;--color-card: 230,230,230;--color-card-muted: 205,205,205;--color-border: 236,233,233;}html[data-theme="dark"] {--color-fill: ${dark_theme_color_fill};--color-text-base: 234,237,243;--color-accent: 255,107,1;--color-card: 52,63,96;--color-card-muted: 138,51,2;--color-border: 171,75,8;}`)),
+					// language=css
+					`:root,html[data-theme="light"]{--color-fill: ${light_theme_color_fill};--color-text-base: 40,39,40;--color-accent: 0,108,172;--color-card: 230,230,230;--color-card-muted: 205,205,205;--color-border: 236,233,233;}html[data-theme="dark"]{--color-fill: ${dark_theme_color_fill};--color-text-base: 234,237,243;--color-accent: 255,107,1;--color-card: 52,63,96;--color-card-muted: 138,51,2;--color-border: 171,75,8;}`)),
 				...assets.css_a.map(href=>
 					link_({
 						rel: 'stylesheet',
@@ -145,6 +146,10 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 					'selection:text-skin-inverted',
 					body_class),
 			}, [
+				nofouc__body_bg__script_({
+					dark_bg_color: dark_theme_color_fill,
+					light_bg_color: light_theme_color_fill,
+				}),
 				children,
 				...assets.script_a.map(src=>
 					script_({ type: 'module', src })),
