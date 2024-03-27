@@ -1,9 +1,5 @@
 import { jsonld_id_ref__new } from '@rappstack/domain--server/jsonld'
-import {
-	type schema_org_props_rdfa_T,
-	schema_org_rdfa_,
-	schema_org_rdfa_property_,
-} from '@rappstack/domain--server/rdfa'
+import { schema_org_rdfa_, schema_org_rdfa_property_, } from '@rappstack/domain--server/rdfa'
 import { footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { blog__main_fragment_ } from '@rappstack/ui--server--blog/main'
 import { class_ } from 'ctx-core/html'
