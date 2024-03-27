@@ -10,7 +10,13 @@ import {
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import { site__author_, site__social_a1_, site__title_, site__website_ } from '@rappstack/domain--server/site'
+import {
+	site__author_,
+	site__author_img_url_,
+	site__social_a1_,
+	site__title_,
+	site__website_
+} from '@rappstack/domain--server/site'
 import { heroicons_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { server_blog_card__li_ } from '@rappstack/ui--server--blog/card'
@@ -26,7 +32,6 @@ import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { svgrepo_waving_hand_ } from '../icon/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
-import briantakita_profile_photo_webp from '../public/assets/images/briantakita-profile-photo.webp'
 import { social_link_button_svg_class } from '../social/index.js'
 export function home__doc_html_({
 	ctx,
@@ -70,7 +75,7 @@ export function home__doc_html_({
 					section_({
 						id: 'hero',
 						class: class_(
-							'pb-6')
+							'py-6')
 					}, [
 						div_({
 							class: class_(
@@ -122,12 +127,12 @@ export function home__doc_html_({
 								'sm:translate-x-4')
 						}, [
 							img_({
-								src: briantakita_profile_photo_webp,
+								src: site__author_img_url_(ctx),
 								title: 'Brian Takita',
 								alt: 'Brian Takita',
 								class: class_(
-									'h-32',
 									'w-32',
+									'h-32',
 									'sm:h-64',
 									'sm:w-64',
 									'mx-auto',
