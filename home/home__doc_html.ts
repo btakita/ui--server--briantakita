@@ -63,7 +63,8 @@ export function home__doc_html_({
 		}, [
 			briantakita__header_({ ctx }),
 			blog__main_fragment_({
-				ctx
+				ctx,
+				class: 'nofouc'
 			}, [
 				article_([
 					section_({
