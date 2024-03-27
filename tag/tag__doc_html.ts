@@ -19,7 +19,10 @@ export function tag__doc_html_({
 			title,
 			description,
 		}, [
-			briantakita__header_({ ctx }),
+			briantakita__header_({
+				ctx,
+				active_link: 'tags',
+			}),
 			blog_tag__main_fragment_({
 				ctx,
 				author_id_ref: Person_id_ref_(ctx),

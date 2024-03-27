@@ -5,11 +5,8 @@ import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
-export function tags__doc_html_({
-	ctx,
-}:{
-	ctx:request_ctx_T
-}) {
+type tags__doc_html_props_T = { ctx:request_ctx_T }
+export function tags__doc_html_({ ctx }:tags__doc_html_props_T) {
 	const title = 'Tags | ' + site__title_(ctx)
 	const description = 'Tags used in all articles & posts by ' + site__author_(ctx) + '.'
   return (
@@ -18,7 +15,10 @@ export function tags__doc_html_({
 			title,
 			description,
 		}, [
-			briantakita__header_({ ctx }),
+			briantakita__header_({
+				ctx,
+				active_link: 'tags',
+			}),
 			blog_tags__main_fragment_({
 				ctx,
 				h1_class: 'text-4xl',

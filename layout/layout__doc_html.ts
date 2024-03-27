@@ -20,24 +20,10 @@ import { twitter__meta_fragment_ } from '@rappstack/ui--server/twitter'
 import { dark_theme_color_fill, light_theme_color_fill } from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
-import { body_, head_, link_, meta_, script_, title_ } from 'relementjs/html'
+import { body_, head_, link_, meta_, script_, style_, title_ } from 'relementjs/html'
 import { doc_html_ } from 'relementjs/server'
 import { assets_, assets__new, type assets_T, type request_ctx_T } from 'relysjs/server'
-export function layout__doc_html_({
-	ctx,
-	assets,
-	canonical_url,
-	title,
-	author,
-	description,
-	og__meta_fragment,
-	twitter__meta_fragment,
-	favicon,
-	social_image_url,
-	theme_color,
-	sitemap_url,
-	body_class,
-}:{
+type layout__doc_html_props_T = {
 	ctx:request_ctx_T
 	assets?:assets_T
 	canonical_url?:string
@@ -51,7 +37,23 @@ export function layout__doc_html_({
 	theme_color?:string
 	sitemap_url?:string
 	body_class?:string
-}, ...children:tag_dom_T[]) {
+}
+export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_dom_T[]) {
+	let {
+		ctx,
+		assets,
+		canonical_url,
+		title,
+		author,
+		description,
+		og__meta_fragment,
+		twitter__meta_fragment,
+		favicon,
+		social_image_url,
+		theme_color,
+		sitemap_url,
+		body_class,
+	} = $p
 	canonical_url ??= request_url__href_(ctx)
 	title ??= site__title_(ctx) ?? site__author_(ctx) ?? canonical_url ?? ''
 	description ??= site__description_(ctx)
@@ -65,9 +67,13 @@ export function layout__doc_html_({
 	theme_color ??= 'rgb(' + dark_theme_color_fill + ')'
 	return (
 		doc_html_({
-			lang: 'en'
+			lang: 'en',
+			class: class_('fouc-ctx'),
+			/** @see {import('@btakita/ui--browser--briantakita/layout').fouc_ctx__hyop} */
+			hyop: 'fouc_ctx__hyop'
 		}, [
 			head_([
+				style_({ type: 'text/css' }, raw_('html.fouc-ctx .fouc{opacity:0;}')),
 				site__light_and_dark_mode
 					? fouc__remove__fragment_({
 						dark_bg_color: dark_theme_color_fill,
@@ -118,7 +124,11 @@ export function layout__doc_html_({
 				google_site_verification
 				&& meta_({ name: 'google-site-verification', content: google_site_verification }),
 				...assets.css_a.map(href=>
-					link_({ rel: 'stylesheet', type: 'text/css', href })),
+					link_({
+						rel: 'stylesheet',
+						type: 'text/css',
+						href,
+					})),
 			]),
 			body_({
 				class: class_(
@@ -132,7 +142,7 @@ export function layout__doc_html_({
 					'selection:bg-skin-accent',
 					'selection:bg-opacity-70',
 					'selection:text-skin-inverted',
-					body_class)
+					body_class),
 			}, [
 				children,
 				...assets.script_a.map(src=>

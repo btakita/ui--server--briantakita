@@ -22,6 +22,7 @@ export function briantakita__header_<env_T extends relement_env_T>({
 	return (
 		blog__header_<env_T>({
 			ctx,
+			class: 'fouc',
 			logo_image_class: class_(
 				'w-16',
 				'h-10')
