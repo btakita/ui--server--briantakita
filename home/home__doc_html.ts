@@ -208,7 +208,6 @@ export function home__doc_html_({
 										ctx,
 										href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
 										dehydrated_post_meta,
-										show_heading: false
 									})
 								))
 							])
@@ -232,7 +231,6 @@ export function home__doc_html_({
 									ctx,
 									href: `/posts/${post_slug__new(post)}`,
 									dehydrated_post_meta: post,
-									show_heading: false
 								}))),
 					]),
 					div_({

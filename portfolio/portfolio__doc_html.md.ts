@@ -2,7 +2,8 @@ import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantaki
 import {
 	jsonld__add,
 	jsonld_id__new,
-	WebPage__description__set, WebPage__hasPart__push,
+	WebPage__description__set,
+	WebPage__hasPart__push,
 	WebPage__headline__set,
 	WebPage__name__set,
 	WebPage_id_ref_
@@ -109,6 +110,7 @@ export function portfolio__doc_html_({
 			title,
 			description,
 			h1_text: 'Portfolio',
+			h1_class: 'mb-0',
 			active_link: 'portfolio',
 		}, [
 			raw_(portfolio__html)

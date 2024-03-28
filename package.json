@@ -17,7 +17,6 @@
 		"./open_source/config": "./open_source/config.ts",
 		"./portfolio": "./portfolio/index.ts",
 		"./post": "./post/index.ts",
-		"./prose": "./prose/index.ts",
 		"./search": "./search/index.ts",
 		"./sitemap": "./sitemap/index.ts",
 		"./social": "./social/index.ts",

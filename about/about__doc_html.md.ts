@@ -37,15 +37,17 @@ import {
 	svgrepo_sparkling_heart_
 } from '../icon/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
-export function about__doc_html_({
-	ctx,
-	about__html,
-	articleBody,
-}:{
+type about__doc_html_props_T = {
 	ctx:request_ctx_T
 	articleBody:string
 	about__html:string
-}) {
+}
+export function about__doc_html_($p:about__doc_html_props_T) {
+	const {
+		ctx,
+		about__html,
+		articleBody,
+	} = $p
 	const title = 'About | ' + site__title_(ctx)
 	const description = AboutPage__description_(ctx)
 	jsonld__add(ctx, ()=><Article>{
@@ -64,6 +66,9 @@ export function about__doc_html_({
 		md_layout__doc_html_({
 			ctx,
 			title,
+			hero_class: class_(
+				'mb-6',
+				'prose'),
 			h1_text: title,
 			hero_p_text: '',
 			description,

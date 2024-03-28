@@ -41,15 +41,17 @@ import {
 	sveltejs_md_,
 	unison_md_
 } from './config.js'
-export function open_source__doc_html_({
-	ctx,
-	open_source__html,
-	articleBody,
-}:{
+type open_source__doc_html_props_T = {
 	ctx:request_ctx_T
 	open_source__html:string
 	articleBody:string
-}) {
+}
+export function open_source__doc_html_($p:open_source__doc_html_props_T) {
+	const {
+		ctx,
+		open_source__html,
+		articleBody,
+	} = $p
 	const title = 'Open Source | ' + site__title_(ctx)
 	const description = 'Brian Takita\'s open source work.'
 	WebPage__name__set(ctx, title)
@@ -74,6 +76,7 @@ export function open_source__doc_html_({
 			title,
 			description,
 			h1_text: 'Open Source',
+			h1_class: 'mb-0',
 			active_link: 'open-source',
 		}, [
 			raw_(open_source__html)

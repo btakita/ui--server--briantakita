@@ -12,12 +12,12 @@ import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
-import { prose_class } from '../prose/index.js'
-export function post__doc_html_({
-	ctx
-}:{
+type post__doc_html_props_T = {
 	ctx:request_ctx_T
-}) {
+	h1_class?:string
+}
+export function post__doc_html_($p:post__doc_html_props_T) {
+	const { ctx, h1_class } = $p
 	const title = blog_post__title_(ctx) + ' | ' + site__title_(ctx)
 	const description = blog_post__description_(ctx)
 	WebPage__name__set(ctx, title)
@@ -37,12 +37,12 @@ export function post__doc_html_({
 			blog_post__main_fragment_({
 				ctx,
 				class: 'nofouc',
-				article_class: prose_class,
+				article_class: '',
 				progress_container_class: 'bg-skin-fill',
 				progress_class: 'bg-skin-accent',
 				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
-				h1_class: 'text-4xl',
+				h1_class,
 				description_class: 'text-2xl',
 			}),
 			briantakita__footer_({ ctx }),
