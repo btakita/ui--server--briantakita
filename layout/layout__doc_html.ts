@@ -5,11 +5,13 @@ import {
 	type icon_link_props_T,
 	site__author_,
 	site__body_class_,
+	site__dark_theme_color_fill_,
 	site__description_,
 	site__favicon_,
 	site__google_site_verification_,
 	site__gtag_id_,
 	site__light_and_dark_mode_,
+	site__light_theme_color_fill_,
 	site__social_image_url_,
 	site__title_
 } from '@rappstack/domain--server/site'
@@ -17,7 +19,6 @@ import { nofouc__body_bg__script_, nofouc__theme__set__fragment_ } from '@rappst
 import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
 import { og__meta_fragment_ } from '@rappstack/ui--server/og'
 import { twitter__meta_fragment_ } from '@rappstack/ui--server/twitter'
-import { dark_theme_color_fill, light_theme_color_fill } from 'briantakita.me/config/index.js'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { body_, head_, link_, meta_, script_, style_, title_ } from 'relementjs/html'
@@ -64,7 +65,7 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 	const site__light_and_dark_mode = site__light_and_dark_mode_(ctx)
 	assets = assets__new(assets_(ctx), assets)
 	const site__gtag_id = site__gtag_id_(ctx)
-	theme_color ??= 'rgb(' + dark_theme_color_fill + ')'
+	theme_color ??= 'rgb(' + site__dark_theme_color_fill_(ctx) + ')'
 	return (
 		doc_html_({
 			lang: 'en',
@@ -75,8 +76,8 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 			head_([
 				site__light_and_dark_mode
 					? nofouc__theme__set__fragment_({
-						dark_bg_color: dark_theme_color_fill,
-						light_bg_color: light_theme_color_fill
+						dark_bg_color: site__dark_theme_color_fill_(ctx)!,
+						light_bg_color: site__light_theme_color_fill_(ctx)!,
 					})
 					: null,
 				meta_({ 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' }),
@@ -124,7 +125,7 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 				&& meta_({ name: 'google-site-verification', content: google_site_verification }),
 				style_({ type: 'text/css' }, raw_(
 					// language=css
-					`:root,html[data-theme="light"]{--color-fill:${light_theme_color_fill};--color-text-base: 40,39,40;--color-accent: 0,108,172;--color-card: 230,230,230;--color-card-muted: 205,205,205;--color-border: 236,233,233;}html[data-theme="dark"]{--color-fill:${dark_theme_color_fill};--color-text-base: 234,237,243;--color-accent: 255,107,1;--color-card: 52,63,96;--color-card-muted: 138,51,2;--color-border: 171,75,8;}`)),
+					`:root,html[data-theme="light"]{--color-fill:${site__light_theme_color_fill_(ctx)};--color-text-base: 40,39,40;--color-accent: 0,108,172;--color-card: 230,230,230;--color-card-muted: 205,205,205;--color-border: 236,233,233;}html[data-theme="dark"]{--color-fill:${site__dark_theme_color_fill_(ctx)};--color-text-base: 234,237,243;--color-accent: 255,107,1;--color-card: 52,63,96;--color-card-muted: 138,51,2;--color-border: 171,75,8;}`)),
 				...assets.css_a.map(href=>
 					link_({
 						rel: 'stylesheet',
