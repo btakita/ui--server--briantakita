@@ -1,9 +1,10 @@
 import { jsonld_Graph_ } from '@rappstack/domain--server/jsonld'
 import { request_url__href_, request_url__origin_ } from '@rappstack/domain--server/request'
 import {
+	type author_T,
 	font__meta_props_a1_,
 	type icon_link_props_T,
-	site__author_,
+	site__author_a1_,
 	site__body_class_,
 	site__dark_theme_color_fill_,
 	site__description_,
@@ -29,7 +30,7 @@ type layout__doc_html_props_T = {
 	assets?:assets_T
 	canonical_url?:string
 	title?:string
-	author?:string
+	author_a1?:[author_T, ...author_T[]]
 	description?:string
 	og__meta_fragment?:tag_dom_T,
 	twitter__meta_fragment?:tag_dom_T,
@@ -45,7 +46,7 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 		assets,
 		canonical_url,
 		title,
-		author,
+		author_a1,
 		description,
 		og__meta_fragment,
 		twitter__meta_fragment,
@@ -56,9 +57,9 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 		body_class,
 	} = $p
 	canonical_url ??= request_url__href_(ctx)
-	title ??= site__title_(ctx) ?? site__author_(ctx) ?? canonical_url ?? ''
+	title ??= site__title_(ctx) ?? site__author_a1_(ctx)![0].name ?? canonical_url ?? ''
 	description ??= site__description_(ctx)
-	author ??= site__author_(ctx)
+	author_a1 ??= site__author_a1_(ctx)!
 	favicon ??= site__favicon_(ctx)
 	social_image_url = new URL(social_image_url ?? site__social_image_url_(ctx), request_url__origin_(ctx)).href
 	const google_site_verification = site__google_site_verification_(ctx)
@@ -84,7 +85,7 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 				meta_({ name: 'viewport', content: 'width=device-width' }),
 				meta_({ name: 'title', content: title }),
 				meta_({ name: 'description', content: description }),
-				meta_({ name: 'author', content: author }),
+				meta_({ name: 'author', content: author_a1[0].name }),
 				//  Open Graph / Facebook
 				og__meta_fragment
 					? og__meta_fragment

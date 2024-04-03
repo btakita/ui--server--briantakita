@@ -1,5 +1,5 @@
 import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
-import { site__author_, site__title_ } from '@rappstack/domain--server/site'
+import { site__author_a1_, site__title_ } from '@rappstack/domain--server/site'
 import { blog_tags__main_fragment_ } from '@rappstack/ui--server--blog/tag'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -14,7 +14,7 @@ type tags__doc_html_props_T = {
 export function tags__doc_html_($p:tags__doc_html_props_T) {
 	const { ctx, h1_class } = $p
 	const title = 'Tags | ' + site__title_(ctx)
-	const description = 'Tags used in all articles & posts by ' + site__author_(ctx) + '.'
+	const description = 'Tags used in all articles & posts by ' + site__author_a1_(ctx)![0].name + '.'
 	return (
 		layout__doc_html_({
 			ctx,

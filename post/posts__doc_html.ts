@@ -1,11 +1,11 @@
-import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
+import { Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import {
 	WebPage__description__set,
 	WebPage__headline__set,
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import { site__author_, site__title_ } from '@rappstack/domain--server/site'
+import { site__author_a1_, site__title_ } from '@rappstack/domain--server/site'
 import { blog_posts__main_fragment_, blog_posts__nav_ } from '@rappstack/ui--server--blog/post'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -19,7 +19,7 @@ type posts__doc_html_props_T = {
 export function posts__doc_html_($p:posts__doc_html_props_T) {
 	const { ctx, h1_class } = $p
 	const title = 'Posts | ' + site__title_(ctx)
-	const description = 'All articles & posts by ' + site__author_(ctx) + '.'
+	const description = 'All articles & posts by ' + site__author_a1_(ctx)![0].name + '.'
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
@@ -38,7 +38,6 @@ export function posts__doc_html_($p:posts__doc_html_props_T) {
 				ctx,
 				class: 'nofouc',
 				h1_class,
-				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
 				description: 'The articles that I have posted to this site…',
 				description_class: class_(

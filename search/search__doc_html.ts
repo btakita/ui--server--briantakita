@@ -4,7 +4,7 @@ import {
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import { site__author_, site__title_ } from '@rappstack/domain--server/site'
+import { site__author_a1_, site__title_ } from '@rappstack/domain--server/site'
 import { blog_search__main_fragment_ } from '@rappstack/ui--server--blog/search'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
@@ -18,7 +18,7 @@ type search__doc_html_props_T = {
 export function search__doc_html_($p:search__doc_html_props_T) {
 	const { ctx, h1_class } = $p
 	const title = 'Search | ' + site__title_(ctx)
-	const description = 'Search through blog posts & articles authored by ' + site__author_(ctx)
+	const description = 'Search through blog posts & articles authored by ' + site__author_a1_(ctx)![0].name
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
@@ -39,7 +39,7 @@ export function search__doc_html_($p:search__doc_html_props_T) {
 				hero_class: class_(
 					'prose',
 					'mb-6'),
-				h1_text: `Search ` + site__author_(ctx) + `'s articles & blog posts`,
+				h1_text: `Search ` + site__author_a1_(ctx)![0].name + `'s articles & blog posts`,
 				h1_class,
 			}),
 			briantakita__footer_({ ctx })

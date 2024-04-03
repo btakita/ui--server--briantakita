@@ -10,13 +10,7 @@ import {
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import {
-	site__author_,
-	site__author_img_url_,
-	site__social_a1_,
-	site__title_,
-	site__website_
-} from '@rappstack/domain--server/site'
+import { site__author_a1_, site__social_a1_, site__title_, site__website_ } from '@rappstack/domain--server/site'
 import { heroicons_rss_ } from '@rappstack/ui--any--blog/icon'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import { server_blog_card__li_ } from '@rappstack/ui--server--blog/card'
@@ -56,7 +50,7 @@ export function home__doc_html_({
 		headline: site__title_(ctx)!,
 		url: site__website_(ctx)!,
 		author: Person_id_ref_(ctx),
-		name: site__author_(ctx),
+		name: site__author_a1_(ctx)![0].name,
 		image: Person_image,
 		articleBody: description,
 	})
@@ -127,7 +121,7 @@ export function home__doc_html_({
 								'sm:translate-x-4')
 						}, [
 							img_({
-								src: site__author_img_url_(ctx),
+								src: site__author_a1_(ctx)![0].image,
 								title: 'Brian Takita',
 								alt: 'Brian Takita',
 								class: class_(
