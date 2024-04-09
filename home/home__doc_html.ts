@@ -202,8 +202,7 @@ export function home__doc_html_({
 										ctx,
 										href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
 										dehydrated_post_meta,
-									})
-								))
+									})))
 							])
 						] : null,
 					hr_div_(),
