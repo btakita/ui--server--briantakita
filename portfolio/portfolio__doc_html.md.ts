@@ -117,10 +117,10 @@ export function portfolio__doc_html_({
 		])
 	)
 }
-export function portfolio__html_() {
+export function portfolio__html_({ ctx }:{ ctx:request_ctx_T }) {
 	// @formatter:off
 	// language=md
-	return '' + md__raw_(`
+	return '' + md__raw_(ctx, `
 ## [briantakita.me](https://briantakita.me)
 
 ${briantakita_me_dev__tb_a_()} started from a fork from ${astropaper__tb_a_()}. Optimized the performance, SEO, & semantic markup with json-ld. I develop & experiment with software tech on this site.

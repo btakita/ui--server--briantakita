@@ -86,7 +86,7 @@ export function open_source__doc_html_($p:open_source__doc_html_props_T) {
 export function open_source__html_({ ctx }:{ ctx:request_ctx_T }) {
 	// @formatter:off
 	// language=md
-	return '' + md__raw_(`
+	return '' + md__raw_(ctx, `
 I work on open source projects, licensed with the ${apache2_license__tb_a_()}. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more open source components & apps. Here are some notable projects:
 
 ${rappstack_md_()}
