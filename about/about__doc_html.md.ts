@@ -81,7 +81,7 @@ export function about__doc_html_($p:about__doc_html_props_T) {
 export function about__html_({ ctx }:{ ctx:request_ctx_T }) {
 	// @formatter:off
 	// language=md
-	return '' + md__raw_(ctx, `
+	return '' + md__raw_({ ctx }, `
 ## Efficient full stack software systems that grow with you
 I create full stack software solutions${footnote__sup_({ ctx, id: 'preferred-tooling' }, [
 		'My preferred tooling is:',
