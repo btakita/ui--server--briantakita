@@ -1,14 +1,11 @@
-import { site__light_and_dark_mode_ } from '@rappstack/domain--server/site'
 import { button__a_ } from '@rappstack/ui--any/anchor'
 import {
 	blog__header_,
-	blog__header__nav__button_class,
 	blog__header__nav__li_,
 	blog__header__nav__li__a_,
 	blog__header__nav__li__a__svg_class_,
 	blog__header__nav__li__a_class_
 } from '@rappstack/ui--server--blog/header'
-import { theme_toggle__button_ } from '@rappstack/ui--server--blog/theme'
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { path_, svg_ } from 'relementjs/svg'
@@ -82,29 +79,7 @@ export function briantakita__header_<env_T extends relement_env_T>({
 					}, [
 						path_({
 							d: 'M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z'
-						})
-					])
-				])
-			]),
-			site__light_and_dark_mode_(ctx)
-			&& blog__header__nav__li_({}, [
-				theme_toggle__button_({
-					class: class_(
-						'p-3',
-						'sm:p-1',
-						blog__header__nav__button_class),
-					svg_class: class_(
-						'scale-125',
-						'sm:scale-100',
-						'hover:rotate-12',
-						'inline-block',
-						'h-6',
-						'w-6',
-						'fill-skin-base',
-						'group-hover:fill-skin-accent')
-				})
-			])
-		])
+						}),]),]),]),])
 	)
 	function active_(link:briantakita_header__link_T) {
 		return active_link === link

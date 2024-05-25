@@ -133,8 +133,7 @@ export function home__doc_html_({
 									'sm:my-2',
 									'rounded-full',
 									'sm:rounded'),
-							})
-						]),
+							}),]),
 						// @formatter:off
 						p_({
 							class: 'my-2',
@@ -178,8 +177,7 @@ export function home__doc_html_({
 									socials__div_({
 										ctx,
 										link_button_svg_class: social_link_button_svg_class,
-									})
-								])
+									}),]),
 							] : undefined,
 					]),
 					hr_div_(),
@@ -202,8 +200,7 @@ export function home__doc_html_({
 										ctx,
 										href: `/posts/${post_slug__new(dehydrated_post_meta)}`,
 										dehydrated_post_meta,
-									})))
-							])
+									}))),]),
 						] : null,
 					hr_div_(),
 					section_({
@@ -243,10 +240,7 @@ export function home__doc_html_({
 									'scale-125',
 									'fill-skin-base',
 									'group-hover:fill-skin-accent')
-							})
-						])
-					])
-				])
+							}),]),]),]),
 			]),
 			briantakita__footer_({ ctx })
 		])
