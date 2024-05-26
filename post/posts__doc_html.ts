@@ -6,7 +6,7 @@ import {
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
 import { site__author_a1_, site__title_ } from '@rappstack/domain--server/site'
-import { blog_posts__main_fragment_, blog_posts__nav_ } from '@rappstack/ui--server--blog/post'
+import { blog_posts__main_fragment_, blog_posts__nav_, blog_posts__ul_ } from '@rappstack/ui--server--blog/post'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
@@ -42,7 +42,9 @@ export function posts__doc_html_($p:posts__doc_html_props_T) {
 				description: 'The articles that I have posted to this site…',
 				description_class: class_(
 					'mb-6'),
-			}),
+			}, [
+				blog_posts__ul_({ ctx })
+			]),
 			blog_posts__nav_({ ctx }),
 			briantakita__footer_({ ctx }),
 		])
