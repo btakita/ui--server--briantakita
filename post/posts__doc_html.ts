@@ -16,7 +16,7 @@ type posts__doc_html_props_T = {
 	ctx:request_ctx_T
 	h1_class?:string
 }
-export function posts__doc_html_($p:posts__doc_html_props_T) {
+export function  posts__doc_html_($p:posts__doc_html_props_T) {
 	const { ctx, h1_class } = $p
 	const title = 'Posts | ' + site__title_(ctx)
 	const description = 'All articles & posts by ' + site__author_a1_(ctx)![0].name + '.'
