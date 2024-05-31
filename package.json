@@ -21,6 +21,7 @@
 		"./sitemap": "./sitemap/index.ts",
 		"./social": "./social/index.ts",
 		"./stack": "./stack/index.ts",
+		"./sticky": "./sticky/index.ts",
 		"./tag": "./tag/index.ts",
 		"./utf8": "./utf8/index.ts",
 		"./package.json": "./package.json"

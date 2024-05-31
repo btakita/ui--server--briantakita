@@ -1,4 +1,4 @@
-import { Person_id_ref_, Person_image } from '@btakita/domain--server--briantakita/jsonld'
+import { Person_image } from '@btakita/domain--server--briantakita/jsonld'
 import { blog_post__description_, blog_post__title_ } from '@rappstack/domain--server--blog/post'
 import {
 	WebPage__description__set,
@@ -40,7 +40,6 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 				article_class: '',
 				progress_container_class: 'bg-skin-fill',
 				progress_class: 'bg-skin-accent',
-				author_id_ref: Person_id_ref_(ctx),
 				image: Person_image,
 				h1_class,
 				description_class: 'text-2xl',

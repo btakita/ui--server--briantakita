@@ -9,17 +9,24 @@ import {
 import { class_ } from 'ctx-core/html'
 import { type relement_env_T, type wide_ctx_T } from 'relementjs'
 import { path_, svg_ } from 'relementjs/svg'
-export function briantakita__header_<env_T extends relement_env_T>({
-	ctx,
-	active_link,
-}:{
+type props_T = {
 	ctx:wide_ctx_T
 	active_link?:briantakita_header__link_T
-}) {
+}
+export function briantakita__header_<env_T extends relement_env_T>($p:props_T) {
+	const {
+		ctx,
+		active_link,
+	} = $p
 	return (
 		blog__header_<env_T>({
 			ctx,
-			class: 'nofouc',
+			class: class_(
+				'nofouc',
+				'bg-skin-fill',
+				'sticky',
+				'top-0',
+				'z-50',),
 			logo_image_class: class_(
 				'w-16',
 				'h-10')
@@ -58,6 +65,9 @@ export function briantakita__header_<env_T extends relement_env_T>({
 				button__a_({
 					href: '/search',
 					class: class_(
+						'flex',
+						'justify-center',
+						'items-center',
 						'focus-outline',
 						'flex',
 						'p-3',
