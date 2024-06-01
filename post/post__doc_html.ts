@@ -8,16 +8,17 @@ import {
 } from '@rappstack/domain--server/jsonld'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { blog_post__main_fragment_ } from '@rappstack/ui--server--blog/post'
+import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
+import { sticky_h1__level_props_a1 } from '../sticky/index.js'
 type post__doc_html_props_T = {
 	ctx:request_ctx_T
-	h1_class?:string
 }
 export function post__doc_html_($p:post__doc_html_props_T) {
-	const { ctx, h1_class } = $p
+	const { ctx } = $p
 	const title = blog_post__title_(ctx) + ' | ' + site__title_(ctx)
 	const description = blog_post__description_(ctx)
 	WebPage__name__set(ctx, title)
@@ -36,12 +37,15 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 			}),
 			blog_post__main_fragment_({
 				ctx,
-				class: 'nofouc',
+				class: class_(
+					'nofouc',
+					'relative',
+					'prose'),
 				article_class: '',
 				progress_container_class: 'bg-skin-fill',
 				progress_class: 'bg-skin-accent',
 				image: Person_image,
-				h1_class,
+				h1_class: sticky_h1__level_props_a1[0],
 				description_class: 'text-2xl',
 			}),
 			briantakita__footer_({ ctx }),
