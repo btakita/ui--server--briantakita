@@ -15,7 +15,8 @@ type md_layout__doc_html_props_T = {
 	ctx:request_ctx_T
 	title:string
 	hero_class?:string
-	h1_text:string
+	h1_dom?:tag_dom_T
+	h1_text?:string
 	h1_class?:string
 	description?:string
 	hero_p_class?:string
@@ -29,6 +30,7 @@ export function md_layout__doc_html_($p:md_layout__doc_html_props_T, ...children
 		ctx,
 		title,
 		hero_class,
+		h1_dom,
 		h1_text,
 		h1_class,
 		description,
@@ -55,6 +57,7 @@ export function md_layout__doc_html_($p:md_layout__doc_html_props_T, ...children
 					'nofouc',
 					'prose'),
 				hero_class,
+				h1_dom,
 				h1_text,
 				h1_class,
 				hero_p_class,

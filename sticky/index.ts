@@ -1,4 +1,5 @@
 import { class_ } from 'ctx-core/html'
+import { div_, h1_ } from 'relementjs/html'
 const sticky__base_class = class_('sticky', 'bg-skin-fill', 'text-skin-base', 'whitespace-nowrap',
 	'[&>*]:overflow-x-auto',
 	'[&>*]:text-ellipsis',)
@@ -21,3 +22,25 @@ export function sticky__dl_tree_props_fn_(level_props_a1:string[]) {
 }
 export const sticky_h1__dl_tree_props_ = sticky__dl_tree_props_fn_(sticky_h1__level_props_a1)
 export const sticky_h2__dl_tree_props_ = sticky__dl_tree_props_fn_(sticky_h2__level_props_a1)
+type sticky__h1_props_T = {
+	class?:string
+	h1_class?:string
+	title:string
+}
+export function sticky__h1_($p:sticky__h1_props_T) {
+	return (
+		div_({
+			class: class_(
+				sticky_h1__level_props_a1[0],
+				$p.class)
+		}, [
+			div_([
+				h1_({
+					class: class_(
+						'inline',
+						$p.h1_class),
+				}, $p.title),
+			])
+		])
+	)
+}

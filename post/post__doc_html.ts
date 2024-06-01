@@ -13,13 +13,13 @@ import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
-import { sticky_h1__level_props_a1 } from '../sticky/index.js'
+import { sticky__h1_, sticky_h1__level_props_a1 } from '../sticky/index.js'
 type post__doc_html_props_T = {
 	ctx:request_ctx_T
 }
 export function post__doc_html_($p:post__doc_html_props_T) {
 	const { ctx } = $p
-	const title = blog_post__title_(ctx)
+	const title = blog_post__title_(ctx)!
 	const description = blog_post__description_(ctx)
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
@@ -41,13 +41,7 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 					'nofouc',
 					'relative',
 					'prose'),
-				h1_dom: div_({ class: sticky_h1__level_props_a1[0] }, [
-					div_([
-						h1_({
-							class: 'inline',
-						}, title),
-					])
-				]),
+				h1_dom: sticky__h1_({ title, }),
 				article_class: '',
 				progress_container_class: 'bg-skin-fill',
 				progress_class: 'bg-skin-accent',

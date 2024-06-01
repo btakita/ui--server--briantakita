@@ -11,13 +11,16 @@ import {
 import { request_url__href_ } from '@rappstack/domain--server/request'
 import { site__title_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
+import { dl_tree_ } from '@rappstack/ui--any/dl'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { lines_ } from '@rappstack/ui--any/string'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { raw_ } from 'relementjs'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import { apache2_license__tb_a_ } from '../anchor/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
+import { sticky__h1_, sticky_h2__dl_tree_props_ } from '../sticky/index.js'
 import {
 	backbone_signal_md_,
 	ctx_core_md_,
@@ -29,7 +32,7 @@ import {
 	nanostores_md_,
 	poloniumrb_md_,
 	poof_md_,
-	rappstack_md_,
+	rappstack_dl_dt_tree_,
 	rebuildjs_md_,
 	rebuildjs_tailwind_md_,
 	relementjs_md_,
@@ -75,8 +78,7 @@ export function open_source__doc_html_($p:open_source__doc_html_props_T) {
 			ctx,
 			title,
 			description,
-			h1_text: 'Open Source',
-			h1_class: 'mb-0',
+			h1_dom: sticky__h1_({ title: 'Open Source', h1_class: 'mb-0' }),
 			active_link: 'open-source',
 		}, [
 			raw_(open_source__html)
@@ -86,51 +88,32 @@ export function open_source__doc_html_($p:open_source__doc_html_props_T) {
 export function open_source__html_({ ctx }:{ ctx:request_ctx_T }) {
 	// @formatter:off
 	// language=md
-	return '' + md__raw_({ ctx }, `
-I work on open source projects, licensed with the ${apache2_license__tb_a_()}. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more open source components & apps. Here are some notable projects:
-
-${rappstack_md_()}
-
-${rmemo_md_()}
-
-${relementjs_md_()}
-
-${rebuildjs_md_()}
-
-${relysjs_md_()}
-
-${rebuildjs_tailwind_md_()}
-
-${hyop_md_()}
-
-${ctx_core_md_(ctx_core_catch_all__footnote__sup_)}
-
-${nanostores_md_(nanostores_breadth_first_queue__footnote__sup_)}
-
-${sveltejs_md_(svelte_cyclic_breadth_first_queue__footnote__sup_)}
-
-${backbone_signal_md_()}
-
-${jasmine_flow_md_()}
-
-${rr_md_()}
-
-${rspec_md_(rspec_nested_describes__footnote__sup_)}
-
-${desertrb_md_()}
-
-${jellyrb_md_()}
-
-${poloniumrb_md_()}
-
-${unison_md_()}
-
-${screw_unit_md_()}
-
-${generic_query_analyzer_md_()}
-
-${poof_md_()}
-			`.trim())
+	return ''
+		+ md__raw_({ ctx }, lines_(
+			`I work on open source projects, licensed with the ${apache2_license__tb_a_()}. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more open source components & apps. Here are some notable projects:`,))
+		+ dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
+			rappstack_dl_dt_tree_(),
+			rmemo_md_(),
+			relementjs_md_(),
+			rebuildjs_md_(),
+			relysjs_md_(),
+			rebuildjs_tailwind_md_(),
+			hyop_md_(),
+			ctx_core_md_(ctx_core_catch_all__footnote__sup_),
+			nanostores_md_(nanostores_breadth_first_queue__footnote__sup_),
+			sveltejs_md_(svelte_cyclic_breadth_first_queue__footnote__sup_),
+			backbone_signal_md_(),
+			jasmine_flow_md_(),
+			rr_md_(),
+			rspec_md_(rspec_nested_describes__footnote__sup_),
+			desertrb_md_(),
+			jellyrb_md_(),
+			poloniumrb_md_(),
+			unison_md_(),
+			screw_unit_md_(),
+			generic_query_analyzer_md_(),
+			poof_md_(),
+		])
 	// @formatter:on
 	function ctx_core_catch_all__footnote__sup_() {
 		return (
