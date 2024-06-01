@@ -8,12 +8,11 @@ import {
 } from '@rappstack/domain--server/jsonld'
 import { blog_post__main_fragment_ } from '@rappstack/ui--server--blog/post'
 import { class_ } from 'ctx-core/html'
-import { div_, h1_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
-import { sticky__h1_, sticky_h1__level_props_a1 } from '../sticky/index.js'
+import { sticky__h1_ } from '../sticky/index.js'
 type post__doc_html_props_T = {
 	ctx:request_ctx_T
 }

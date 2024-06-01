@@ -13,7 +13,7 @@ import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
-import { div_, h1_ } from 'relementjs/html'
+import { div_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import type { Article } from 'schema-dts'
 import {
@@ -38,7 +38,7 @@ import {
 	svgrepo_sparkling_heart_
 } from '../icon/index.js'
 import { md_layout__doc_html_ } from '../md/index.js'
-import { sticky__h1_, sticky_h1__level_props_a1, sticky_h2__dl_tree_props_ } from '../sticky/index.js'
+import { sticky__h1_, sticky_h2__dl_tree_props_ } from '../sticky/index.js'
 type about__doc_html_props_T = {
 	ctx:request_ctx_T
 	articleBody:string
