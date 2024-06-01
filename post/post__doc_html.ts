@@ -6,9 +6,9 @@ import {
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
-import { site__title_ } from '@rappstack/domain--server/site'
 import { blog_post__main_fragment_ } from '@rappstack/ui--server--blog/post'
 import { class_ } from 'ctx-core/html'
+import { div_, h1_ } from 'relementjs/html'
 import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
@@ -19,7 +19,7 @@ type post__doc_html_props_T = {
 }
 export function post__doc_html_($p:post__doc_html_props_T) {
 	const { ctx } = $p
-	const title = blog_post__title_(ctx) + ' | ' + site__title_(ctx)
+	const title = blog_post__title_(ctx)
 	const description = blog_post__description_(ctx)
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
@@ -41,11 +41,17 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 					'nofouc',
 					'relative',
 					'prose'),
+				h1_dom: div_({ class: sticky_h1__level_props_a1[0] }, [
+					div_([
+						h1_({
+							class: 'inline',
+						}, title),
+					])
+				]),
 				article_class: '',
 				progress_container_class: 'bg-skin-fill',
 				progress_class: 'bg-skin-accent',
 				image: Person_image,
-				h1_class: sticky_h1__level_props_a1[0],
 				description_class: 'text-2xl',
 			}),
 			briantakita__footer_({ ctx }),

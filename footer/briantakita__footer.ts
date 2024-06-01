@@ -49,7 +49,6 @@ export function briantakita__footer_<env_T extends relement_env_T>({
 						'flex',
 						'flex-col',
 						'items-center',
-						'whitespace-nowrap',
 						'sm:flex-row')
 				}, [
 					span_([

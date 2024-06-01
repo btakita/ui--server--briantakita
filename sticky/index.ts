@@ -1,14 +1,15 @@
 import { class_ } from 'ctx-core/html'
 const sticky__base_class = class_('sticky', 'bg-skin-fill', 'text-skin-base', 'whitespace-nowrap',
-	'[&>*]:overflow-x-auto', '[&>*]:text-ellipsis')
+	'[&>*]:overflow-x-auto',
+	'[&>*]:text-ellipsis',)
 export const sticky__top__nav_class = class_(sticky__base_class, 'top-[4.5rem]', 'z-[49]')
 export const sticky_h1__level_props_a1 = [
-	class_(sticky__base_class, 'top-[5.5rem]', 'z-[48]', 'mb-0'),
-	class_(sticky__base_class, 'top-[7.875rem]', 'z-[47]'),
-	class_(sticky__base_class, 'top-[9.625rem]', 'z-[46]'),
-	class_(sticky__base_class, 'top-[11.375rem]', 'z-[45]'),
-	class_(sticky__base_class, 'top-[13rem]', 'z-[44]'),
-	class_(sticky__base_class, 'top-[14.75rem]', 'z-[43]'),
+	class_(sticky__base_class, 'top-[5.75rem]', 'h-[11]', 'z-[48]', 'mb-0'),
+	class_(sticky__base_class, 'top-[8.25rem]', 'h-8', 'z-[47]'),
+	class_(sticky__base_class, 'top-[10rem]', 'h-[7]', 'z-[46]'),
+	class_(sticky__base_class, 'top-[11.75rem]', 'z-[45]'),
+	class_(sticky__base_class, 'top-[13.5rem]', 'z-[44]'),
+	class_(sticky__base_class, 'top-[15.25rem]', 'z-[43]'),
 ]
 export const sticky_h2__level_props_a1 = sticky_h1__level_props_a1.slice(1)
 export function sticky__dl_tree_props_fn_(level_props_a1:string[]) {
