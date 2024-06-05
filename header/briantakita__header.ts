@@ -31,34 +31,39 @@ export function briantakita__header_<env_T extends relement_env_T>($p:props_T) {
 				'w-16',
 				'h-10')
 		}, [
-			blog__header__nav__li_({}, [
+			blog__header__nav__li_([
 				blog__header__nav__li__a_({
 					active: active_('about'),
 					href: '/about',
+					class: 'text-nowrap',
 				}, 'About')
 			]),
 			blog__header__nav__li_({}, [
 				blog__header__nav__li__a_({
 					active: active_('posts'),
 					href: '/posts',
+					class: 'text-nowrap',
 				}, 'Posts')
 			]),
 			blog__header__nav__li_({}, [
 				blog__header__nav__li__a_({
 					active: active_('portfolio'),
 					href: '/portfolio',
+					class: 'text-nowrap',
 				}, 'Portfolio')
 			]),
 			blog__header__nav__li_({}, [
 				blog__header__nav__li__a_({
 					active: active_('open-source'),
 					href: '/open-source',
+					class: 'text-nowrap',
 				}, 'Open Source')
 			]),
 			blog__header__nav__li_({}, [
 				blog__header__nav__li__a_({
 					active: active_('tags'),
 					href: '/tags',
+					class: 'text-nowrap',
 				}, 'Tags')
 			]),
 			blog__header__nav__li_({}, [
