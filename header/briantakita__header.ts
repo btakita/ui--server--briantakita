@@ -31,7 +31,7 @@ export function briantakita__header_<env_T extends relement_env_T>($p:props_T) {
 				'w-16',
 				'h-10')
 		}, [
-			blog__header__nav__li_([
+			blog__header__nav__li_({}, [
 				blog__header__nav__li__a_({
 					active: active_('about'),
 					href: '/about',
