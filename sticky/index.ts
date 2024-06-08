@@ -1,6 +1,7 @@
 import { class_ } from 'ctx-core/html'
 import { div_, h1_ } from 'relementjs/html'
 const sticky__base_class = class_('sticky', 'bg-skin-fill', 'text-skin-base', 'whitespace-nowrap',
+	'relative',
 	'[&>*]:w-full',
 	'[&>*]:overflow-x-auto',
 	'[&>*]:text-ellipsis',
