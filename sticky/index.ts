@@ -1,8 +1,11 @@
 import { class_ } from 'ctx-core/html'
 import { div_, h1_ } from 'relementjs/html'
 const sticky__base_class = class_('sticky', 'bg-skin-fill', 'text-skin-base', 'whitespace-nowrap',
+	'[&>*]:w-full',
 	'[&>*]:overflow-x-auto',
-	'[&>*]:text-ellipsis',)
+	'[&>*]:text-ellipsis',
+	'[&>*]:m-0',
+	'[&>*]:p-0',)
 export const sticky__top__nav_class = class_(sticky__base_class, 'top-[4.5rem]', 'z-[49]')
 export const sticky_h1__level_props_a1 = [
 	class_(sticky__base_class, 'top-[5.75rem]', 'h-[11]', 'z-[48]', 'mb-0'),
