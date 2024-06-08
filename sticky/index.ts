@@ -4,7 +4,7 @@ const sticky__base_class = class_('sticky', 'bg-skin-fill', 'text-skin-base', 'w
 	'relative',
 	'[&>*]:w-full',
 	'[&>*]:overflow-x-auto',
-	'[&>*]:text-ellipsis',
+	'[&>*]:sm:text-ellipsis',
 	'[&>*]:m-0',
 	'[&>*]:p-0',)
 export const sticky__top__nav_class = class_(sticky__base_class, 'top-[4.5rem]', 'z-[49]')
