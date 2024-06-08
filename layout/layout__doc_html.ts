@@ -15,7 +15,7 @@ import {
 	site__title_
 } from '@rappstack/domain--server/site'
 import { site__color_scheme_vars__style_ } from '@rappstack/ui--server/css'
-import { nofouc__body_bg__script_, nofouc__theme__set__fragment_ } from '@rappstack/ui--server/fouc'
+import { nofouc__body__script_, nofouc__theme__set__fragment_ } from '@rappstack/ui--server/fouc'
 import { jsonld__script_ } from '@rappstack/ui--server/jsonld'
 import { og__meta_fragment_ } from '@rappstack/ui--server/og'
 import { twitter__meta_fragment_ } from '@rappstack/ui--server/twitter'
@@ -145,9 +145,7 @@ export function layout__doc_html_($p:layout__doc_html_props_T, ...children:tag_d
 					'selection:text-skin-inverted',
 					body_class),
 			}, [
-				nofouc__body_bg__script_({
-					bg_color: 'var(--color-fill)',
-				}),
+				nofouc__body__script_(),
 				children,
 				...assets.script_a.map(src=>
 					script_({ type: 'module', src })),
