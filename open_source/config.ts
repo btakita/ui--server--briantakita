@@ -3,7 +3,7 @@ import { nl } from '@rappstack/ui--any/string'
 import { url__join } from 'ctx-core/uri'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { a_, script_ } from 'relementjs/html'
-import { SoftwareSourceCode } from 'schema-dts'
+import type { SoftwareSourceCode } from 'schema-dts'
 import {
 	ado_net__tb_a_,
 	astrojs__tb_a_,
