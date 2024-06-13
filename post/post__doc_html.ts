@@ -1,5 +1,9 @@
 import { Person_image } from '@btakita/domain--server--briantakita/jsonld'
-import { blog_post__description_, blog_post__title_ } from '@rappstack/domain--server--blog/post'
+import {
+	blog_post__canonical_url_,
+	blog_post__description_,
+	blog_post__title_
+} from '@rappstack/domain--server--blog/post'
 import {
 	WebPage__description__set,
 	WebPage__headline__set,
@@ -19,6 +23,7 @@ type post__doc_html_props_T = {
 export function post__doc_html_($p:post__doc_html_props_T) {
 	const { ctx } = $p
 	const title = blog_post__title_(ctx)!
+	const canonical_url = blog_post__canonical_url_(ctx)
 	const description = blog_post__description_(ctx)
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
@@ -28,6 +33,7 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 		layout__doc_html_({
 			ctx,
 			title,
+			canonical_url,
 			description,
 		}, [
 			briantakita__header_({
