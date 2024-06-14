@@ -78,6 +78,7 @@ export function open_source__doc_html_($p:open_source__doc_html_props_T) {
 			ctx,
 			title,
 			description,
+			header_class: 'contents',
 			h1_dom: sticky__h1_({ title: 'Open Source', h1_class: 'mb-0' }),
 			active_link: 'open-source',
 		}, [

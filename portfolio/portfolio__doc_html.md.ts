@@ -110,6 +110,7 @@ export function portfolio__doc_html_({
 			ctx,
 			title,
 			description,
+			header_class: 'contents',
 			h1_dom: sticky__h1_({ title: 'Portfolio', class: 'mb-0' }),
 			active_link: 'portfolio',
 		}, [

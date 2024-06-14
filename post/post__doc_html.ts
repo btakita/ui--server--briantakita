@@ -16,7 +16,7 @@ import { type request_ctx_T } from 'relysjs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
-import { sticky__h1_ } from '../sticky/index.js'
+import { sticky__h1_, sticky_header_class } from '../sticky/index.js'
 type post__doc_html_props_T = {
 	ctx:request_ctx_T
 }
@@ -46,6 +46,7 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 					'nofouc',
 					'relative',
 					'prose'),
+				header_class: 'contents',
 				h1_dom: sticky__h1_({ title, }),
 				article_class: '',
 				progress_container_class: 'bg-skin-fill',

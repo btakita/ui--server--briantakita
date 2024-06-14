@@ -68,6 +68,7 @@ export function about__doc_html_($p:about__doc_html_props_T) {
 		md_layout__doc_html_({
 			ctx,
 			title,
+			header_class: 'contents',
 			h1_dom: sticky__h1_({ title, }),
 			hero_class: class_(
 				'mb-6',
