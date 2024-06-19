@@ -35,9 +35,9 @@
 		"@rappstack/ui--any--blog": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
 		"@btakita/ui--server--linkument": "workspace:*",
-		"ctx-core": "^7.2.20",
+		"ctx-core": "^7.2.22",
 		"marked": "^13.0.0",
-		"relementjs": "^0.80.19"
+		"relementjs": "^0.80.21"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
