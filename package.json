@@ -35,13 +35,13 @@
 		"@rappstack/ui--any--blog": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
 		"@btakita/ui--server--linkument": "workspace:*",
-		"ctx-core": "^7.2.27",
-		"marked": "^13.0.2",
-		"relementjs": "^0.80.26"
+		"ctx-core": "^7.2.32",
+		"marked": "^17.0.4",
+		"relementjs": "^0.80.31"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"schema-dts": "^1.1.2"
+		"schema-dts": "^1.1.5"
 	},
 	"peerDependencies": {
 		"typescript": "*"
