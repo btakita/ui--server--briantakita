@@ -12,7 +12,7 @@ import {
 } from '@rappstack/domain--server/jsonld'
 import { blog_post__main_fragment_ } from '@rappstack/ui--server--blog/post'
 import { class_ } from 'ctx-core/html'
-import { type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'rhonojs/server'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
