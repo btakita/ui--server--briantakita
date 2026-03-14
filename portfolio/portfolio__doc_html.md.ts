@@ -16,7 +16,7 @@ import { nl } from '@rappstack/ui--any/string'
 import { tag_class } from '@rappstack/ui--server--blog/tag'
 import { raw_ } from 'relementjs'
 import { span_ } from 'relementjs/html'
-import { type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'rhonojs/server'
 import type { Article } from 'schema-dts'
 import {
 	astrojs__tb_a_,

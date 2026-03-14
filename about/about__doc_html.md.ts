@@ -14,7 +14,7 @@ import { tag_class } from '@rappstack/ui--server--blog/tag'
 import { class_ } from 'ctx-core/html'
 import { raw_, type tag_dom_T } from 'relementjs'
 import { div_ } from 'relementjs/html'
-import { type request_ctx_T } from 'relysjs/server'
+import { type request_ctx_T } from 'rhonojs/server'
 import type { Article } from 'schema-dts'
 import {
 	bunjs__tb_a_,
