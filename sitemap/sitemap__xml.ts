@@ -1,5 +1,5 @@
 import { post_mod_a1_ } from '@rappstack/domain--any--blog/post'
-import { unique_tag_a1_ } from '@rappstack/domain--any--blog/tag'
+import { unique_tags_ } from '@rappstack/domain--any--blog/tag'
 import { request_url__origin_ } from '@rappstack/domain--server/request'
 import { doc__render, xml_doctype } from '@rappstack/ui--server/doc'
 import { loc_, url_, urlset_ } from '@rappstack/ui--server/sitemap'
@@ -36,7 +36,7 @@ export function sitemap__xml_({
 			url_([
 				loc_(url__join(origin, '/tags'))
 			]),
-			...unique_tag_a1_(ctx).map(tag=>
+			...unique_tags_(ctx).map(tag=>
 			url_([
 				loc_(url__join(origin, '/tags', tag))
 			]))
