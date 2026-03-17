@@ -29,7 +29,7 @@
 	"dependencies": {
 		"@btakita/domain--server--briantakita": "workspace:*",
 		"@rappstack/domain--any--blog": "^0.1.2",
-		"@rappstack/domain--server": "^0.1.0",
+		"@rappstack/domain--server": "^0.1.1",
 		"@rappstack/domain--server--blog": "^0.1.1",
 		"@rappstack/ui--any": "^0.1.0",
 		"@rappstack/ui--any--blog": "^0.1.0",
