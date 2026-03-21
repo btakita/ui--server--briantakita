@@ -5,14 +5,14 @@ const sticky__base_class = class_('sticky', 'bg-skin-fill', 'text-skin-base',
 	'[&>*]:w-full',
 	'[&>*]:m-0',
 	'[&>*]:p-0',)
-export const sticky__top__nav_class = class_(sticky__base_class, 'top-[4.5rem]', 'z-[49]')
+export const sticky__top__nav_class = class_(sticky__base_class, 'top-[2.75rem]', 'z-[49]')
 export const sticky_h1__level_props_a1 = [
-	class_(sticky__base_class, 'top-[5.75rem]', 'min-h-[2.75rem]', 'z-[48]', 'mb-0'),
-	class_(sticky__base_class, 'top-[8.25rem]', 'min-h-[2.75rem]', 'z-[47]'),
-	class_(sticky__base_class, 'top-[10.75rem]', 'min-h-[1.75rem]', 'z-[46]'),
-	class_(sticky__base_class, 'top-[12.5rem]', 'z-[45]'),
-	class_(sticky__base_class, 'top-[14.25rem]', 'z-[44]'),
-	class_(sticky__base_class, 'top-[16rem]', 'z-[43]'),
+	class_(sticky__base_class, 'top-[4rem]', 'min-h-[2rem]', 'z-[48]', 'mb-0'),
+	class_(sticky__base_class, 'top-[6rem]', 'min-h-[2rem]', 'z-[47]'),
+	class_(sticky__base_class, 'top-[8rem]', 'min-h-[1.5rem]', 'z-[46]'),
+	class_(sticky__base_class, 'top-[9.5rem]', 'z-[45]'),
+	class_(sticky__base_class, 'top-[11rem]', 'z-[44]'),
+	class_(sticky__base_class, 'top-[12.5rem]', 'z-[43]'),
 ]
 export const sticky_h2__level_props_a1 = sticky_h1__level_props_a1.slice(1)
 export function sticky__dl_tree_props_fn_(level_props_a1:string[]) {

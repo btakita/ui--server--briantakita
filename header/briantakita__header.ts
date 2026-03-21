@@ -28,8 +28,8 @@ export function briantakita__header_<env_T extends relement_env_T>($p:props_T) {
 				'top-0',
 				'z-50',),
 			logo_image_class: class_(
-				'w-16',
-				'h-10')
+				'w-12',
+				'h-7')
 		}, [
 			blog__header__nav__li_({}, [
 				blog__header__nav__li__a_({
