@@ -29,9 +29,9 @@
 	"dependencies": {
 		"@btakita/domain--server--briantakita": "workspace:*",
 		"@btakita/ui--server--linkument": "workspace:*",
-		"@rappstack/domain--any--blog": "^0.1.2",
+		"@rappstack/domain--any--blog": "^0.1.3",
 		"@rappstack/domain--server": "^0.1.1",
-		"@rappstack/domain--server--blog": "^0.1.1",
+		"@rappstack/domain--server--blog": "0.1.3",
 		"@rappstack/ui--any": "^0.1.0",
 		"@rappstack/ui--any--blog": "^0.1.0",
 		"@rappstack/ui--server--blog": "^0.1.1",
