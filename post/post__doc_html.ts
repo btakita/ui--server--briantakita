@@ -3,20 +3,23 @@ import {
 	blog_post__canonical_url_,
 	blog_post__description_,
 	blog_post__pub_date_,
+	blog_post__tags_,
 	blog_post__title_,
 	blog_post__video_url_,
 } from '@rappstack/domain--server--blog/post'
 import {
 	jsonld__add,
+	WebPage__author_,
 	WebPage__description__set,
 	WebPage__headline__set,
+	WebPage__mainEntity__set,
 	WebPage__name__set,
 	WebPage__type__set
 } from '@rappstack/domain--server/jsonld'
 import { blog_post__main_fragment_ } from '@rappstack/ui--server--blog/post'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'rhonojs/server'
-import type { VideoObject } from 'schema-dts'
+import type { BlogPosting, VideoObject } from 'schema-dts'
 import { briantakita__footer_ } from '../footer/index.js'
 import { briantakita__header_ } from '../header/index.js'
 import { layout__doc_html_ } from '../layout/index.js'
@@ -30,14 +33,16 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 	const canonical_url = blog_post__canonical_url_(ctx)
 	const description = blog_post__description_(ctx)
 	const video_url = blog_post__video_url_(ctx)
+	const pub_date = blog_post__pub_date_(ctx)
+	const tags = blog_post__tags_(ctx)
 	WebPage__name__set(ctx, title)
 	WebPage__headline__set(ctx, title)
 	WebPage__description__set(ctx, description)
 	WebPage__type__set(ctx, 'ItemPage')
+	let video:VideoObject|undefined
 	if (video_url) {
 		const video_id = video_url.split('v=')[1]?.split('&')[0]
-		const pub_date = blog_post__pub_date_(ctx)
-		jsonld__add(ctx, ()=><VideoObject>{
+		video = <VideoObject>{
 			'@type': 'VideoObject',
 			name: title,
 			description: description,
@@ -51,13 +56,21 @@ export function post__doc_html_($p:post__doc_html_props_T) {
 			embedUrl: video_id
 				? `https://www.youtube.com/embed/${video_id}`
 				: undefined,
-			author: {
-				'@type': 'Person',
-				name: 'Brian Takita',
-				url: 'https://briantakita.me',
-			},
-		})
+		}
 	}
+	const blog_posting_id_ref = jsonld__add(ctx, ()=><BlogPosting>{
+		'@type': 'BlogPosting',
+		headline: title,
+		url: canonical_url,
+		description: description,
+		datePublished: pub_date
+			? new Date(pub_date).toISOString().split('T')[0]
+			: undefined,
+		author: WebPage__author_(ctx),
+		keywords: tags?.join(', ') || undefined,
+		...(video ? { video } : {}),
+	})
+	WebPage__mainEntity__set(ctx, blog_posting_id_ref)
   return (
 		layout__doc_html_({
 			ctx,
